@@ -1,19 +1,31 @@
-import React from "react";
+import React, { createRef, useState } from "react";
 import Chevron from "../../../public/Assets/icons/chevron";
 import Menu from "./Menu";
 export default function Button({ text, menu }) {
+  console.log(menu);
+  const [menuVisablity, setMenuVisablity] = useState("none");
   return (
     <div>
-      <button className=" uppercase hover:border-secondery border-transparent border-t-4 relative  font-extrabold mx-3 flex items-center h-28 [&>svg]:hover:rotate-180">
+      <button
+        onMouseEnter={() => setMenuVisablity("flex")}
+        onMouseLeave={() => setMenuVisablity("none")}
+        className=" relative uppercase hover:border-secondery border-transparent border-t-4   font-extrabold mx-3 flex items-center h-28 [&>span]:hover:rotate-180"
+      >
         {text}
         {menu ? (
-          <div className=" w-3 h-3 mx-2">
+          <span className=" w-3 h-3 mx-2">
             <Chevron />
-          </div>
+          </span>
         ) : (
           ""
         )}
-        {menu ? <Menu data={menu} /> : ""}
+        <div
+          style={{
+            display: menuVisablity,
+          }}
+        >
+          {menu ? <Menu data={menu} /> : ""}
+        </div>
       </button>
     </div>
   );

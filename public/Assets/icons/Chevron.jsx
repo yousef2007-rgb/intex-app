@@ -3,6 +3,7 @@ import React from "react";
 export default function Chevron() {
   return (
     <svg
+      width={"100%"}
       xmlns="http://www.w3.org/2000/svg"
       class="ionicon"
       viewBox="0 0 512 512"

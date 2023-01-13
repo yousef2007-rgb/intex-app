@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "../../components/ui/Header";
+import Chevron from "../../public/Assets/icons/chevron";
 
 export default function HomePage() {
   return (
