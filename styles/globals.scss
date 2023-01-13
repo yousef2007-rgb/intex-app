@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+$primary-color: rgb(37, 150, 190);
+$secondery-color: #f7c44a;
+@layer utilities {
+  .text-primary {
+    color: $primary-color;
+  }
+  .bg-primary {
+    background-color: $primary-color;
+  }
+  .border-primary {
+    border-color: $primary-color;
+  }
+  .text-secondery {
+    color: $secondery-color;
+  }
+  .bg-secondery {
+    background-color: $secondery-color;
+  }
+  .border-secondery {
+    border-color: $secondery-color;
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  transition: transform 300ms ease-in-out;
+}
+
+// svg {
+//   max-width: 12px;
+// }

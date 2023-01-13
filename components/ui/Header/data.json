@@ -1,0 +1,124 @@
+{
+    "navigation":[
+        {
+            "title":"Products",
+            "menu":[{
+                "image":"/Assets/images/navigation menus/2021_04_12_agp_cropped__34790.original",
+                "title":"above ground pools"
+                ,"items":[
+                {"text":"Kids","link":""},
+                {"text":"Easy Set","link":""},
+                {"text":"Metal Frame","link":""},
+                {"text":"Prism Frame","link":""},
+                {"text":"Ultra XTR Frame","link":""},
+                {"text":"Graphite Gray Panel","link":""},
+                {"text":"KidsKrystal Clear Filtration & Sanitation","link":""},
+                {"text":"Pool Accessories","link":""},
+                {"text":"View All","link":""}
+            ]},
+       {
+                "image":"/Assets/images/navigation menus/airbeds__08922_category.original",
+                "title":"AIR MATTRESSES"
+                ,"items":[
+                {"text":"AIR MATTRESSES","link":""},
+                {"text":"Dura-Beam Standard Series","link":""},
+                {"text":"Dura-Beam Plus Series","link":""},
+                {"text":"Dura-Beam Deluxe Series","link":""},
+                {"text":"Multi-Use/Camping","link":""},
+                {"text":"Graphite Gray Panel","link":""},
+                {"text":"PremAire & TruAire","link":""},
+                {"text":"Pumps & Accessories","link":""},
+                {"text":"View All","link":""}
+            ]},
+       {
+                "image":"/Assets/images/navigation menus/air_furniture__31168.original",
+                "title":"aboveAIR FURNITURE"
+                ,"items":[
+                {"text":"Chairs","link":""},
+                {"text":"Kids Beds & Pillows","link":""},
+                {"text":"Loungers","link":""},
+                {"text":"Sofas","link":""},
+                {"text":"View All","link":""}
+            ]},
+            
+       {
+                "image":"/Assets/images/navigation menus/airbeds__08922_category.original",
+                "title":"FLOATS & TOYS"
+                ,"items":[
+                {"text":"ChairsNovelties & Games","link":""},
+                {"text":"AquaFlow Swim Gear","link":""},
+                {"text":"Pool Toys","link":""},
+                {"text":"Pool Mats & Lounges","link":""},
+                {"text":"Play Centers","link":""},
+                {"text":"Play Series Boats","link":""},
+                {"text":"Bouncers & Playhouses","link":""},
+                {"text":"View All","link":""}
+            ]}
+        ]
+        },
+                {
+            "title":"Replacement parts",
+            "menu":[{
+                "image":null,
+                "title":"ABOVE GROUND POOLS"
+                ,"items":[
+                {"text":"Kids","link":""},
+                {"text":"Easy Set","link":""},
+                {"text":"Oval Frame","link":""},
+                {"text":"Metal Frame","link":""},
+                {"text":"Prism Frame","link":""},
+                {"text":"Graphite Gray Panel","link":""},
+                {"text":"Ultra Frame","link":""},
+                {"text":"Ultra XTR Frame","link":""},
+                {"text":"View All","link":""}
+            ]},
+       {
+                "image":null,
+                "title":"KRYSTAL CLEAR FILTRATION &"
+                ,"items":[
+                {"text":"SANITATION","link":""},
+                {"text":"Cartridge Filter Pumps","link":""},
+                {"text":"Sand Filter Pumps","link":""},
+                {"text":"Saltwater Systems","link":""},
+                {"text":"Combination Systems","link":""},
+                {"text":"View All","link":""}
+            ]},
+       {
+                "image":null,
+                "title":"SPAS"
+                ,"items":[
+                {"text":"PureSpa Bubble Massage","link":""},
+                {"text":"PureSpa Plus Bubble Massage","link":""},
+                {"text":"PureSpa Jet and Bubble Deluxe","link":""},
+                {"text":"PureSpa Greywood Deluxe","link":""},
+                {"text":"SimpleSpa","link":""},
+                {"text":"View All","link":""}
+            ]},
+            
+       {
+                "image":null,
+                "title":"FLOATS & TOYS"
+                ,"items":[
+                {"text":"Play Series Boats","link":""},
+                {"text":"View All","link":""}
+            ]}
+        ]
+        },
+                        {
+            "title":"Safety",
+            "menu":null
+        },
+         {
+            "title":"Support",
+            "menu":[{
+                "image":null,
+                "title":"Order status"
+                ,"items":[
+                    {"text":"Order status","link":""},
+                    {"text":"claim status","link":""}
+                ]}
+      
+        ]
+        }
+    ]
+}
