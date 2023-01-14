@@ -40,5 +40,6 @@ a {
 * {
   box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, color 300ms ease-in-out,
+    background 300ms ease-in-out;
 }

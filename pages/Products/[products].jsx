@@ -1,11 +1,16 @@
+import { useRouter } from "next/router";
+
 import React from "react";
 import Head from "next/head";
 import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
-import ProductsContainer from "../../components/ui/ProductsContainer";
+import ProductsContainer from "../../components/ui/ProductsContainer/ProductsContainer";
 import Chevron from "../../public/Assets/icons/chevron";
 
 export default function HomePage() {
+  const router = useRouter();
+  const products = router.query;
+  console.log(products);
   return (
     <div>
       <Head>
@@ -14,8 +19,14 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <Intro />
-      <ProductsContainer />
+      <div className=" mt-28">
+        <img className="w-full" src="/Assets/images/intro/hero2.jpg" alt="" />
+        <ProductsContainer
+          number={products.products}
+          limit={1000}
+          title={products.title}
+        />
+      </div>
     </div>
   );
 }
