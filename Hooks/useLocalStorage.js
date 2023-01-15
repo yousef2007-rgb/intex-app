@@ -1,6 +1,17 @@
-const useLoacatStorage = (key, value) => {
-  window.localStorage.setItem(key, value);
-  return window.localStorage.getItem(key);
+import { useState, useEffect } from "react";
+const useLocalStorage = (key) => {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  console.log("storage");
+  useEffect(() => {
+    const storage = new Promise((resolve, reject) => {
+      resolve(window.localStorage.getItem(key));
+    }).then((data) => {
+      setData(JSON.parse(data));
+      setIsLoading(false);
+    });
+  }, []);
+  return [data, isLoading];
 };
 
-export default useLoacatStorage;
+export default useLocalStorage;

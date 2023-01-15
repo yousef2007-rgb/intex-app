@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 const useFetch = (url) => {
+  console.log("fetch");
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -9,7 +10,7 @@ const useFetch = (url) => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
-        useLocalStorage("data", data);
+        window.localStorage.setItem("data", JSON.stringify(data));
       });
   }, []);
   return [data, isLoading];
