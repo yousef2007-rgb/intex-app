@@ -27,6 +27,7 @@ export default function ProductsContainer({ title, number, limit }) {
             .filter((x, index) => index < limit)
             .map((product, i) => (
               <ProductCard
+                label={product.label}
                 discription={product.field_item_name}
                 image={product.image}
                 price={product.field_wholesale_price}

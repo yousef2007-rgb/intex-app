@@ -7,6 +7,7 @@ import Close from "../../../public/Assets/icons/Close";
 
 export default function SearchBody({ visability }) {
   const input = useRef(null);
+  const text = "Hello World".toLowerCase();
   const [textValue, setTextValue] = useState(undefined);
   const [data, isLoading] = useData(
     "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
@@ -31,9 +32,12 @@ export default function SearchBody({ visability }) {
           {textValue != ""
             ? data &&
               data.data.res
-                .filter((x) => x.field_item_name.includes(textValue))
+                .filter((x) =>
+                  x.field_item_name.toLowerCase().includes(textValue)
+                )
                 .map((product, i) => (
                   <ProductCard
+                    label={product.label}
                     discription={product.field_item_name}
                     image={product.image}
                     price={product.field_wholesale_price}

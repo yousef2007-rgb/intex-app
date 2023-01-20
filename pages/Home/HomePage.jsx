@@ -4,8 +4,12 @@ import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer";
 import Chevron from "../../public/Assets/icons/chevron";
+import { useSelector, useDispatch } from "react-redux";
+import { addCartItem } from "../../slices/cartSlice";
 
 export default function HomePage() {
+  const count = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
   return (
     <div>
       <Head>
@@ -15,6 +19,7 @@ export default function HomePage() {
       </Head>
       <Header />
       <Intro />
+      <h1 onClick={() => dispatch(addCartItem())}>count is:-{count}</h1>
       <ProductsContainer />
     </div>
   );

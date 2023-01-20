@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 
 export default function Menu({ data }) {
-  console.log(data);
   return (
     <div className=" absolute top-full right-1/2 translate-x-1/2  w-full   mx-auto flex bg-white border-t-4 border-secondery min-w-fit ">
       {data.map((item, index) => (
