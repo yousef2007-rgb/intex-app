@@ -16,8 +16,8 @@ export default function ProductsContainer({ title, number, limit }) {
       <img src="/Assets/GIF/Loading.gif" width={"100%"} />
     </div>
   ) : (
-    <div className="my-12 flex flex-col items-center">
-      <h1 className=" text-primary my-5 mx-auto w-fit text-3xl capitalize font-bold  ">
+    <div className=" flex flex-col items-center">
+      <h1 className=" text-primary my-10 mx-auto w-fit text-3xl capitalize font-bold  ">
         {title}
       </h1>
       <div className="flex flex-wrap gap-10 justify-center items-center text-center ">
