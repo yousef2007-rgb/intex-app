@@ -8,7 +8,7 @@ export default function Navigation() {
   return (
     <nav className=" ml-auto flex">
       {data.navigation.map((item, index) => (
-        <Buttons text={item.title} menu={item.menu} />
+        <Buttons key={index} text={item.title} menu={item.menu} />
       ))}
       <Cart />
       <Authantication />

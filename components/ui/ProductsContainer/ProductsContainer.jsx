@@ -25,8 +25,9 @@ export default function ProductsContainer({ title, number, limit }) {
           data.data.res
             .filter((x) => x.field_subcategory == number)
             .filter((x, index) => index < limit)
-            .map((product, i) => (
+            .map((product, index) => (
               <ProductCard
+                key={index}
                 label={product.label}
                 discription={product.field_item_name}
                 image={product.image}

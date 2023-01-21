@@ -47,7 +47,7 @@ export default function HomePage() {
             {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => (
-                <div className="w-full min-h-screen">
+                <div key={index} className="w-full min-h-screen">
                   <div className=" border-b flex w-full h-screen items-center justify-evenly">
                     <img className="w-1/2 max-w-lg h-fit" src={product.image} />
                     {}

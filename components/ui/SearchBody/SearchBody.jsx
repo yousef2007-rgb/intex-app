@@ -35,8 +35,9 @@ export default function SearchBody({ visability }) {
                 .filter((x) =>
                   x.field_item_name.toLowerCase().includes(textValue)
                 )
-                .map((product, i) => (
+                .map((product, index) => (
                   <ProductCard
+                    key={index}
                     label={product.label}
                     discription={product.field_item_name}
                     image={product.image}
