@@ -9,7 +9,10 @@ export default function Menu({ data }) {
           <img src={item.image} alt="" />
           <ul>
             {item.items.map((element, index) => (
-              <li className="font-bold capitalize hover:bg-secondery w-full hover:text-white">
+              <li
+                key={index}
+                className="font-bold capitalize hover:bg-secondery w-full hover:text-white"
+              >
                 <Link className="w-full h-full p-1" href={element.link}>
                   {element.text}
                 </Link>

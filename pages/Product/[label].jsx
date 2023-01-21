@@ -33,7 +33,7 @@ export default function HomePage() {
           <img className=" h-screen w-screen" src="/Assets/GIF/Loading.gif" />
         ) : (
           <div className=" flex items-center">
-            {data.data.res
+            {/* {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => {
                 const dimensions = new Image();
@@ -43,7 +43,7 @@ export default function HomePage() {
                   setHeight(this.height);
                   setWidth(this.width);
                 };
-              })}
+              })} */}
             {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => (
