@@ -1,5 +1,5 @@
 import React, { createRef, useState } from "react";
-import Chevron from "../../../public/Assets/icons/chevron";
+import Chevron from "../../../public/Assets/icons/Chevron";
 import Menu from "./Menu";
 export default function Button({ text, menu }) {
   const [menuVisablity, setMenuVisablity] = useState("none");

@@ -5,7 +5,6 @@ import Head from "next/head";
 import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer/ProductsContainer";
-import Chevron from "../../public/Assets/icons/chevron";
 
 export default function HomePage() {
   const router = useRouter();

@@ -3,7 +3,6 @@ import Head from "next/head";
 import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer";
-import Chevron from "../../public/Assets/icons/chevron";
 import { useSelector, useDispatch } from "react-redux";
 import { addCartItem } from "../../slices/cartSlice";
 
