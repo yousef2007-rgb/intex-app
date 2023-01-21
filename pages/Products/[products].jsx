@@ -22,7 +22,7 @@ export default function HomePage() {
         <img className="w-full" src="/Assets/images/intro/hero2.jpg" alt="" />
         <ProductsContainer
           number={products.products}
-          limit={1000}
+          limit={0}
           title={products.title}
         />
       </div>

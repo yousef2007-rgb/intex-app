@@ -19,7 +19,7 @@ export default function ProductsContainerBody() {
           key={index}
           title={item.title}
           number={item.number}
-          limit={5}
+          limit={3}
         />
       ))}
     </div>

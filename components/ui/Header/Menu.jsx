@@ -5,20 +5,19 @@ export default function Menu({ data }) {
   return (
     <div className=" absolute top-full right-1/2 translate-x-1/2  w-full   mx-auto flex bg-white border-t-4 border-secondery min-w-fit ">
       {data.map((item, index) => (
-        <section key={index} className=" flex flex-col w-full">
+        <section key={index} className=" flex flex-col w-60">
           <img src={item.image} alt="" />
-          <ul>
+          <div className=" flex flex-col">
             {item.items.map((element, index) => (
-              <li
+              <Link
                 key={index}
-                className="font-bold capitalize hover:bg-secondery w-full hover:text-white"
+                className="font-bold p-3 capitalize transition-all hover:bg-secondery w-full hover:text-white"
+                href={element.link}
               >
-                <Link className="w-full h-full p-1" href={element.link}>
-                  {element.text}
-                </Link>
-              </li>
+                {element.text}
+              </Link>
             ))}
-          </ul>
+          </div>
         </section>
       ))}
     </div>

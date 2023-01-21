@@ -24,7 +24,7 @@ export default function ProductsContainer({ title, number, limit }) {
         {data &&
           data.data.res
             .filter((x) => x.field_subcategory == number)
-            .filter((x, index) => index < limit)
+            .filter((x, index) => index < limit || limit == 0)
             .map((product, index) => (
               <ProductCard
                 key={index}
@@ -35,10 +35,10 @@ export default function ProductsContainer({ title, number, limit }) {
               />
             ))}
       </div>
-      {limit <= 5 ? (
+      {limit != 0 ? (
         <Link
           href={`/Products/${number}?title=${title}`}
-          className=" bg-primary text-white mx-auto px-5 py-2 font-bold my-10"
+          className=" bg-secondery border-transparent border-2 transition-all ease-in-out duration-200 hover:border-secondery hover:bg-white hover:text-secondery text-white mx-auto px-8 py-2 font-bold my-10"
         >
           View All
         </Link>
