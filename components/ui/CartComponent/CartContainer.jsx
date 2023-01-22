@@ -3,7 +3,7 @@ import CardItem from "./CardItem";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem } from "../../../slices/cartSlice";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
-export default function CartContainer({ cart }) {
+function CartContainer({ cart }) {
   const visability = useSelector((state) => state.cartVisability);
   const dispatch = useDispatch();
   return (
@@ -29,3 +29,6 @@ export default function CartContainer({ cart }) {
     </>
   );
 }
+CartContainer.displayName = "cart";
+
+export default CartContainer;
