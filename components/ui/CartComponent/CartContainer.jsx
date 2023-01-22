@@ -1,11 +1,24 @@
 import React, { useEffect } from "react";
 import CardItem from "./CardItem";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartItem } from "../../../slices/cartSlice";
+import { addCartItem, resetCartItem } from "../../../slices/cartSlice";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
 function CartContainer({ cart }) {
   const visability = useSelector((state) => state.cartVisability);
+  const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (cartItems.length == 0 && window.localStorage.getItem("cart")) {
+      dispatch(
+        resetCartItem([...JSON.parse(window.localStorage.getItem("cart"))])
+      );
+    }
+  }, []);
+  useEffect(() => {
+    if (cartItems.length != 0) {
+      window.localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
   return (
     <>
       <div
