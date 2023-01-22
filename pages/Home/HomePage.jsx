@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer";
+import Footer from "../../components/ui/Footer/Footer";
 import { addCartItem } from "../../slices/cartSlice";
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Intro />
         <ProductsContainer />
       </main>
+      <Footer />
     </div>
   );
 }
