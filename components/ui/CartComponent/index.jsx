@@ -1,5 +1,6 @@
+import React from "react";
 import CartContainer from "./CartContainer";
-import CardItem from "./CardItem";
-export default function () {
+
+export default function index() {
   return <CartContainer />;
 }
