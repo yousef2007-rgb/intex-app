@@ -1,7 +1,8 @@
 import React, { createRef, useState } from "react";
 import Chevron from "../../../public/Assets/icons/Chevron";
 import Menu from "./Menu";
-export default function Button({ text, menu }) {
+import Link from "next/link";
+export default function Button({ text, menu, link }) {
   const [menuVisablity, setMenuVisablity] = useState("none");
   return (
     <div>

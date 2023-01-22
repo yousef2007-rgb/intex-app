@@ -4,6 +4,8 @@ import useData from "../../../Hooks/useData";
 import ProductCard from "../ProductsContainer/ProductCard";
 import Link from "next/link";
 import Close from "../../../public/Assets/icons/Close";
+import { useSelector, useDispatch } from "react-redux";
+import { tougle } from "../../../slices/searchVisabilitySlice";
 
 export default function SearchBody({ visability }) {
   const input = useRef(null);
@@ -13,10 +15,11 @@ export default function SearchBody({ visability }) {
     "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
     "data"
   );
-  console.log(textValue);
+  const searchVisability = useSelector((state) => state.searchVisability);
+  const dispatch = useDispatch();
   return (
     <div
-      style={{ display: visability }}
+      style={{ display: searchVisability }}
       className=" absolute flex items-start overflow-y-scroll overflow-x-hidden justify-center top-0 left-0 w-screen h-fit bg-white  p-5"
     >
       <div className=" bg-white flex flex-col items-center w-full rounded-lg  p-5">
@@ -28,7 +31,10 @@ export default function SearchBody({ visability }) {
             onChange={() => setTextValue(input.current.value)}
           />
         </div>
-        <div className="w-full gap-20 max-h-screen flex flex-row justify-evenly flex-wrap">
+        <div
+          onClick={() => dispatch(tougle())}
+          className="w-full gap-20 max-h-screen flex flex-row justify-evenly flex-wrap"
+        >
           {textValue != ""
             ? data &&
               data.data.res

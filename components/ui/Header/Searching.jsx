@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import Search from "../../../public/Assets/icons/Search";
 import SearchBody from "../SearchBody/SearchBody";
 import Close from "../../../public/Assets/icons/Close";
+import { useSelector, useDispatch } from "react-redux";
+import { tougle } from "../../../slices/searchVisabilitySlice";
 
 export default function Searching() {
-  const [visability, setVisability] = useState("none");
+  const searchVisability = useSelector((state) => state.searchVisability);
+  const dispatch = useDispatch();
   return (
     <div className="mx-4 w-6 h-28 flex items-center hover:border-secondery border-transparent border-t-4 cursor-pointer ">
-      <SearchBody visability={visability} />
+      <SearchBody visability={searchVisability} />
       <button
         style={{
-          position: visability == "none" ? "relative" : "absolute",
+          position: searchVisability == "none" ? "relative" : "absolute",
           right: "25%",
         }}
         className=" z-50 w-6"
-        onClick={() =>
-          visability == "none" ? setVisability("flex") : setVisability("none")
-        }
+        onClick={() => dispatch(tougle())}
       >
-        {visability == "none" ? <Search /> : <Close />}
+        {searchVisability == "none" ? <Search /> : <Close />}
       </button>
     </div>
   );

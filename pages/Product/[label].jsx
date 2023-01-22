@@ -6,8 +6,8 @@ import Header from "../../components/ui/Header";
 import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer/ProductsContainer";
 import useData from "../../Hooks/useData";
-// import ReactImageMagnify from "react-image-magnify";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addCartItem } from "../../slices/cartSlice";
 export default function HomePage() {
   const [data, isLoading] = useData(
     "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
@@ -18,6 +18,7 @@ export default function HomePage() {
   const [height, setHeight] = useState(0);
   const router = useRouter();
   const label = router.query;
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -32,49 +33,13 @@ export default function HomePage() {
           <img className=" h-screen w-screen" src="/Assets/GIF/Loading.gif" />
         ) : (
           <div className=" flex items-center">
-            {/* {data.data.res
-              .filter((x) => x.label == label.label)
-              .map((product, index) => {
-                const dimensions = new Image();
-                dimensions.src = product.image;
-
-                dimensions.onload = function () {
-                  setHeight(this.height);
-                  setWidth(this.width);
-                };
-              })} */}
             {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => (
                 <div key={index} className="w-full min-h-screen">
                   <div className=" border-b flex w-full h-screen items-center justify-evenly">
                     <img className="w-1/2 max-w-lg h-fit" src={product.image} />
-                    {}
 
-                    {/* <div
-                      style={{ flex: "0 0 30%", margin: "20px 0 20px 20px" }}
-                    >
-                      <ReactImageMagnify
-                        {...{
-                          smallImage: {
-                            alt: "Wristwatch by Ted Baker London",
-                            isFluidWidth: true,
-                            src: product.image,
-                            // src: "https://cdn11.bigcommerce.com/s-u7yn5f7nmq/images/stencil/640w/products/3954/7879/68303EP_Main__44538.1632861542.jpg?c=2",
-                          },
-                          largeImage: {
-                            src: product.image,
-                            // src: "https://cdn11.bigcommerce.com/s-u7yn5f7nmq/images/stencil/640w/products/3954/7879/68303EP_Main__44538.1632861542.jpg?c=2",
-                            width: width * 5.555555555555556,
-                            height: height * 5.555555555555556,
-                          },
-                          enlargedImageContainerDimensions: {
-                            width: "200%",
-                            height: "100%",
-                          },
-                        }}
-                      />
-                    </div> */}
                     <article className="w-1/2 font-bold h-fit">
                       <div>
                         <h1 className=" text-3xl my-2 text-blue-gray">
@@ -108,7 +73,26 @@ export default function HomePage() {
                             -
                           </button>
                         </div>
-                        <button className=" border-transparent bg-secondery uppercase text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2">
+                        <button
+                          onClick={() => {
+                            if (counter != 0) {
+                              dispatch(
+                                addCartItem({
+                                  item: {
+                                    image: product.image,
+                                    discription: product.field_item_name,
+                                    label: product.label,
+                                    price: product.field_wholesale_price * 1.5,
+                                  },
+                                  quantity: counter,
+                                })
+                              );
+                            } else {
+                              alert("Set A Quantity Please!");
+                            }
+                          }}
+                          className=" border-transparent bg-secondery uppercase text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2"
+                        >
                           Add to Cart
                         </button>
                       </div>
