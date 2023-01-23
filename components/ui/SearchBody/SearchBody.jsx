@@ -33,13 +33,15 @@ export default function SearchBody({ visability }) {
         </div>
         <div
           onClick={() => dispatch(tougle())}
-          className="w-full gap-20 max-h-screen flex flex-row justify-evenly flex-wrap"
+          className="w-full gap-20 max-h-[50vh] flex flex-row justify-evenly flex-wrap"
         >
           {textValue != ""
             ? data &&
               data.data.res
-                .filter((x) =>
-                  x.field_item_name.toLowerCase().includes(textValue)
+                .filter(
+                  (x) =>
+                    x.label.toLowerCase().includes(textValue) ||
+                    x.field_item_name.toLowerCase().includes(textValue)
                 )
                 .map((product, index) => (
                   <ProductCard

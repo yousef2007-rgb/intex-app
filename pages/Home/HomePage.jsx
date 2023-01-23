@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div>
       <Head>
-        <title>Intex Store</title>
+        <title>Intex Store - Home Page</title>
         <meta name="description" content="IntexJo" />
         <meta name="description" content="intex jo" />
         <meta name="description" content="intex pools" />

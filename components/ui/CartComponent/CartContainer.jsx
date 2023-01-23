@@ -22,7 +22,7 @@ function CartContainer({ cart }) {
   return (
     <>
       <div
-        className="z-40 absolute top-0 left-0 w-screen h-screen "
+        className=" absolute top-0 left-0 w-screen h-screen "
         style={{ display: visability }}
         onClick={() => dispatch(tougleCart())}
       ></div>
