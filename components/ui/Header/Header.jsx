@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "./Navigation";
 import Link from "next/link";
+import Cart from "./Cart";
+import Search from "./Searching";
 
 export default function Header() {
   return (
@@ -10,6 +12,8 @@ export default function Header() {
           <img className=" w-44" src="/Assets/images/logo.png" />
         </Link>
         <Navigation />
+        <Cart />
+        <Search />
       </div>
     </header>
   );

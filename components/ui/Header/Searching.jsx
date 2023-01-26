@@ -16,7 +16,7 @@ export default function Searching() {
           position: searchVisability == "none" ? "relative" : "absolute",
           right: "25%",
         }}
-        className=" z-50 w-6"
+        className={` z-[${searchVisability == "none" ? 0 : 50}] w-6`}
         onClick={() => dispatch(tougle())}
       >
         {searchVisability == "none" ? <Search /> : <Close />}

@@ -16,8 +16,8 @@ export default function ProductsContainer({ title, number, limit }) {
       <img src="/Assets/GIF/Loading.gif" width={"100%"} />
     </div>
   ) : (
-    <div className=" flex flex-col items-center">
-      <h1 className=" text-primary my-10 mx-auto w-fit text-3xl capitalize font-bold  ">
+    <div className=" flex flex-col items-center border-b">
+      <h1 className=" text-blue-gray my-10 mx-auto w-fit text-3xl uppercase font-bold  ">
         {title}
       </h1>
       <div className="flex flex-wrap gap-10 justify-center items-center text-center ">
@@ -38,7 +38,7 @@ export default function ProductsContainer({ title, number, limit }) {
       {limit != 0 ? (
         <Link
           href={`/Products/${number}?title=${title}`}
-          className=" bg-secondery border-transparent border-2 transition-all ease-in-out duration-200 hover:border-secondery hover:bg-white hover:text-secondery text-white mx-auto px-8 py-2 font-bold my-10"
+          className=" bg-primary border-transparent border-2 transition-all ease-in-out duration-200 hover:border-primary hover:bg-white hover:text-primary text-white mx-auto px-12 py-2 font-bold my-12"
         >
           View All
         </Link>
