@@ -20,7 +20,7 @@ export default function HomePage() {
       </Head>
       <Header />
       <main>
-        <Intro />
+        <Intro link={"/Assets/images/intro/hero1.jpg"} />
         <ProductsContainer />
       </main>
       <Footer />

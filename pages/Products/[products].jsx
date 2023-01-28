@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-
 import React from "react";
 import Head from "next/head";
 import Header from "../../components/ui/Header";
@@ -18,8 +17,8 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <div className=" mt-28">
-        <img className="w-full" src="/Assets/images/intro/hero2.jpg" alt="" />
+      <div className="">
+        <Intro link={"/Assets/images/intro/hero2.jpg"} />
         <ProductsContainer
           number={products.products}
           limit={0}
