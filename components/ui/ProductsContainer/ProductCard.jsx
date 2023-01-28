@@ -17,6 +17,7 @@ export default function ProductCard({
         src={image}
         alt={discription + label}
         className="w-full aspect-square object-cover"
+        loading="lazy"
       />
       <h1 className=" font-bold text-primary my-2 w-fit">{discription}</h1>
       <h2 className=" font-bold text-secondery w-fit">{label}</h2>
