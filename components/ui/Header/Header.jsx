@@ -21,7 +21,10 @@ export default function Header() {
           <img className=" w-44 mx-3" src="/Assets/images/logo.png" />
         </Link>
         <Navigation />
-        <button className=" mx-2" onClick={() => dispatch(tougleLanguage())}>
+        <button
+          className=" tablet:mx-3 ml-auto mr-3"
+          onClick={() => dispatch(tougleLanguage())}
+        >
           🌐
         </button>
         <Cart />
