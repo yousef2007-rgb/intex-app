@@ -31,7 +31,7 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <div className="p-5">
+      <div className="p-5 mt-28">
         {isLoading ? (
           <img className=" h-screen w-screen" src="/Assets/GIF/Loading.gif" />
         ) : (
