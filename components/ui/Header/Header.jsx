@@ -9,7 +9,7 @@ export default function Header() {
     <header className=" z-50 fixed shadow-lg w-full bg-white top-0 ">
       <div className=" max-w-5xl mx-auto h-28 flex items-center">
         <Link href={"/"}>
-          <img className=" w-44" src="/Assets/images/logo.png" />
+          <img className=" w-44 mx-3" src="/Assets/images/logo.png" />
         </Link>
         <Navigation />
         <Cart />
