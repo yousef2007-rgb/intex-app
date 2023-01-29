@@ -22,10 +22,14 @@ export default function Header() {
         </Link>
         <Navigation />
         <button
-          className=" tablet:mx-3 ml-auto mr-3"
+          className="flex capitalize font-bold tablet:mx-3 ml-auto mr-3"
+          style={{
+            flexDirection: language == "arabic" ? "row-reverse" : "row",
+          }}
           onClick={() => dispatch(tougleLanguage())}
         >
-          🌐
+          <span>🌐</span>
+          <span>{language == "arabic" ? "العربية" : language}</span>
         </button>
         <Cart />
         <Search />
