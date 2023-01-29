@@ -45,15 +45,19 @@ function CartContainer({ cart }) {
             <h1 className="font-bold py-10">Your Cart Is Empty</h1>
           </div>
         ) : (
-          cart.map((item, index) => <CardItem key={index} {...item} />)
+          <>
+            {cart.map((item, index) => (
+              <CardItem key={index} {...item} />
+            ))}
+            <a
+              className=" bg-green-500 capitalize w-full py-2 text-center font-bold rounded-xl border-2 border-green-500 hover:bg-white hover:text-green-500 px-5 text-white"
+              href={`https://wa.me/798642783?text=order:\n${whatsappText}`}
+              target={"blank"}
+            >
+              checkout using whatsapp
+            </a>
+          </>
         )}
-        <a
-          className=" bg-green-500 capitalize w-full py-2 text-center font-bold rounded-xl border-2 border-green-500 hover:bg-white hover:text-green-500 px-5 text-white"
-          href={`https://wa.me/798642783?text=order:\n${whatsappText}`}
-          target={"blank"}
-        >
-          checkout using whatsapp
-        </a>
       </div>
     </>
   );

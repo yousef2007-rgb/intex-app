@@ -41,7 +41,10 @@ export default function HomePage() {
               .map((product, index) => (
                 <div key={index} className="w-full min-h-screen">
                   <div className=" border-b flex w-full h-screen items-center justify-evenly">
-                    <img className="w-1/2 max-w-lg h-fit" src={product.image} />
+                    <img
+                      className="w-1/2 max-w-lg h-fit aspect-square object-contain"
+                      src={product.image}
+                    />
 
                     <article className="w-1/2 font-bold h-fit">
                       <div>
