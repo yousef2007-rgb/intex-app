@@ -1,0 +1,12 @@
+{
+  "arabic": {
+    "addToCartButton": "اضف الى القائمة",
+    "itemNumber": "رقم المنتج",
+    "relatedProducts": "منتجات لها علاقة"
+  },
+  "english": {
+    "addToCartButton": "add to cart",
+    "itemNumber": "item number",
+    "relatedProducts": "related products"
+  }
+}

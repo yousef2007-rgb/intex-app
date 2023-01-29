@@ -1,0 +1,110 @@
+{
+  "english": {
+    "navigation": [
+      {
+        "title": "Products",
+        "menu": [
+          {
+            "image": "/Assets/images/navigation/2021_04_12_agp_cropped__34790.original",
+            "items": [
+              {
+                "text": "Inflated Products",
+                "link": "/Products/1515?title=inflated%20products"
+              },
+              {
+                "text": "Inflated Pools",
+                "link": "/Products/342?title=inflated%20pools"
+              },
+              { "text": "Pools", "link": "/Products/343?title=pools" },
+              { "text": "Furniture", "link": "/Products/1944?title=furniture" },
+              {
+                "text": "Accessories",
+                "link": "/Products/344?title=accessories"
+              },
+              {
+                "text": "Inflated Boats",
+                "link": "/Products/1514?title=inflated%20boats"
+              },
+              { "text": "Blower", "link": "/Products/346?title=blower" }
+            ]
+          }
+        ],
+        "link": "/"
+      },
+      {
+        "title": "Replacement parts",
+        "menu": [
+          {
+            "image": null,
+            "items": [
+              {
+                "text": "Pool Equipment",
+                "link": "/Products/345?title=pool%20equipment"
+              }
+            ]
+          }
+        ],
+        "link": "/"
+      },
+      {
+        "title": "About us",
+        "menu": null,
+        "link": "/AboutUs"
+      }
+    ]
+  },
+  "arabic": {
+    "navigation": [
+      {
+        "title": "المنتجات",
+        "menu": [
+          {
+            "image": "/Assets/images/navigation/2021_04_12_agp_cropped__34790.original",
+            "items": [
+              {
+                "text": "المنتجات القابلة للنفخ",
+                "link": "/Products/1515?title=المنتجات%20القابلة%20للنفخ"
+              },
+              {
+                "text": "برك قابلة للنفخ",
+                "link": "/Products/342?title=البرك%20القابلة%20للنفخ"
+              },
+              { "text": "برك", "link": "/Products/343?title=البرك" },
+              { "text": "اثاث", "link": "/Products/1944?title=الاثاث" },
+              {
+                "text": "اكسسوارات",
+                "link": "/Products/344?title=اكسسوارات"
+              },
+              {
+                "text": "قوارب قابلة للنفخ",
+                "link": "/Products/1514?title=قوارب%20القابلة%20للنفخ"
+              },
+              { "text": "منفاخ", "link": "/Products/346?title=منافيخ" }
+            ]
+          }
+        ],
+        "link": "/"
+      },
+      {
+        "title": "قطع غيار",
+        "menu": [
+          {
+            "image": null,
+            "items": [
+              {
+                "text": "اكسسوارات للبرك",
+                "link": "/Products/345?title=pool%20equipment"
+              }
+            ]
+          }
+        ],
+        "link": "/"
+      },
+      {
+        "title": "عنا",
+        "menu": null,
+        "link": "/AboutUs"
+      }
+    ]
+  }
+}

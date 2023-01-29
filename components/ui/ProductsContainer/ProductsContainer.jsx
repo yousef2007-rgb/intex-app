@@ -5,12 +5,15 @@ import useLocalStorage from "../../../Hooks/useLocalStorage";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
 import useData from "../../../Hooks/useData";
+import uiData from "../../../data/ProductContainer.json";
+import { useSelector } from "react-redux";
 
 export default function ProductsContainer({ title, number, limit }) {
   const [data, isLoading] = useData(
     "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
     "data"
   );
+  const language = useSelector((state) => state.language);
   return isLoading ? (
     <div className="flex items-center justify-center h-full h-1/2">
       <img src="/Assets/GIF/Loading.gif" width={"100%"} />
@@ -40,7 +43,9 @@ export default function ProductsContainer({ title, number, limit }) {
           href={`/Products/${number}?title=${title}`}
           className=" bg-primary border-transparent border-2 transition-all ease-in-out duration-200 hover:border-primary hover:bg-white hover:text-primary text-white mx-auto px-12 py-2 font-bold my-12"
         >
-          View All
+          {language == "arabic"
+            ? uiData.arabic.viewAllButton
+            : uiData.english.viewAllButton}
         </Link>
       ) : (
         ""

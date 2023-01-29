@@ -8,6 +8,7 @@ import ProductsContainer from "../../components/ui/ProductsContainer/ProductsCon
 import useData from "../../Hooks/useData";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem } from "../../slices/cartSlice";
+import componentData from "../../data/ProductPage.json";
 export default function HomePage() {
   const [data, isLoading] = useData(
     "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
@@ -21,6 +22,9 @@ export default function HomePage() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const item = cart.find((x) => x.item.label == label.label);
+  const language = useSelector((state) => state.language);
+  const uiData =
+    language == "arabic" ? componentData.arabic : componentData.english;
 
   const [counter, setCounter] = useState(item ? item.quantity : 1);
   return (
@@ -52,7 +56,7 @@ export default function HomePage() {
                           {product.field_item_name}
                         </h1>
                         <h2 className="  capitalize w-full font-normal border-b pb-10">
-                          item number: {product.label}
+                          {uiData.itemNumber}: {product.label}
                         </h2>
                       </div>
                       <div className=" flex flex-col">
@@ -100,13 +104,13 @@ export default function HomePage() {
                           }}
                           className=" border-transparent bg-secondery uppercase tablet:w-fit w-full text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2"
                         >
-                          Add to Cart
+                          {uiData.addToCartButton}
                         </button>
                       </div>
                     </article>
                   </div>
                   <ProductsContainer
-                    title={"Related Products"}
+                    title={uiData.relatedProducts}
                     limit={3}
                     number={product.field_subcategory}
                   />

@@ -1,0 +1,70 @@
+{
+  "english": [
+    {
+      "title": "inflated products",
+      "number": "1515"
+    },
+    {
+      "title": "inflated pools",
+      "number": "342"
+    },
+    {
+      "title": "pools",
+      "number": "343"
+    },
+    {
+      "title": "furniture",
+      "number": "1944"
+    },
+    {
+      "title": "pool equipment",
+      "number": "345"
+    },
+    {
+      "title": "accessories",
+      "number": "344"
+    },
+    {
+      "title": "inflated boats",
+      "number": "1514"
+    },
+    {
+      "title": "blower",
+      "number": "346"
+    }
+  ],
+  "arabic": [
+    {
+      "title": "منتجات قابلة للنفخ",
+      "number": "1515"
+    },
+    {
+      "title": "برك قابلة للنفخ",
+      "number": "342"
+    },
+    {
+      "title": "برك",
+      "number": "343"
+    },
+    {
+      "title": "اثاث",
+      "number": "1944"
+    },
+    {
+      "title": "اكسسوارات البرك",
+      "number": "345"
+    },
+    {
+      "title": "اكسسوارات",
+      "number": "344"
+    },
+    {
+      "title": "قوارب قابلة للنفخ",
+      "number": "1514"
+    },
+    {
+      "title": "منافيخ",
+      "number": "346"
+    }
+  ]
+}
