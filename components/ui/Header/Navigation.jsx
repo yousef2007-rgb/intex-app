@@ -3,7 +3,7 @@ import data from "./data.json";
 import Buttons from "./Button";
 export default function Navigation() {
   return (
-    <nav className=" ml-auto flex">
+    <nav className=" ml-auto hidden tablet:flex">
       {data.navigation.map((item, index) => (
         <Buttons
           key={index}

@@ -19,7 +19,7 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <main>
+      <main className="tablet:mt-0 mt-28">
         <Intro link={"/Assets/images/intro/hero1.jpg"} />
         <ProductsContainer />
       </main>
