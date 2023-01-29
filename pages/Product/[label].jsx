@@ -40,13 +40,13 @@ export default function HomePage() {
               .filter((x) => x.label == label.label)
               .map((product, index) => (
                 <div key={index} className="w-full min-h-screen">
-                  <div className=" border-b flex w-full h-screen items-center justify-evenly">
+                  <div className=" border-b flex w-full min-h-screen items-center flex-wrap justify-evenly">
                     <img
-                      className="w-1/2 max-w-lg h-fit aspect-square object-contain"
+                      className="tablet:w-1/2 w-full tablet:min-w-[400px] max-w-lg h-fit aspect-square object-contain"
                       src={product.image}
                     />
 
-                    <article className="w-1/2 font-bold h-fit">
+                    <article className="tablet:w-1/2 w-full font-bold h-fit">
                       <div>
                         <h1 className=" text-3xl my-2 text-blue-gray">
                           {product.field_item_name}
@@ -60,7 +60,7 @@ export default function HomePage() {
                           {product.field_wholesale_price * 1.5} JOD
                         </p>
 
-                        <div className=" flex ml-auto shadow-md">
+                        <div className=" flex ml-auto tablet:w-fit w-full text-center shadow-md">
                           <button
                             onClick={() => {
                               if (counter > 0) {
@@ -71,7 +71,7 @@ export default function HomePage() {
                           >
                             -
                           </button>
-                          <p className=" px-24 py-2">{counter}</p>
+                          <p className=" tablet:px-24 flex-1 py-2">{counter}</p>
 
                           <button
                             onClick={() => setCounter(counter + 1)}
@@ -98,7 +98,7 @@ export default function HomePage() {
                               alert("Set A Quantity Please!");
                             }
                           }}
-                          className=" border-transparent bg-secondery uppercase text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2"
+                          className=" border-transparent bg-secondery uppercase tablet:w-fit w-full text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2"
                         >
                           Add to Cart
                         </button>
