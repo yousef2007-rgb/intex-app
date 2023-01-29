@@ -20,6 +20,10 @@ export const cartSlice = createSlice({
       state[index].quantity += action.payload.quantity;
       return state;
     },
+    clearItems: (state, action) => {
+      window.localStorage.setItem("cart", []);
+      return [];
+    },
     removeCartItem: (state, action) => {
       window.localStorage.setItem(
         "cart",
@@ -36,6 +40,7 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addCartItem, removeCartItem, resetCartItem } = cartSlice.actions;
+export const { addCartItem, removeCartItem, resetCartItem, clearItems } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

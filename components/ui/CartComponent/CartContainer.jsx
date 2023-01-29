@@ -3,11 +3,14 @@ import CardItem from "./CardItem";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, resetCartItem } from "../../../slices/cartSlice";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
+import { clearItems } from "../../../slices/cartSlice";
 import { useState } from "react";
 function CartContainer({ cart }) {
   const visability = useSelector((state) => state.cartVisability);
   const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [whatsappText, setWhatsAppText] = useState("");
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     if (cartItems.length == 0 && window.localStorage.getItem("cart")) {
       dispatch(
@@ -19,15 +22,14 @@ function CartContainer({ cart }) {
     if (cartItems.length != 0) {
       window.localStorage.setItem("cart", JSON.stringify(cartItems));
     }
-    cart.map((x) =>
+    cart.map((x) => {
       setWhatsAppText(
         `%0D${whatsappText} item=%20${x.item.discription.replace(" ", "%20")}X${
           x.quantity
         }%20total%20price=${x.quantity * x.item.price * 1.5}`
-      )
-    );
+      );
+    });
   }, [cartItems]);
-  const [whatsappText, setWhatsAppText] = useState("");
   return (
     <>
       <div
@@ -49,10 +51,12 @@ function CartContainer({ cart }) {
             {cart.map((item, index) => (
               <CardItem key={index} {...item} />
             ))}
+
             <a
               className=" bg-green-500 capitalize w-full py-2 text-center font-bold rounded-xl border-2 border-green-500 hover:bg-white hover:text-green-500 px-5 text-white"
               href={`https://wa.me/798642783?text=order:\n${whatsappText}`}
               target={"blank"}
+              onClick={() => dispatch(clearItems())}
             >
               checkout using whatsapp
             </a>
