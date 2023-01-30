@@ -5,12 +5,16 @@ import { addCartItem, resetCartItem } from "../../../slices/cartSlice";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
 import { clearItems } from "../../../slices/cartSlice";
 import { useState } from "react";
+import componentData from "../../../data/Cart.json";
 function CartContainer({ cart }) {
   const visability = useSelector((state) => state.cartVisability);
   const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [whatsappText, setWhatsAppText] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
+  const language = useSelector((state) => state.language);
+  const uiData =
+    language == "arabic" ? componentData.arabic : componentData.english;
   useEffect(() => {
     if (cartItems.length == 0 && window.localStorage.getItem("cart")) {
       dispatch(
@@ -33,15 +37,27 @@ function CartContainer({ cart }) {
   return (
     <>
       <div
-        className=" absolute top-0 left-0 w-screen h-screen "
-        style={{ display: visability }}
+        className=" absolute top-0 left-0  w-screen h-screen "
+        style={{
+          display: visability,
+        }}
         onClick={() => dispatch(tougleCart())}
       ></div>
       <div
-        className=" bg-white absolute flex flex-col  max-w-sm w-full mx-2 right-0 shadow-lg p-5 rounded-2xl top-28"
-        style={{ display: visability }}
+        className=" bg-white absolute flex flex-col  max-w-sm w-full mx-2 shadow-lg p-5 rounded-2xl top-28"
+        style={{
+          display: visability,
+          left: language == "arabic" ? 0 : "70vw",
+        }}
       >
-        <h1 className=" p-2 font-bold w-full border-b">Cart</h1>
+        <h1
+          className=" p-2 font-bold w-full border-b"
+          style={{
+            textAlign: language == "arabic" ? "right" : "left",
+          }}
+        >
+          {uiData.title}
+        </h1>
         {cart.length == 0 ? (
           <div>
             <h1 className="font-bold py-10">Your Cart Is Empty</h1>
@@ -58,7 +74,7 @@ function CartContainer({ cart }) {
               target={"blank"}
               onClick={() => dispatch(clearItems())}
             >
-              checkout using whatsapp
+              {uiData.checkoutButton}
             </a>
           </>
         )}

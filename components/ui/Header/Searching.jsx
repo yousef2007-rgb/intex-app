@@ -9,7 +9,7 @@ export default function Searching() {
   const searchVisability = useSelector((state) => state.searchVisability);
   const dispatch = useDispatch();
   return (
-    <div className="mx-4 w-6 h-28 flex items-center hover:border-secondery border-transparent border-t-4 cursor-pointer ">
+    <div className="mx-2 w-6 h-28 flex items-center hover:border-secondery border-transparent border-t-4 cursor-pointer ">
       <SearchBody visability={searchVisability} />
       <button
         style={{

@@ -29,7 +29,7 @@ export default function Header() {
           onClick={() => dispatch(tougleLanguage())}
         >
           <span>🌐</span>
-          <span>{language == "arabic" ? "العربية" : language}</span>
+          <span>{language == "arabic" ? "EN" : "AR"}</span>
         </button>
         <Cart />
         <Search />

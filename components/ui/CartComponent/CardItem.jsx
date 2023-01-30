@@ -1,12 +1,13 @@
 import React from "react";
 import Trash from "../../../public/Assets/icons/Trash";
 import { removeCartItem } from "../../../slices/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
 
 export default function CardItem({ item, quantity }) {
   const dispatch = useDispatch();
+  const language = useSelector((state) => state.language);
   return (
     <div className=" flex items-center  p-5 font-bold">
       <Link

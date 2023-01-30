@@ -1,0 +1,10 @@
+{
+  "arabic": {
+    "title": "قائمة المشتريات",
+    "checkoutButton": "الشراء عبر الواتس اب"
+  },
+  "english": {
+    "title": "cart",
+    "checkoutButton": "checkout using whatsapp"
+  }
+}
