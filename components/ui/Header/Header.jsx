@@ -10,26 +10,25 @@ export default function Header() {
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language);
   return (
-    <header className=" z-50 fixed shadow-lg w-full bg-white top-0 ">
+    <header className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
       <div
-        className=" max-w-5xl mx-auto h-28 flex items-center"
+        className=" mx-auto flex h-28 max-w-5xl items-center"
         style={{
           flexDirection: language == "arabic" ? "row-reverse" : "row",
         }}
       >
         <Link href={"/"}>
-          <img className=" w-44 mx-3" src="/Assets/images/logo.png" />
+          <img className=" mx-3 w-44" src="/Assets/images/logo.png" />
         </Link>
         <Navigation />
         <button
-          className="flex capitalize font-bold tablet:mx-3 ml-auto mr-3"
+          className="mx-3 flex font-bold capitalize tablet:mx-3"
           style={{
             flexDirection: language == "arabic" ? "row-reverse" : "row",
           }}
           onClick={() => dispatch(tougleLanguage())}
         >
-          <span>🌐</span>
-          <span>{language == "arabic" ? "EN" : "AR"}</span>
+          {language == "arabic" ? "EN" : "AR"}
         </button>
         <Cart />
         <Search />

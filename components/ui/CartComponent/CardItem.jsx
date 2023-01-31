@@ -12,15 +12,15 @@ export default function CardItem({ item, quantity }) {
     <div className=" flex items-center  p-5 font-bold">
       <Link
         onClick={() => dispatch(tougleCart())}
-        className=" flex item-center flex-1"
+        className=" item-center flex flex-1"
         href={`/Product/${item.label}`}
       >
         <img
-          className=" w-12 h-12  aspect-square rounded-xl"
+          className=" aspect-square h-12 w-12 rounded-xl object-cover "
           src={item.image}
           alt={item.discription}
         />
-        <section className="flex-1 mx-5">
+        <section className="mx-5 flex-1">
           <h1 className="text-blue-gray">{item.discription}</h1>
           <h2 className=" text-black">
             {item.price}JOD x {quantity} = {item.price * quantity}JOD
@@ -29,7 +29,7 @@ export default function CardItem({ item, quantity }) {
       </Link>
       <div
         onClick={() => dispatch(removeCartItem(item.label))}
-        className=" w-6 fill-blue-300 hover:fill-red-600 h-6 transition-all"
+        className=" h-6 w-6 fill-blue-300 transition-all hover:fill-red-600"
       >
         <Trash />
       </div>

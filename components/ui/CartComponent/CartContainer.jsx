@@ -37,21 +37,22 @@ function CartContainer({ cart }) {
   return (
     <>
       <div
-        className=" absolute top-0 left-0  w-screen h-screen "
+        className=" absolute top-0 left-0  h-screen w-screen "
         style={{
           display: visability,
         }}
         onClick={() => dispatch(tougleCart())}
       ></div>
       <div
-        className=" bg-white absolute flex flex-col  max-w-sm w-full mx-2 shadow-lg p-5 rounded-2xl top-28"
+        className=" absolute top-28 mx-2 flex  w-full max-w-[340px] flex-col rounded-2xl bg-white p-5 shadow-lg"
         style={{
-          display: visability, 
-language == "arabic" ? left:0:right:0
+          display: visability,
+          left: language == "english" ? "unset" : 0,
+          right: language == "english" ? 0 : "unset",
         }}
       >
         <h1
-          className=" p-2 font-bold w-full border-b"
+          className=" w-full border-b p-2 font-bold"
           style={{
             textAlign: language == "arabic" ? "right" : "left",
           }}
@@ -60,7 +61,7 @@ language == "arabic" ? left:0:right:0
         </h1>
         {cart.length == 0 ? (
           <div>
-            <h1 className="font-bold py-10">Your Cart Is Empty</h1>
+            <h1 className="py-10 font-bold">Your Cart Is Empty</h1>
           </div>
         ) : (
           <>
@@ -69,7 +70,7 @@ language == "arabic" ? left:0:right:0
             ))}
 
             <a
-              className=" bg-green-500 capitalize w-full py-2 text-center font-bold rounded-xl border-2 border-green-500 hover:bg-white hover:text-green-500 px-5 text-white"
+              className=" w-full rounded-xl border-2 border-green-500 bg-green-500 py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-green-500"
               href={`https://wa.me/798642783?text=order:\n${whatsappText}`}
               target={"blank"}
               onClick={() => dispatch(clearItems())}
