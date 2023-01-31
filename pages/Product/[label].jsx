@@ -43,8 +43,8 @@ export default function HomePage() {
             {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => (
-                <div key={index} className="min-h-screen w-full">
-                  <div className=" flex min-h-screen w-full flex-wrap items-center justify-evenly border-b">
+                <div key={index} className="h-fit w-full">
+                  <div className=" flex w-full flex-wrap items-center justify-evenly border-b">
                     <img
                       className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
                       src={product.image}

@@ -12,7 +12,7 @@ export default function CardItem({ item, quantity }) {
     <div className=" flex items-center  p-5 font-bold">
       <Link
         onClick={() => dispatch(tougleCart())}
-        className=" item-center flex flex-1"
+        className=" flex flex-1 items-center"
         href={`/Product/${item.label}`}
       >
         <img
