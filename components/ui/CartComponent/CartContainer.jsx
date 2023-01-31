@@ -46,8 +46,8 @@ function CartContainer({ cart }) {
       <div
         className=" bg-white absolute flex flex-col  max-w-sm w-full mx-2 shadow-lg p-5 rounded-2xl top-28"
         style={{
-          display: visability,
-          right: language == "arabic" ? 0: "50vw",
+          display: visability, 
+language == "arabic" ? left:0:right:0
         }}
       >
         <h1
