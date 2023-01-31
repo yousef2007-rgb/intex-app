@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       screens: {
         mobile: "260px",
-        tablet: "750px",
+        tablet: "790px",
         // => @media (min-width: 1024px) { ... }
 
         desktop: "1280px",
