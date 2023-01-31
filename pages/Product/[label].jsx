@@ -35,7 +35,7 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <div className="p-5 mt-28">
+      <div className="mt-28 p-5">
         {isLoading ? (
           <img className=" h-screen w-screen" src="/Assets/GIF/Loading.gif" />
         ) : (
@@ -43,43 +43,43 @@ export default function HomePage() {
             {data.data.res
               .filter((x) => x.label == label.label)
               .map((product, index) => (
-                <div key={index} className="w-full min-h-screen">
-                  <div className=" border-b flex w-full min-h-screen items-center flex-wrap justify-evenly">
+                <div key={index} className="min-h-screen w-full">
+                  <div className=" flex min-h-screen w-full flex-wrap items-center justify-evenly border-b">
                     <img
-                      className="tablet:w-1/2 w-full tablet:min-w-[400px] max-w-lg h-fit aspect-square object-contain"
+                      className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
                       src={product.image}
                     />
 
-                    <article className="tablet:w-1/2 w-full font-bold h-fit">
+                    <article className="ml-4 h-fit w-full font-bold tablet:w-1/2">
                       <div>
-                        <h1 className=" text-3xl my-2 text-blue-gray">
+                        <h1 className=" text-blue-gray my-2 text-3xl">
                           {product.field_item_name}
                         </h1>
-                        <h2 className="  capitalize w-full font-normal border-b pb-10">
+                        <h2 className="  w-full border-b pb-10 font-normal capitalize">
                           {uiData.itemNumber}: {product.label}
                         </h2>
                       </div>
                       <div className=" flex flex-col">
-                        <p className=" text-2xl capitalize my-5 ml-auto">
+                        <p className=" my-5 ml-auto text-2xl capitalize">
                           {product.field_wholesale_price * 1.5} JOD
                         </p>
 
-                        <div className=" flex ml-auto tablet:w-fit w-full text-center shadow-md">
+                        <div className=" ml-auto flex w-full text-center shadow-md tablet:w-fit">
                           <button
                             onClick={() => {
                               if (counter > 0) {
                                 setCounter(counter - 1);
                               }
                             }}
-                            className=" bg-slate-800 text-white font-bold rounded-l-xl p-2 px-3"
+                            className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
                           >
                             -
                           </button>
-                          <p className=" tablet:px-24 flex-1 py-2">{counter}</p>
+                          <p className=" flex-1 py-2 tablet:px-24">{counter}</p>
 
                           <button
                             onClick={() => setCounter(counter + 1)}
-                            className=" bg-slate-800 text-white font-bold rounded-r-xl py-2 px-3"
+                            className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
                           >
                             +
                           </button>
@@ -102,7 +102,7 @@ export default function HomePage() {
                               alert("Set A Quantity Please!");
                             }
                           }}
-                          className=" border-transparent bg-secondery uppercase tablet:w-fit w-full text-white ml-auto px-20 rounded-xl py-2 font-bold my-5 hover:bg-white hover:text-secondery hover:border-secondery border-2"
+                          className=" bg-secondery hover:text-secondery hover:border-secondery my-5 ml-auto w-full rounded-xl border-2 border-transparent px-20 py-2 font-bold uppercase text-white hover:bg-white tablet:w-fit"
                         >
                           {uiData.addToCartButton}
                         </button>
