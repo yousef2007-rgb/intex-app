@@ -47,7 +47,7 @@ function CartContainer({ cart }) {
         className=" bg-white absolute flex flex-col  max-w-sm w-full mx-2 shadow-lg p-5 rounded-2xl top-28"
         style={{
           display: visability,
-          right: language == "arabic" ? "50vw": 0,
+          right: language == "arabic" ? 0: "50vw",
         }}
       >
         <h1
