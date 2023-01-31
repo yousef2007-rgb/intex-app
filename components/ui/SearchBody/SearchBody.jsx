@@ -20,28 +20,30 @@ export default function SearchBody({ visability }) {
   return (
     <div
       style={{ display: searchVisability }}
-      className=" absolute flex items-start overflow-y-scroll overflow-x-hidden justify-center top-0 left-0 w-screen h-fit bg-white  p-5"
+      className=" absolute top-0 left-0 flex h-fit w-screen items-start justify-center overflow-x-hidden overflow-y-scroll bg-white  p-5"
     >
-      <div className=" bg-white flex flex-col items-center h-screen w-full rounded-lg  p-5">
-        <div className=" max-w-2xl my-20 bg-white flex flex-nowrap w-full justify-center items-center border rounded-lg  border-secondery px-5 py-2 ">
+      <div className=" flex h-screen w-full flex-col items-center rounded-lg bg-white  p-5">
+        <div className=" border-secondery my-20 flex w-full max-w-2xl flex-nowrap items-center justify-center rounded-lg border  bg-white px-5 py-2 ">
           <input
             ref={input}
             placeholder="Search for product"
-            className=" text-black font-bold fex-1 w-full outline-none h-full"
+            className=" fex-1 h-full w-full font-bold text-black outline-none"
             onChange={() => setTextValue(input.current.value)}
           />
         </div>
         <div
           onClick={() => dispatch(tougle())}
-          className="w-full gap-20 max-h-[50vh] flex flex-row justify-evenly flex-wrap"
+          className="flex max-h-[50vh] w-full flex-row flex-wrap justify-evenly gap-20"
         >
           {textValue != ""
             ? data &&
               data.data.res
                 .filter(
                   (x) =>
-                    x.label.toLowerCase().includes(textValue) ||
-                    x.field_item_name.toLowerCase().includes(textValue)
+                    x.label.toLowerCase().includes(textValue.toLowerCase()) ||
+                    x.field_item_name
+                      .toLowerCase()
+                      .includes(textValue.toLowerCase())
                 )
                 .map((product, index) => (
                   <ProductCard

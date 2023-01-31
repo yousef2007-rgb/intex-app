@@ -18,7 +18,10 @@ export default function Header() {
         }}
       >
         <Link href={"/"}>
-          <img className=" mx-3 w-44" src="/Assets/images/logo.png" />
+          <img
+            className=" mx-3 w-full max-w-[176px] "
+            src="/Assets/images/logo.png"
+          />
         </Link>
         <Navigation />
         <button
