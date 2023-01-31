@@ -13,7 +13,12 @@ const useData = (url, key) => {
         setIsLoading(false);
       });
     } else {
-      fetch(url)
+      fetch(url,
+method: 'GET',
+      headers: {
+        accept: 'application/json',
+      },
+)
         .then((res) => res.json())
         .then((data) => {
           setData(data);
