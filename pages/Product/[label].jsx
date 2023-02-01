@@ -52,7 +52,7 @@ export default function HomePage() {
 
                     <article className="ml-4 h-fit w-full font-bold tablet:w-1/2">
                       <div>
-                        <h1 className=" text-blue-gray my-2 text-3xl">
+                        <h1 className=" my-2 text-3xl text-blue_gray">
                           {product.field_item_name}
                         </h1>
                         <h2 className="  w-full border-b pb-10 font-normal capitalize">
@@ -102,7 +102,7 @@ export default function HomePage() {
                               alert("Set A Quantity Please!");
                             }
                           }}
-                          className=" bg-secondery hover:text-secondery hover:border-secondery my-5 ml-auto w-full rounded-xl border-2 border-transparent px-20 py-2 font-bold uppercase text-white hover:bg-white tablet:w-fit"
+                          className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery px-20 py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:w-fit"
                         >
                           {uiData.addToCartButton}
                         </button>

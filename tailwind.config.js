@@ -9,11 +9,13 @@ module.exports = {
       screens: {
         mobile: "260px",
         tablet: "790px",
-        // => @media (min-width: 1024px) { ... }
-
         desktop: "1280px",
-        // => @media (min-width: 1280px) { ... }
       },
+      colors:{
+primary: "#2596BE",
+blue_gray:"#55a4b6",
+secondery: "#f7c44a",
+      }
     },
   },
   plugins: [],

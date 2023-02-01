@@ -21,7 +21,7 @@ export default function CardItem({ item, quantity }) {
           alt={item.discription}
         />
         <section className="mx-5 flex-1">
-          <h1 className="text-blue-gray">{item.discription}</h1>
+          <h1 className="text-blue_gray">{item.discription}</h1>
           <h2 className=" text-black">
             {item.price}JOD x {quantity} = {item.price * quantity}JOD
           </h2>

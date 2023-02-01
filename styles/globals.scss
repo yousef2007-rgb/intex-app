@@ -2,38 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-$primary-color: rgb(37, 150, 190);
-$blue-gray-color: #55a4b6;
-$secondery-color: #f7c44a;
-@layer utilities {
-  .text-primary {
-    color: $primary-color;
-  }
-  .bg-primary {
-    background-color: $primary-color;
-  }
-  .border-primary {
-    border-color: $primary-color;
-  }
-  .text-blue-gray {
-    color: $blue-gray-color;
-  }
-  .bg-blue-gray {
-    background-color: $blue-gray-color;
-  }
-  .border-blue-gray {
-    border-color: $blue-gray-color;
-  }
-  .text-secondery {
-    color: $secondery-color;
-  }
-  .bg-secondery {
-    background-color: $secondery-color;
-  }
-  .border-secondery {
-    border-color: $secondery-color;
-  }
-}
+
 html,
 body {
   padding: 0;
