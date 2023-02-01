@@ -12,10 +12,10 @@
                 "link": "/Products/1515?title=inflated%20products"
               },
               {
-                "text": "Inflated Pools",
-                "link": "/Products/342?title=inflated%20pools"
+                "text": "Pools",
+                "link": "/Products/342?title=pools"
               },
-              { "text": "Pools", "link": "/Products/343?title=pools" },
+              { "text": "Inflated Pools", "link": "/Products/343?title=inflated%20pools" },
               { "text": "Furniture", "link": "/Products/1944?title=furniture" },
               {
                 "text": "Accessories",
@@ -66,10 +66,10 @@
                 "link": "/Products/1515?title=المنتجات%20القابلة%20للنفخ"
               },
               {
-                "text": "برك قابلة للنفخ",
-                "link": "/Products/342?title=البرك%20القابلة%20للنفخ"
+                "text": "برك",
+                "link": "/Products/342?title=البرك"
               },
-              { "text": "برك", "link": "/Products/343?title=البرك" },
+              { "text": "برك قابلة للنفخ", "link": "/Products/343?title=البرك20%قابلة20%للنفخ" },
               { "text": "اثاث", "link": "/Products/1944?title=الاثاث" },
               {
                 "text": "اكسسوارات",
