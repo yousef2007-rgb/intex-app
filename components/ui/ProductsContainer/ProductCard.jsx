@@ -11,17 +11,20 @@ export default function ProductCard({
   return (
     <Link
       href={`/Product/${label}`}
-      className=" transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl p-5 text-center max-w-xs w-full flex flex-col items-center justify-center shadow-lg"
+      className=" flex w-full max-w-xs flex-col items-center justify-center p-5 text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
+      itemScope
+      itemType="https://schema.org/Product"
     >
+      <meta itemProp="image" content={image} />
       <img
         src={image}
         alt={discription + label}
-        className="w-full aspect-square object-cover"
+        className="aspect-square w-full object-cover"
         loading="lazy"
       />
-      <h1 className=" font-bold text-primary my-2 w-fit">{discription}</h1>
-      <h2 className=" font-bold text-secondery w-fit">{label}</h2>
-      <h3 className=" font-bold my-2 w-fit">{price * 1.5}JOD</h3>
+      <h1 className=" my-2 w-fit font-bold text-primary">{discription}</h1>
+      <h2 className=" w-fit font-bold text-secondery">{label}</h2>
+      <h3 className=" my-2 w-fit font-bold">{price * 1.5}JOD</h3>
     </Link>
   );
 }
