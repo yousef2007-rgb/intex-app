@@ -44,11 +44,11 @@ function CartContainer({ cart }) {
         onClick={() => dispatch(tougleCart())}
       ></div>
       <div
-        className={` absolute top-28 right-1/2 mx-2  flex w-screen max-w-[340px] translate-x-[50%] flex-col rounded-2xl bg-white p-5 shadow-lg`}
+        className={` absolute top-32  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg tablet:right-1/2 tablet:translate-x-[50%]`}
         style={{
           display: visability,
-          // left: language == "english" ? "unset" : 0,
-          // right: language == "english" ? 0 : "unset",
+          left: language == "english" ? "unset" : 0,
+          right: language == "english" ? 0 : "unset",
         }}
       >
         <h1
