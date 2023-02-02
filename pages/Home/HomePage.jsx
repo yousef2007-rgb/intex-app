@@ -16,6 +16,34 @@ export default function HomePage() {
         <meta name="description" content="intex pools" />
         <meta name="description" content="intex products" />
         <meta name="description" content="intex jordan" />
+        <meta
+          property="og:title"
+          content="Intex Jo | Official Distributor for Intex In Jordan"
+        />
+        <meta property="og:type" content="products" />
+        <meta property="og:url" content="https://www.intexjo.com/" />
+        <meta
+          property="og:image"
+          content="https://www.intexjo.com/Assets/images/intro/hero1.jpg"
+        />
+        <meta
+          property="og:description"
+          content="official distrubutor of intex in jordan that sells all kinds of pools ,pools equipment and accesories"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@intex-jo" />
+        <meta
+          name="twitter:title"
+          content="Intex Jo | Official Distributor for Intex In Jordan"
+        />
+        <meta
+          name="twitter:description"
+          content="official distrubutor of intex in jordan that sells all kinds of pools ,pools equipment and accesories"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.intexjo.com/Assets/images/intro/hero1.jpg"
+        />
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
