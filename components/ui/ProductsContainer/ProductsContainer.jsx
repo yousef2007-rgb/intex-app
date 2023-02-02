@@ -15,8 +15,10 @@ export default function ProductsContainer({ title, number, limit }) {
   );
   const language = useSelector((state) => state.language);
   return isLoading ? (
-    <div className="flex h-full h-1/2 items-center justify-center">
-      <img src="/Assets/GIF/Loading.gif" width={"100%"} />
+    <div className="flex h-full h-1/2 flex-wrap items-center justify-center">
+      <img src="/Assets/GIF/Loading.gif" />
+      <img src="/Assets/GIF/Loading.gif" />
+      <img src="/Assets/GIF/Loading.gif" />
     </div>
   ) : (
     <div className=" flex flex-col items-center border-b">
