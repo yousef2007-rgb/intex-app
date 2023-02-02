@@ -42,6 +42,11 @@ export default function HomePage() {
                   <Head>
                     <title>Intex Jo | {product.field_item_name}</title>
                     <meta name="description" content="IntexJo" />
+                    <meta name="description" content="IntexJo" />
+                    <meta name="description" content="intex jo" />
+                    <meta name="description" content="intex pools" />
+                    <meta name="description" content="intex products" />
+                    <meta name="description" content="intex jordan" />
                     <meta
                       property="og:title"
                       content={`Intex Jo | ${product.field_item_name}`}
