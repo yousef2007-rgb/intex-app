@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div>
       <Head>
-        <title>Intex Store - Home Page</title>
+        <title>Intex Jo | Official Distributor for Intex In Jordan</title>
         <meta name="description" content="IntexJo" />
         <meta name="description" content="intex jo" />
         <meta name="description" content="intex pools" />
@@ -19,7 +19,7 @@ export default function HomePage() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <Header />
-      <main className="tablet:mt-0 mt-28">
+      <main className="mt-28 tablet:mt-0">
         <Intro link={"/Assets/images/intro/hero1.jpg"} />
         <ProductsContainer />
       </main>
