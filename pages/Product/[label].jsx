@@ -56,7 +56,7 @@ export default function HomePage() {
                       property="og:description"
                       content={product.field_item_name}
                     />
-                    <meta name="twitter:card" content="product" />
+                    <meta name="twitter:card" content="summery" />
                     <meta name="twitter:site" content="@intex-jo" />
                     <meta
                       name="twitter:title"
