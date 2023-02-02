@@ -21,8 +21,8 @@ const useData = (url, key) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          setData(data);
           setIsLoading(false);
+          setData(data);
           window.localStorage.setItem("data", JSON.stringify(data));
         });
     }

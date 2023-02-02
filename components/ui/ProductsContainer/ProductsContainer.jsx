@@ -9,10 +9,7 @@ import uiData from "../../../data/ProductContainer.json";
 import { useSelector } from "react-redux";
 
 export default function ProductsContainer({ title, number, limit }) {
-  const [data, isLoading] = useData(
-    "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
-    "data"
-  );
+  const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, "data");
   const language = useSelector((state) => state.language);
   return isLoading ? (
     <div className="flex h-full h-1/2 flex-wrap items-center justify-center">
