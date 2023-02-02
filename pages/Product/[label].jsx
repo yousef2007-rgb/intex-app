@@ -113,6 +113,8 @@ export default function HomePage() {
                     title={uiData.relatedProducts}
                     limit={3}
                     number={product.field_subcategory}
+                    data={data}
+                    isLoading={isLoading}
                   />
                 </div>
               ))}

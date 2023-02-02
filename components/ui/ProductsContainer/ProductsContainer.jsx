@@ -8,8 +8,13 @@ import useData from "../../../Hooks/useData";
 import uiData from "../../../data/ProductContainer.json";
 import { useSelector } from "react-redux";
 
-export default function ProductsContainer({ title, number, limit }) {
-  const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, "data");
+export default function ProductsContainer({
+  title,
+  number,
+  limit,
+  data,
+  isLoading,
+}) {
   const language = useSelector((state) => state.language);
   return isLoading ? (
     <div className="flex h-full h-1/2 flex-wrap items-center justify-center">
