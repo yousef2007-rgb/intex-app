@@ -26,7 +26,7 @@ export default function HomePage() {
   const uiData =
     language == "arabic" ? componentData.arabic : componentData.english;
 
-  const [counter, setCounter] = useState(item ? item.quantity : 1);
+  const [counter, setCounter] = useState(1);
   return (
     <div>
       <Head>
