@@ -9,11 +9,23 @@ import useData from "../../Hooks/useData";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem } from "../../slices/cartSlice";
 import componentData from "../../data/ProductPage.json";
-export default function HomePage() {
-  const [data, isLoading] = useData(
-    "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
-    "data"
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(
+    `https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151`
   );
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data, isLoading: false } };
+}
+
+export default function HomePage({ data, isLoading }) {
+  // const [data, isLoading] = useData(
+  //   "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
+  //   "data"
+  // );
   const [title, setTitle] = useState("");
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
