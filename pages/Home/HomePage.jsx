@@ -42,7 +42,7 @@ export default function HomePage() {
         />
         <meta
           name="twitter:image"
-          content="https://www.intexjo.com/Assets/images/intro/hero1.jpg"
+          content="https://www.intexjo.com/Assets/images/www.intexjo.com.png"
         />
         <link rel="icon" href="/icon.jpg" />
       </Head>
