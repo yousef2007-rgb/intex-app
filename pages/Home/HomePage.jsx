@@ -24,7 +24,7 @@ export default function HomePage() {
         <meta property="og:url" content="https://www.intexjo.com/" />
         <meta
           property="og:image"
-          content="https://www.intexjo.com/Assets/images/intro/hero1.jpg"
+          content="https://www.intexjo.com/Assets/images/www.intexjo.com.png"
         />
         <meta
           property="og:description"
