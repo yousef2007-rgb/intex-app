@@ -13,6 +13,7 @@ export default function ProductsContainer({
   number,
   limit,
   data,
+  currentProduct,
   isLoading,
 }) {
   const language = useSelector((state) => state.language);
@@ -31,6 +32,7 @@ export default function ProductsContainer({
         {data &&
           data.data.res
             .filter((x) => x.field_subcategory == number)
+            .filter((x) => x.nid != currentProduct)
             .filter((x, index) => index < limit || limit == 0)
             .map((product, index) => (
               <ProductCard

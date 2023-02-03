@@ -1,7 +1,6 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Header from "../../components/ui/Header";
-import Intro from "../../components/ui/Intro/Intro";
 import ProductsContainer from "../../components/ui/ProductsContainer/ProductsContainer";
 import useData from "../../Hooks/useData";
 import { useDispatch, useSelector } from "react-redux";
@@ -138,6 +137,7 @@ export default function HomePage({ data, isLoading }) {
             number={product.field_subcategory}
             data={relatedData}
             isLoading={relatedIsLoading}
+            currentProduct={product.nid}
           />
         </div>
       </div>
