@@ -10,17 +10,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCartItem } from "../../slices/cartSlice";
 import componentData from "../../data/ProductPage.json";
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   // Fetch data from external API
   const res = await fetch(
     `https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151`
   );
   const data = await res.json();
-
+  context.res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=50, stale-while-revalidate=59"
+  );
   // Pass data to the page via props
   return { props: { data, isLoading: false } };
 }
-
 export default function HomePage({ data, isLoading }) {
   // const [data, isLoading] = useData(
   //   "https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151",
