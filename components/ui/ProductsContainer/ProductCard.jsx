@@ -12,7 +12,7 @@ export default function ProductCard({
   nid,
 }) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <>
       <Loading visablilty={isLoading} />
@@ -45,7 +45,7 @@ const Loading = ({ visablilty }) => {
       style={{ display: visablilty ? "flex" : "none" }}
     >
       <img
-        className=" mx-auto w-12"
+        className=" mx-auto w-20"
         src="/Assets/GIF/Loading_icon.gif"
         alt="loading gif"
       />
