@@ -45,47 +45,56 @@ export default function HomePage({ data, isLoading }) {
   const product = data.data.res[0];
   return (
     <div>
-      <Head>
-        <title>Intex Jo | {product.field_item_name}</title>
-        <meta name="description" content="IntexJo" />
-        <meta name="description" content="IntexJo" />
-        <meta name="description" content="intex jo" />
-        <meta name="description" content="intex pools" />
-        <meta name="description" content="intex products" />
-        <meta name="description" content="intex jordan" />
-        <meta
-          property="og:title"
-          content={`Intex Jo | ${product.field_item_name}`}
-        />
-        <meta property="og:type" content="product" />
-        <meta
-          property="og:url"
-          content={`https://www.intexjo.com/Product/${product.label}`}
-        />
-        <meta property="og:image" content={product.image} />
-        <meta property="og:description" content={product.field_item_name} />
-        <meta name="twitter:card" content="summery" />
-        <meta name="twitter:site" content="@intex-jo" />
-        <meta
-          name="twitter:title"
-          content={`Intex Jo | ${product.field_item_name}`}
-        />
-        <meta name="twitter:description" content={product.field_item_name} />
-        <meta name="twitter:image" content={product.image} />
-        <link rel="icon" href="/icon.jpg" />
-      </Head>
       <Header />
       <div className="mt-28 p-5">
         {isLoading ? (
           <img className=" h-screen w-screen" src="/Assets/GIF/Loading.gif" />
         ) : (
           <div className=" flex items-center">
-            <div className="h-fit w-full">
-              <div className=" flex w-full flex-wrap items-center justify-evenly border-b">
-                <img
-                  className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
-                  src={product.image}
-                />
+            {data.data.res
+              .filter((x) => x.label == label.label)
+              .map((product, index) => (
+                <div key={index} className="h-fit w-full">
+                  <Head>
+                    <title>Intex Jo | {product.field_item_name}</title>
+                    <meta name="description" content="IntexJo" />
+                    <meta name="description" content="IntexJo" />
+                    <meta name="description" content="intex jo" />
+                    <meta name="description" content="intex pools" />
+                    <meta name="description" content="intex products" />
+                    <meta name="description" content="intex jordan" />
+                    <meta
+                      property="og:title"
+                      content={`Intex Jo | ${product.field_item_name}`}
+                    />
+                    <meta property="og:type" content="product" />
+                    <meta
+                      property="og:url"
+                      content={`https://www.intexjo.com/Product/${product.label}`}
+                    />
+                    <meta property="og:image" content={product.image} />
+                    <meta
+                      property="og:description"
+                      content={product.field_item_name}
+                    />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content="@intex-jo" />
+                    <meta
+                      name="twitter:title"
+                      content={`Intex Jo | ${product.field_item_name}`}
+                    />
+                    <meta
+                      name="twitter:description"
+                      content={product.field_item_name}
+                    />
+                    <meta name="twitter:image" content={product.image} />
+                    <link rel="icon" href="/icon.jpg" />
+                  </Head>
+                  <div className=" flex w-full flex-wrap items-center justify-evenly border-b">
+                    <img
+                      className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
+                      src={product.image}
+                    />
 
                 <article className="ml-4 h-fit w-full font-bold tablet:w-1/2">
                   <div>
