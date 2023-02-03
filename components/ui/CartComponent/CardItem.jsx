@@ -11,7 +11,9 @@ export default function CardItem({ item, quantity }) {
   return (
     <div className=" flex items-center  p-5 font-bold">
       <Link
-        onClick={() => dispatch(tougleCart())}
+        onClick={() => {
+          dispatch(tougleCart());
+        }}
         className=" flex flex-1 items-center"
         href={`/Product/${item.label}`}
       >
