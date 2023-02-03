@@ -7,10 +7,11 @@ export default function ProductCard({
   image,
   price,
   cagotary,
+  nid,
 }) {
   return (
     <Link
-      href={`/Product/${label}`}
+      href={`/Product/${nid}`}
       className=" flex w-full max-w-xs flex-col items-center justify-center p-5 text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
       itemScope
       itemType="https://schema.org/Product"

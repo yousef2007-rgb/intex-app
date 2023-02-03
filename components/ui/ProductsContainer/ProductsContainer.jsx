@@ -39,6 +39,7 @@ export default function ProductsContainer({
                 discription={product.field_item_name}
                 image={product.image}
                 price={product.field_wholesale_price}
+                nid={product.nid}
               />
             ))}
       </div>
