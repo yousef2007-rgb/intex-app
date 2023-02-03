@@ -73,7 +73,7 @@ export default function HomePage({ data, isLoading }) {
                       property="og:description"
                       content={product.field_item_name}
                     />
-                    <meta name="twitter:card" content="summery" />
+                    <meta name="twitter:card" content="summary" />
                     <meta name="twitter:site" content="@intex-jo" />
                     <meta
                       name="twitter:title"
