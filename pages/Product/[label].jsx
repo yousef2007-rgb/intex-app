@@ -40,12 +40,10 @@ export default function HomePage({ data, isLoading }) {
     <div className=" mt-28">
       <Head>
         <title>Intex Jo | {product.field_item_name}</title>
-        <meta name="description" content="IntexJo" />
-        <meta name="description" content="IntexJo" />
-        <meta name="description" content="intex jo" />
-        <meta name="description" content="intex pools" />
-        <meta name="description" content="intex products" />
-        <meta name="description" content="intex jordan" />
+        <meta
+          name="keywords"
+          content="IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs"
+        ></meta>
         <meta
           property="og:title"
           content={`Intex Jo | ${product.field_item_name}`}

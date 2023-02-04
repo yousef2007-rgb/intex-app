@@ -11,11 +11,11 @@ export default function HomePage() {
     <div>
       <Head>
         <title>Intex Jo | Official Distributor for Intex In Jordan</title>
-        <meta name="description" content="IntexJo" />
-        <meta name="description" content="intex jo" />
-        <meta name="description" content="intex pools" />
-        <meta name="description" content="intex products" />
-        <meta name="description" content="intex jordan" />
+
+        <meta
+          name="keywords"
+          content="IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs"
+        ></meta>
         <meta
           property="og:title"
           content="Intex Jo | Official Distributor for Intex In Jordan"
