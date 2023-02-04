@@ -42,7 +42,7 @@ export default function HomePage({ data, isLoading }) {
         <title>Intex Jo | {product.field_item_name}</title>
         <meta
           name="keywords"
-          content="IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs"
+          content="مسابح جاهزه للبيع في الأردن, IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs, مسابح ,مسابح في الأردن , مسبح نفخ, نفخ"
         ></meta>
         <meta
           property="og:title"
