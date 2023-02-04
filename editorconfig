@@ -1,0 +1,17 @@
+# ~ Sets this as the top most editorconfig file.
+# ! WARN never edit this outside Visual Studio Code.
+root = true
+
+[*]
+# ~ Uses real tabs for indenting codeblocks.
+indent_style = tab
+# ~ Specifies the indent size to be 4.
+indent_size = 8
+# ~ Ends lines with CRLF.
+end_of_line = crlf
+# ~ Uses UTF-8 encoding.
+charset = utf-8
+# ~ Trims trailing whitespaces.
+trim_trailing_whitespace = true
+# ~ Inserts a final newline at the end of files.
+insert_final_newline = true
