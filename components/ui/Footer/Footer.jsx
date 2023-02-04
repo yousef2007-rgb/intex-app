@@ -6,7 +6,7 @@ export default function Footer({}) {
 			<div class="mx-auto max-w-6xl sm:flex sm:justify-between">
 				<div class="mx-auto mb-6 w-fit sm:mx-0 md:mb-0">
 					<a
-						href="https://flowbite.com/"
+						href="https://www.intexjo.com/"
 						class="flex items-center"
 					>
 						<img
@@ -24,7 +24,7 @@ export default function Footer({}) {
 						<ul class="text-gray-600 ">
 							<li class="mb-4">
 								<a
-									href="#"
+									href="https://www.facebook.com/intexjor"
 									class="flex items-center font-bold text-primary hover:text-gray-900 "
 								>
 									<svg
@@ -44,7 +44,7 @@ export default function Footer({}) {
 							</li>
 							<li>
 								<a
-									href="#"
+									href="https://www.instagram.com/intexjo/"
 									class="flex items-center font-bold text-primary hover:text-gray-900 "
 								>
 									<svg
