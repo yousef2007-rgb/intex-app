@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CardItem from "./CardItem";
+import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, resetCartItem } from "../../../slices/cartSlice";
 import { tougleCart } from "../../../slices/cartVisabilitySlice";
@@ -66,7 +66,7 @@ function CartContainer({ cart }) {
         ) : (
           <>
             {cart.map((item, index) => (
-              <CardItem key={index} {...item} />
+              <CartItem key={index} {...item} />
             ))}
 
             <a

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProductCard({
   label,
@@ -10,14 +10,18 @@ export default function ProductCard({
   price,
   cagotary,
   nid,
+  loadingAllowed,
 }) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => setIsLoading(false), []);
   return (
     <>
       <Loading visablilty={isLoading} />
       <Link
-        onClick={() => setIsLoading(true)}
+        onClick={() =>
+          loadingAllowed ? setIsLoading(true) : setIsLoading(false)
+        }
         href={`/Product/${nid}`}
         className=" z-0 flex w-full max-w-xs flex-col items-center justify-center p-5 text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
         itemScope

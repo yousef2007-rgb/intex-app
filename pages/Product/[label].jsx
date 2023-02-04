@@ -8,7 +8,6 @@ import { addCartItem } from "../../slices/cartSlice";
 import componentData from "../../data/ProductPage.json";
 
 export async function getServerSideProps(context) {
-  console.log(context);
   const res = await fetch(
     `https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=get_product&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${context.params.label}&lang=en&username=28&field_subcategory=151`
   );
@@ -17,7 +16,12 @@ export async function getServerSideProps(context) {
     "Cache-Control",
     "public, s-maxage=50, stale-while-revalidate=59"
   );
-  return { props: { data, isLoading: false } };
+  if (data.data.res[0].field_category == 55) {
+    return { props: { data, isLoading: false } };
+  } else {
+    context.res.writeHead(404);
+    context.res.end();
+  }
 }
 export default function HomePage({ data, isLoading }) {
   const [relatedData, relatedIsLoading] = useData(
@@ -31,6 +35,7 @@ export default function HomePage({ data, isLoading }) {
 
   const [counter, setCounter] = useState(1);
   const product = data.data.res[0];
+
   return (
     <div className=" mt-28">
       <Head>
@@ -116,6 +121,7 @@ export default function HomePage({ data, isLoading }) {
                             discription: product.field_item_name,
                             label: product.label,
                             price: product.field_wholesale_price * 1.5,
+                            nid: product.nid,
                           },
                           quantity: counter,
                         })
@@ -138,6 +144,7 @@ export default function HomePage({ data, isLoading }) {
             data={relatedData}
             isLoading={relatedIsLoading}
             currentProduct={product.nid}
+            loadingAllowed={false}
           />
         </div>
       </div>

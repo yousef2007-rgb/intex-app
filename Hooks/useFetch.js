@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 const useFetch = (url) => {
-  console.log("fetch");
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {

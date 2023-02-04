@@ -15,7 +15,7 @@ export default function CardItem({ item, quantity }) {
           dispatch(tougleCart());
         }}
         className=" flex flex-1 items-center"
-        href={`/Product/${item.label}`}
+        href={`/Product/${item.nid}`}
       >
         <img
           className=" aspect-square h-12 w-12 rounded-xl object-cover "

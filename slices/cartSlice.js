@@ -8,11 +8,9 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addCartItem: (state, action) => {
-      console.log(state);
       const item = state.find(
         (c) => c.item.label === action.payload.item.label
       );
-      console.log(item);
       if (!item) {
         return [...state, action.payload];
       }

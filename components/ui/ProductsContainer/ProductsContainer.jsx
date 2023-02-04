@@ -15,6 +15,7 @@ export default function ProductsContainer({
   data,
   currentProduct,
   isLoading,
+  loadingAllowed,
 }) {
   const language = useSelector((state) => state.language);
   return isLoading ? (
@@ -42,6 +43,7 @@ export default function ProductsContainer({
                 image={product.image}
                 price={product.field_wholesale_price}
                 nid={product.nid}
+                loadingAllowed={loadingAllowed}
               />
             ))}
       </div>

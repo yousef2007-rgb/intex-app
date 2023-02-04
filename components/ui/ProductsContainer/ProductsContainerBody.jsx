@@ -19,6 +19,7 @@ export default function ProductsContainerBody() {
           limit={3}
           data={data}
           isLoading={isLoading}
+          loadingAllowed={true}
         />
       ))}
     </div>

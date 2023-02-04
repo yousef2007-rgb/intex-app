@@ -10,7 +10,6 @@ export default function HomePage() {
   const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, "data");
   const router = useRouter();
   const products = router.query;
-  console.log(products);
   return (
     <div>
       <Head>
@@ -27,6 +26,7 @@ export default function HomePage() {
           title={products.title}
           data={data}
           isLoading={isLoading}
+          loadingAllowed={true}
         />
       </div>
     </div>
