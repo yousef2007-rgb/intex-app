@@ -69,7 +69,7 @@ export default function HomePage({ data, isLoading }) {
 
       <div className=" flex items-center">
         <div className="h-fit w-full">
-          <div className=" flex w-full flex-wrap items-center justify-evenly border-b">
+          <div className=" mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly border-b">
             <img
               className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
               src={product.image}
