@@ -2,7 +2,7 @@ import React from 'react';
 // import SocialMedia from "../SocialMedia";
 export default function Footer({}) {
 	return (
-		<footer class=" bg-gray-200 p-4  sm:p-6">
+		<footer class=" bg-gray-100 p-4  sm:p-6">
 			<div class="mx-auto max-w-6xl md:flex md:justify-between">
 				<div class="mb-6 md:mb-0">
 					<a
