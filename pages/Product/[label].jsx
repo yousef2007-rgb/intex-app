@@ -43,7 +43,7 @@ export default function HomePage({ data, isLoading }) {
 				<title>Intex Jo | {product.field_item_name}</title>
 				<meta
 					name="keywords"
-					content="مسابح جاهزه للبيع في الأردن, IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs, مسابح ,مسابح في الأردن , مسبح نفخ, نفخ"
+					content="مسابح جاهزه للبيع في الأردن, IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs, برك سباحة intex , برك سباحة للاطفال , برك سباحة متنقلة , ,مسابح ,مسابح في الأردن , مسبح نفخ, نفخ , برك سباحة في الاردن , "
 				></meta>
 				<meta
 					property="og:title"
@@ -80,20 +80,30 @@ export default function HomePage({ data, isLoading }) {
 						<img
 							className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
 							src={product.image}
+							itemProp="product image"
 						/>
 
 						<article className="ml-4 h-fit w-full font-bold tablet:w-1/2">
 							<div>
-								<h1 className=" my-2 text-3xl text-blue_gray">
+								<h1
+									itemProp="discription"
+									className=" my-2 text-3xl text-blue_gray"
+								>
 									{product.field_item_name}
 								</h1>
-								<h2 className="  w-full border-b pb-10 font-normal capitalize">
+								<h2
+									className="  w-full border-b pb-10 font-normal capitalize"
+									itemProp="item id"
+								>
 									{uiData.itemNumber}:{' '}
 									{product.label}
 								</h2>
 							</div>
 							<div className=" flex flex-col">
-								<p className=" my-5 ml-auto text-2xl capitalize">
+								<p
+									itemProp="price"
+									className=" my-5 ml-auto text-2xl capitalize"
+								>
 									{product.field_wholesale_price *
 										1.5}{' '}
 									JOD
