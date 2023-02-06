@@ -58,7 +58,11 @@ function CartContainer({ cart }) {
 				tougleCart={tougleCart}
 			/>
 			<div
-				className={` absolute top-32  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg tablet:right-1/2 tablet:translate-x-[50%]`}
+				className={` absolute top-32  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
+					language == 'arabic'
+						? 'desktop:left-1/2 desktop:translate-x-[-50%]'
+						: 'desktop:right-1/2 desktop:translate-x-[50%]'
+				}`}
 				style={{
 					display: visability,
 					left: language == 'english' ? 'unset' : 0,
@@ -68,17 +72,14 @@ function CartContainer({ cart }) {
 				<h1
 					className=" w-full border-b p-2 font-bold"
 					style={{
-						textAlign:
-							language == 'arabic' ? 'right' : 'left',
+						textAlign: language == 'arabic' ? 'right' : 'left',
 					}}
 				>
 					{uiData.title}
 				</h1>
 				{cart.length == 0 ? (
 					<div>
-						<h1 className="py-10 font-bold">
-							Your Cart Is Empty
-						</h1>
+						<h1 className="py-10 font-bold">Your Cart Is Empty</h1>
 					</div>
 				) : (
 					<>
