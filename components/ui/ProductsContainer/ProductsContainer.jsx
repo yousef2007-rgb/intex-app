@@ -29,7 +29,7 @@ export default function ProductsContainer({
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
 				{title}
 			</h1>
-			<div className="flex flex-wrap items-center justify-center gap-10 text-center ">
+			<div className="flex flex-wrap items-center justify-center gap-8 text-center ">
 				{data &&
 					data.data.res
 						.filter((x) => x.field_subcategory == number)
