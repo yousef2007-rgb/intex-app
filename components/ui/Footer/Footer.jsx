@@ -96,10 +96,7 @@ export default function Footer({}) {
 			<div class="mx-auto max-w-6xl sm:flex sm:items-center sm:justify-between">
 				<span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
 					© 2023{' '}
-					<a
-						href="https://www.intexjo.com/"
-						class="hover:underline"
-					>
+					<a href="https://www.intexjo.com/" class="hover:underline">
 						IntexJo™
 					</a>
 					. All Rights Reserved.
