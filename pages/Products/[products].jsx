@@ -15,8 +15,8 @@ export default function HomePage() {
 		<div>
 			<Head>
 				<title>
-					Intex Jo | {products.title.toUpperCase()} Official
-					Distributor for Intex In Jordan
+					Intex Jo | {products.title} Official Distributor for Intex
+					In Jordan
 				</title>
 
 				<meta
