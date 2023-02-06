@@ -83,7 +83,7 @@ export default function HomePage({ data, isLoading }) {
 							itemProp="product image"
 						/>
 
-						<article className="ml-4 h-fit w-full font-bold tablet:w-1/2">
+						<article className="h-fit w-full p-5 font-bold tablet:ml-4 tablet:w-1/2">
 							<div>
 								<h1
 									itemProp="discription"
@@ -98,7 +98,7 @@ export default function HomePage({ data, isLoading }) {
 									{uiData.itemNumber}: {product.label}
 								</h2>
 							</div>
-							<div className=" flex flex-col">
+							<div className=" flex w-full flex-col">
 								<p
 									itemProp="price"
 									className=" my-5 ml-auto text-2xl capitalize"
@@ -106,7 +106,7 @@ export default function HomePage({ data, isLoading }) {
 									{product.field_wholesale_price * 1.5} JOD
 								</p>
 
-								<div className=" ml-auto flex w-full text-center shadow-md tablet:w-fit">
+								<div className=" mx-auto flex w-full text-center shadow-md tablet:mr-0 tablet:w-fit">
 									<button
 										onClick={() => {
 											if (counter > 0) {
