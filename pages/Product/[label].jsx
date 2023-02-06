@@ -95,8 +95,7 @@ export default function HomePage({ data, isLoading }) {
 									className="  w-full border-b pb-10 font-normal capitalize"
 									itemProp="item id"
 								>
-									{uiData.itemNumber}:{' '}
-									{product.label}
+									{uiData.itemNumber}: {product.label}
 								</h2>
 							</div>
 							<div className=" flex flex-col">
@@ -104,18 +103,14 @@ export default function HomePage({ data, isLoading }) {
 									itemProp="price"
 									className=" my-5 ml-auto text-2xl capitalize"
 								>
-									{product.field_wholesale_price *
-										1.5}{' '}
-									JOD
+									{product.field_wholesale_price * 1.5} JOD
 								</p>
 
 								<div className=" ml-auto flex w-full text-center shadow-md tablet:w-fit">
 									<button
 										onClick={() => {
 											if (counter > 0) {
-												setCounter(
-													counter - 1
-												);
+												setCounter(counter - 1);
 											}
 										}}
 										className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
@@ -127,9 +122,7 @@ export default function HomePage({ data, isLoading }) {
 									</p>
 
 									<button
-										onClick={() =>
-											setCounter(counter + 1)
-										}
+										onClick={() => setCounter(counter + 1)}
 										className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
 									>
 										+
@@ -150,14 +143,11 @@ export default function HomePage({ data, isLoading }) {
 															1.5,
 														nid: product.nid,
 													},
-													quantity:
-														counter,
+													quantity: counter,
 												})
 											);
 										} else {
-											alert(
-												'Set A Quantity Please!'
-											);
+											alert('Set A Quantity Please!');
 										}
 									}}
 									className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery px-20 py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:w-fit"
