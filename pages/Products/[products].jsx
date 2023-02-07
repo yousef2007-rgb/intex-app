@@ -7,8 +7,15 @@ import ProductsContainer from '../../components/ui/ProductsContainer/ProductsCon
 import useData from '../../Hooks/useData';
 import Footer from '../../components/ui/Footer/Footer';
 
-export default function HomePage() {
-	const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
+export async function getServerSideProps(context) {
+	const res = await fetch(process.env.NEXT_PUBLIC_URL);
+	const data = await res.json();
+
+	return { props: { data, isLoading: false } };
+}
+
+export default function HomePage({ isLoading, data }) {
+	// const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
 	const router = useRouter();
 	const products = router.query;
 	return (
