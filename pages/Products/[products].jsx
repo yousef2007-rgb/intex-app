@@ -10,7 +10,10 @@ import Footer from '../../components/ui/Footer/Footer';
 export async function getServerSideProps(context) {
 	const res = await fetch(process.env.NEXT_PUBLIC_URL);
 	const data = await res.json();
-
+	context.res.setHeader(
+		'Cache-Control',
+		'public, s-maxage=50, stale-while-revalidate=59'
+	);
 	return { props: { data, isLoading: false } };
 }
 
