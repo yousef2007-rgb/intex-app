@@ -5,7 +5,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //	React Components
 import PopUp from '../PopUp/PopUp';
-import { CartBody } from './CartBody';
+import CartBody from './CartBody';
 //	Redux Slices
 import { tougleCart } from '../../../slices/cartVisabilitySlice';
 //Ui Component Region

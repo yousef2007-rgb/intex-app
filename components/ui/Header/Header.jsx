@@ -1,5 +1,5 @@
-import { Logo } from './Logo';
-import { LanguageButton } from './LanguageButton';
+import Logo from './Logo';
+import LanguageButton from './LanguageButton';
 import React from 'react';
 import Navigation from './Navigation';
 import Cart from './Cart';

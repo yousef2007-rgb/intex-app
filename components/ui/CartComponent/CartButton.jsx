@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { tougleCart } from '../../../slices/cartVisabilitySlice';
 import Cart from '../../../public/Assets/icons/Cart';
-export function CartButton() {
+export default function CartButton() {
 	const cart = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
 	const [cartItemsNumber, setCartItemsNumber] = useState(0);

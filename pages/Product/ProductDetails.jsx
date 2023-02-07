@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { addCartItem } from '../../slices/cartSlice';
 import { useDispatch } from 'react-redux';
 
-export function ProductDetails({ product, uiData }) {
+export default function ProductDetails({ product, uiData }) {
 	const dispatch = useDispatch();
 	const [counter, setCounter] = useState(1);
 	return (

@@ -5,7 +5,7 @@ import ProductsContainer from '../../components/ui/ProductsContainer/ProductsCon
 import useData from '../../Hooks/useData';
 import { useSelector } from 'react-redux';
 import componentData from '../../data/ProductPage.json';
-import { ProductDetails } from './ProductDetails';
+import ProductDetails from './ProductDetails';
 import Footer from '../../components/ui/Footer/Footer';
 
 export async function getServerSideProps(context) {

@@ -1,6 +1,6 @@
-import { CartButton } from '../CartComponent/CartButton';
 import React, { useState, useEffect } from 'react';
 import CartContainer from '../CartComponent/CartContainer';
+import CartButton from '../CartComponent/CartButton';
 
 export default function Cart2() {
 	return (

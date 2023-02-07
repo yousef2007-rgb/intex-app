@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-export function Background({ visability, tougle }) {
+export default function Background({ visability, tougle }) {
 	const dispatch = useDispatch();
 	return (
 		<div

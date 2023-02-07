@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-export function WhatsappCheckout({ dispatch, clearItems, cartItems, uiData }) {
+export default function WhatsappCheckout({
+	dispatch,
+	clearItems,
+	cartItems,
+	uiData,
+}) {
 	const [whatsappText, setWhatsAppText] = useState('');
 	useEffect(() => {
 		if (cartItems.length != 0) {

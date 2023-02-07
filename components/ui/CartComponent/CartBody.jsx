@@ -5,13 +5,13 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 //	React Components
 import CartItem from './CartItem';
-import { WhatsappCheckout } from './WhatsappCheckout';
+import WhatsappCheckout from './WhatsappCheckout';
 //	Redux Slices
 import { clearItems } from '../../../slices/cartSlice';
 import { resetCartItem } from '../../../slices/cartSlice';
 //	Data
 import componentData from '../../../data/Cart.json';
-export function CartBody({ visability, dispatch }) {
+export default function CartBody({ visability, dispatch }) {
 	//Redux State Hooks
 	const cartItems = useSelector((state) => state.cart);
 	const language = useSelector((state) => state.language); //variables
