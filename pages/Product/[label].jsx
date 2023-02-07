@@ -74,7 +74,11 @@ export default function HomePage({ data, isLoading }) {
 
 			<div className=" flex items-center">
 				<div className="h-fit w-full">
-					<ProductDetails product={product} uiData={uiData} />
+					{product ? (
+						<ProductDetails product={product} uiData={uiData} />
+					) : (
+						''
+					)}
 					<ProductsContainer
 						title={uiData.relatedProducts}
 						limit={3}
