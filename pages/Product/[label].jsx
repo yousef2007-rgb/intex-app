@@ -74,7 +74,7 @@ export default function HomePage({ data, isLoading }) {
 
 			<div className=" flex items-center">
 				<div className="h-fit w-full">
-					{product ? (
+					{product.image ? (
 						<ProductDetails product={product} uiData={uiData} />
 					) : (
 						''
