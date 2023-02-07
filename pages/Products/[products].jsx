@@ -64,8 +64,8 @@ export default function HomePage() {
 					isLoading={isLoading}
 					loadingAllowed={true}
 				/>
+				<Footer />
 			</div>
-			<Footer />
 		</div>
 	);
 }

@@ -1,42 +1,26 @@
+import { Logo } from './Logo';
+import { LanguageButton } from './LanguageButton';
 import React from 'react';
 import Navigation from './Navigation';
-import Link from 'next/link';
 import Cart from './Cart';
 import Search from './Searching';
-import { tougleLanguage } from '../../../slices/languageSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
-	const dispatch = useDispatch();
 	const language = useSelector((state) => state.language);
 	return (
-		<header className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
-			<div
-				className=" mx-auto flex h-28 max-w-5xl items-center"
-				style={{
-					flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
-				}}
+		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
+			<header
+				className={` flex-${
+					language == 'arabic' ? 'row-reverse' : 'row'
+				} mx-auto flex h-28 max-w-5xl items-center`}
 			>
-				<Link href={'/'}>
-					<img
-						className=" mx-3 w-full max-w-[176px] "
-						src="/Assets/images/logo.png"
-					/>
-				</Link>
+				<Logo />
 				<Navigation />
-				<button
-					className=" flex font-bold capitalize tablet:mx-3"
-					style={{
-						flexDirection:
-							language == 'arabic' ? 'row-reverse' : 'row',
-					}}
-					onClick={() => dispatch(tougleLanguage())}
-				>
-					{language == 'arabic' ? 'EN' : 'AR'}
-				</button>
+				<LanguageButton />
 				<Cart />
 				<Search />
-			</div>
-		</header>
+			</header>
+		</div>
 	);
 }

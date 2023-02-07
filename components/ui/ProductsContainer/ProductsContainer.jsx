@@ -1,10 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import useFetch from '../../../Hooks/useFetch';
-import useLocalStorage from '../../../Hooks/useLocalStorage';
-import ProductCard from './ProductCard';
-import Link from 'next/link';
-import useData from '../../../Hooks/useData';
+import { ProductsCards } from './ProductsCards';
+import { ViewAllButton } from './ViewAllButton';
 import uiData from '../../../data/ProductContainer.json';
 import { useSelector } from 'react-redux';
 
@@ -29,33 +25,20 @@ export default function ProductsContainer({
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
 				{title}
 			</h1>
-			<div className="flex flex-wrap items-center justify-center gap-8 text-center ">
-				{data &&
-					data.data.res
-						.filter((x) => x.field_subcategory == number)
-						.filter((x) => x.nid != currentProduct)
-						.filter((x, index) => index < limit || limit == 0)
-						.map((product, index) => (
-							<ProductCard
-								key={index}
-								label={product.label}
-								discription={product.field_item_name}
-								image={product.image}
-								price={product.field_wholesale_price}
-								nid={product.nid}
-								loadingAllowed={loadingAllowed}
-							/>
-						))}
-			</div>
+			<ProductsCards
+				data={data}
+				currentProduct={currentProduct}
+				loadingAllowed={loadingAllowed}
+				number={number}
+				limit={limit}
+			/>
 			{limit != 0 ? (
-				<Link
-					href={`/Products/${number}?title=${title}`}
-					className=" mx-auto my-12 border-2 border-transparent bg-primary px-12 py-2 font-bold text-white transition-all duration-200 ease-in-out hover:border-primary hover:bg-white hover:text-primary"
-				>
-					{language == 'arabic'
-						? uiData.arabic.viewAllButton
-						: uiData.english.viewAllButton}
-				</Link>
+				<ViewAllButton
+					number={number}
+					title={title}
+					language={language}
+					uiData={uiData}
+				/>
 			) : (
 				''
 			)}
