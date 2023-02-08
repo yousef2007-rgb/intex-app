@@ -29,6 +29,36 @@ export default function ProductCard({
 				itemType="https://schema.org/Product"
 			>
 				<meta itemProp="image" content={image} />
+				<meta itemProp="name" content={discription} />
+				<meta itemProp="discription" content={discription} />
+				<meta itemProp="price" content={price * 1.5} />
+				<meta itemProp="priceCurrency" content="JOD" />
+				<meta
+					itemProp="availability"
+					content="https://schema.org/InStock"
+				/>
+				<div
+					itemProp="reviewRating"
+					itemType="https://schema.org/Rating"
+					itemScope
+				>
+					<meta itemProp="ratingValue" content="5" />
+					<meta itemProp="bestRating" content="5" />
+				</div>
+				<div
+					itemProp="author"
+					itemType="https://schema.org/Person"
+					itemScope
+				>
+					<meta itemProp="name" content="Riad Aburadi" />
+				</div>
+				<div
+					itemProp="brand"
+					itemType="https://schema.org/Brand"
+					itemscope
+				>
+					<meta itemProp="name" content="ACME" />
+				</div>
 				<img
 					src={image}
 					alt={discription + label}
