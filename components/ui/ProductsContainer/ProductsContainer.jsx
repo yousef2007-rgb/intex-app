@@ -1,3 +1,4 @@
+import { Loading } from './Loading';
 import React from 'react';
 import { ProductsCards } from './ProductsCards';
 import { ViewAllButton } from './ViewAllButton';
@@ -15,11 +16,7 @@ export default function ProductsContainer({
 }) {
 	const language = useSelector((state) => state.language);
 	return isLoading ? (
-		<div className="flex h-full h-1/2 flex-wrap items-center justify-center">
-			<img src="/Assets/GIF/Loading.gif" />
-			<img src="/Assets/GIF/Loading.gif" />
-			<img src="/Assets/GIF/Loading.gif" />
-		</div>
+		<Loading />
 	) : (
 		<div className="flex flex-col items-center border-b py-10">
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
