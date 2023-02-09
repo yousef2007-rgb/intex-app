@@ -9,6 +9,8 @@ export default function LanguageButton() {
 			className=" flex font-bold capitalize tablet:mx-3"
 			style={{
 				flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
+				marginLeft: language == 'english' ? 'auto' : 'unset',
+				marginRight: language == 'arabic' ? 'auto' : 'unset',
 			}}
 			onClick={() => dispatch(tougleLanguage())}
 		>
