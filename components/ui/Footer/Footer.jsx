@@ -11,7 +11,7 @@ export default function Footer({}) {
 					>
 						<img
 							src="/Assets/images/logo.png"
-							className="mr-3 h-8 w-full"
+							className="mr-3  w-full"
 							alt="FlowBite Logo"
 						/>
 					</a>
