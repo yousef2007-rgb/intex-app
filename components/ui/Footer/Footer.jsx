@@ -4,7 +4,7 @@ export default function Footer({}) {
 	return (
 		<footer className=" bg-gray-100 p-4  sm:p-6">
 			<div className="mx-auto max-w-6xl sm:flex sm:justify-between">
-				<div className="mx-auto mb-6 w-fit sm:mx-0 md:mb-0">
+				<div className="mx-auto mb-6 w-fit max-w-xs sm:mx-0 md:mb-0">
 					<a
 						href="https://www.intexjo.com/"
 						className="flex items-center"
