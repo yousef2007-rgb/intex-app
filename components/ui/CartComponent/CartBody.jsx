@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 //	React Components
 import CartItem from './CartItem';
-import WhatsappCheckout from './WhatsappCheckout';
+import CheckoutButton from './CheckoutButton';
 //	Redux Slices
 import { clearItems } from '../../../slices/cartSlice';
 import { resetCartItem } from '../../../slices/cartSlice';
@@ -57,7 +57,7 @@ export default function CartBody({ visability, dispatch }) {
 						<CartItem key={index} {...item} />
 					))}
 
-					<WhatsappCheckout
+					<CheckoutButton
 						dispatch={dispatch}
 						clearItems={clearItems}
 						uiData={uiData}

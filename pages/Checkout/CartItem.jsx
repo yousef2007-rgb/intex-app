@@ -1,24 +1,21 @@
 import React from 'react';
-import Trash from '../../../public/Assets/icons/Trash';
-import { removeCartItem } from '../../../slices/cartSlice';
+import Trash from '../../public/Assets/icons/Trash';
+import { removeCartItem } from '../../slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
+import { tougleCart } from '../../slices/cartVisabilitySlice';
 
 export default function CardItem({ item, quantity }) {
 	const dispatch = useDispatch();
 	const language = useSelector((state) => state.language);
 	return (
-		<div className=" flex items-center  p-5 font-bold">
+		<div className=" my-4 flex items-center rounded-lg border border-gray-100 p-5 font-bold shadow-xl">
 			<Link
-				onClick={() => {
-					dispatch(tougleCart());
-				}}
-				className=" flex flex-1 items-center"
+				className=" flex flex-1 items-center "
 				href={`/Product/${item.nid}`}
 			>
 				<img
-					className=" aspect-square h-12 w-12 rounded-xl object-cover "
+					className=" aspect-square h-12 w-12 rounded-xl object-contain tablet:h-48 tablet:w-48  "
 					src={item.image}
 					alt={item.discription}
 				/>

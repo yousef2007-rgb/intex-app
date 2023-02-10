@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-export default function WhatsappCheckout({
-	dispatch,
-	clearItems,
-	cartItems,
-	uiData,
-}) {
+import { useDispatch } from 'react-redux';
+export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
+	const dispatch = useDispatch();
 	const [whatsappText, setWhatsAppText] = useState('');
 	useEffect(() => {
 		if (cartItems.length != 0) {
@@ -28,7 +25,7 @@ export default function WhatsappCheckout({
 			target={'blank'}
 			onClick={() => dispatch(clearItems())}
 		>
-			{uiData.checkoutButton}
+			Checkout Using WhatsApp
 		</a>
 	);
 }
