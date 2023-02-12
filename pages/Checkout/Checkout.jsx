@@ -8,7 +8,10 @@ import CartItem from './CartItem';
 
 export default function index() {
 	const cartItems = useSelector((state) => state.cart);
+	const dispatch = useDispatch();
+
 	const [totalPrice, setTotalPrice] = useState(0);
+
 	useEffect(() => {
 		let num = 0;
 		for (let i = 0; i < cartItems.length; i++) {
@@ -18,7 +21,6 @@ export default function index() {
 		}
 		setTotalPrice(num);
 	}, [cartItems]);
-	const dispatch = useDispatch();
 
 	return (
 		<>
