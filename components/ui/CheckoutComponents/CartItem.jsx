@@ -9,7 +9,7 @@ export default function CardItem({ item, quantity }) {
 	const dispatch = useDispatch();
 	const language = useSelector((state) => state.language);
 	return (
-		<div className=" my-4 flex items-center rounded-lg border border-gray-100 p-5 font-bold shadow-xl">
+		<div className=" w-max-4xl my-4 mx-auto flex items-center rounded-lg border border-gray-100 p-5 font-bold shadow-xl">
 			<Link
 				className=" flex flex-1 items-center "
 				href={`/Product/${item.nid}`}
