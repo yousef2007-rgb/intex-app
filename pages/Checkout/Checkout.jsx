@@ -27,12 +27,15 @@ export default function Checkout() {
 			<Header />
 			{cartItems.length != 0 ? (
 				<main className=" mx-auto mt-28 flex  h-fit max-w-7xl flex-col justify-center p-5">
-					{cartItems.map((item, index) => (
-						<CartItem key={index} {...item} />
-					))}
-					<h1 className=" mx-auto my-6 font-bold capitalize tablet:mx-0">
-						total price: {totalPrice}JOD
-					</h1>
+					<div className=" mx-auto flex w-full max-w-2xl flex-col justify-evenly">
+						{cartItems.map((item, index) => (
+							<CartItem key={index} {...item} />
+						))}
+						<h1 className=" mx-auto my-6 font-bold capitalize tablet:mx-0">
+							total price: {totalPrice}JOD
+						</h1>
+					</div>
+
 					<div className=" flex w-full flex-col items-center justify-evenly font-bold tablet:ml-auto tablet:w-fit tablet:flex-row">
 						<div className="my-4 flex  max-w-xs">
 							<button
