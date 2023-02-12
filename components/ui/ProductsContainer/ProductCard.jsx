@@ -13,6 +13,7 @@ export default function ProductCard({
 	nid,
 	loadingAllowed,
 }) {
+	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
 	useEffect(() => setIsLoading(false), []);
 	return (
@@ -23,7 +24,7 @@ export default function ProductCard({
 					loadingAllowed ? setIsLoading(true) : setIsLoading(false)
 				}
 				href={`/Product/${nid}`}
-				className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center p-5 text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
+				className=" z-0 flex w-full max-w-xs flex-col items-center justify-center p-5 text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
 				itemScope
 				itemType="https://schema.org/Product"
 			>
@@ -61,10 +62,10 @@ export default function ProductCard({
 				<img
 					src={image}
 					alt={discription + label}
-					className="aspect-square h-52 w-full object-contain"
+					className="aspect-square w-full object-cover"
 					loading="lazy"
 				/>
-				<h1 className=" text-whi my-2 w-fit whitespace-pre-line font-bold text-primary">
+				<h1 className=" my-2 w-fit font-bold text-primary">
 					{discription}
 				</h1>
 				<h2 className=" w-fit font-bold text-secondery">{label}</h2>
