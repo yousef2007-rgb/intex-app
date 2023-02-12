@@ -1,36 +1,39 @@
 {
-  "name": "intex-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.9.1",
-    "@vercel/analytics": "^0.1.8",
-    "framer-motion": "^8.4.3",
-    "next": "13.1.2",
-    "next-redux-wrapper": "^8.1.0",
-    "react": "^18.0.0",
-    "react-dom": "18.2.0",
-    "react-redux": "^8.0.5",
-    "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.2",
-    "sass": "^1.57.1",
-    "scss": "^0.2.4",
-    "toolkit": "^1.5.4"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "eslint": "7.32.0",
-    "eslint-config-next": "13.1.2",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.3",
-    "prettier-plugin-tailwindcss": "^0.2.2",
-    "tailwindcss": "^3.2.4"
-  }
+	"name": "intex-app",
+	"version": "0.1.0",
+	"private": true,
+	"engines": {
+		"node": "16.x"
+	},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.1",
+		"@vercel/analytics": "^0.1.8",
+		"framer-motion": "^8.4.3",
+		"next": "13.1.2",
+		"next-redux-wrapper": "^8.1.0",
+		"react": "^18.0.0",
+		"react-dom": "18.2.0",
+		"react-redux": "^8.0.5",
+		"redux": "^4.2.0",
+		"redux-devtools-extension": "^2.13.9",
+		"redux-thunk": "^2.4.2",
+		"sass": "^1.57.1",
+		"scss": "^0.2.4",
+		"toolkit": "^1.5.4"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"eslint": "7.32.0",
+		"eslint-config-next": "13.1.2",
+		"postcss": "^8.4.21",
+		"prettier": "^2.8.3",
+		"prettier-plugin-tailwindcss": "^0.2.2",
+		"tailwindcss": "^3.2.4"
+	}
 }
