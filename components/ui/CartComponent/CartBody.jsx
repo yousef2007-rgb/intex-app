@@ -57,12 +57,12 @@ export default function CartBody({ visability, dispatch }) {
 						<CartItem key={index} {...item} />
 					))}
 
-					<CheckoutButton
+					{/* <CheckoutButton
 						dispatch={dispatch}
 						clearItems={clearItems}
 						uiData={uiData}
 						cartItems={cartItems}
-					/>
+					/> */}
 				</>
 			)}
 		</div>
