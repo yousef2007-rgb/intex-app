@@ -4,7 +4,7 @@ import Footer from '../../components/ui/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../../slices/cartSlice';
 import WhatsappCheckout from '../../components/ui/CartComponent/WhatsappCheckout';
-import CartItem from './CartItem';
+// import CartItem from './CartItem';
 
 export default function index() {
 	const cartItems = useSelector((state) => state.cart);
@@ -27,9 +27,9 @@ export default function index() {
 			<Header />
 			{cartItems.length != 0 ? (
 				<main className=" mx-auto mt-28 flex flex h-fit max-w-7xl flex-col justify-center p-5">
-					{cartItems.map((item, index) => (
+					{/* {cartItems.map((item, index) => (
 						<CartItem key={index} {...item} />
-					))}
+					))} */}
 					<h1 className=" mx-auto my-6 font-bold capitalize tablet:mx-0">
 						total price: {totalPrice}JOD
 					</h1>
