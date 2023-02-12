@@ -1,5 +1,7 @@
 import React from 'react';
 import Checkout from './Checkout';
-const CheckOut = () => {
+const index = () => {
 	return <Checkout />;
 };
+
+export default index;
