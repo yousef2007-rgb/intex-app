@@ -1,9 +1,9 @@
 import React from 'react';
-import Trash from '../../public/Assets/icons/Trash';
-import { removeCartItem } from '../../slices/cartSlice';
+import Trash from '../../../public/Assets/icons/Trash';
+import { removeCartItem } from '../../../slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
-import { tougleCart } from '../../slices/cartVisabilitySlice';
+import { tougleCart } from '../../../slices/cartVisabilitySlice';
 
 export default function CardItem({ item, quantity }) {
 	const dispatch = useDispatch();

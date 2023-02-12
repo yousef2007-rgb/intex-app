@@ -4,7 +4,7 @@ import Footer from '../../components/ui/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../../slices/cartSlice';
 import WhatsappCheckout from '../../components/ui/CartComponent/WhatsappCheckout';
-import CartItem from './CartItem';
+import CartItem from '../../components/ui/CheckoutComponents/CartItem';
 
 export default function Checkout() {
 	const cartItems = useSelector((state) => state.cart);
