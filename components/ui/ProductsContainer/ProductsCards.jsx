@@ -11,10 +11,13 @@ export function ProductsCards({
 		<div className="flex flex-wrap items-center justify-center gap-8 text-center ">
 			{data &&
 				data.data.res
-					.filter((item) => item.status == 1)
-					.filter((x) => x.field_subcategory == number)
-					.filter((x) => x.nid != currentProduct)
-					.filter((_x, index) => index < limit || limit == 0)
+					.filter(
+						(x, index) =>
+							x.status == 1 &&
+							x.field_subcategory == number &&
+							x.nid != currentProduct
+					)
+					.filter((_, index) => index < limit || limit == 0)
 					.map((product, index) => (
 						<ProductCard
 							key={index}

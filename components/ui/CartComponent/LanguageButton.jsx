@@ -1,5 +1,9 @@
-import React from 'react';
-export function LanguageButton({ language, dispatch, tougleLanguage }) {
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { tougleLanguage } from '../../../slices/languageSlice';
+export function LanguageButton({ language }) {
+	const dispatch = useDispatch();
+
 	return (
 		<button
 			className=" flex font-bold capitalize tablet:mx-3"

@@ -14,7 +14,10 @@ export default function CartButton() {
 		setCartItemsNumber(num);
 	}, [cart]);
 	return (
-		<div onClick={() => dispatch(tougleCart())} className="relative">
+		<div
+			onClick={() => dispatch(tougleCart())}
+			className="relative shadow-2xl"
+		>
 			{cartItemsNumber != 0 ? (
 				<span className=" absolute bottom-4 left-4 flex h-5 w-5 items-center justify-center rounded-full bg-primary font-bold text-white">
 					{cartItemsNumber}
