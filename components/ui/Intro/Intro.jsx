@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Intro({ imagePath, link }) {
+export default function Intro({ imagePath, link, title }) {
 	return (
 		<div className=" relative mt-20">
 			<img
