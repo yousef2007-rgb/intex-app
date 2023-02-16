@@ -64,8 +64,8 @@ export default function HomePage({ isLoading, data }) {
 				<link rel="icon" href="/icon.jpg" />
 			</Head>
 			<Header />
-			<div className="mt-28 tablet:mt-0">
-				<Intro link={'/Assets/images/intro/hero2.jpg'} />
+			<div className="mt-20 tablet:mt-0">
+				<Intro imagePath={'/Assets/images/intro/hero2.jpg'} />
 				<ProductsContainer
 					number={products.products}
 					limit={0}

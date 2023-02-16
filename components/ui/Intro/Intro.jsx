@@ -1,9 +1,13 @@
 import React from 'react';
 
-export default function Intro({ link }) {
+export default function Intro({ imagePath, link }) {
 	return (
-		<div className=" relative">
-			<img src={link} alt="" className="w-full " />
+		<div className=" relative mt-20">
+			<img
+				src={imagePath}
+				alt=""
+				className="aspect-video w-full object-cover mobile:aspect-[16/3]"
+			/>
 		</div>
 	);
 }

@@ -38,7 +38,7 @@ export default function HomePage({ data, isLoading }) {
 	const product = data.data.res[0];
 
 	return (
-		<div className=" mt-28">
+		<div className=" mt-20">
 			<Head>
 				<title>Intex Jo | {product.field_item_name}</title>
 				<meta

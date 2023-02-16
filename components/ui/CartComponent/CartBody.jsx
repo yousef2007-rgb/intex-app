@@ -15,10 +15,10 @@ export default function CartBody({ visability, dispatch }) {
 	//Redux State Hooks
 	const cartItems = useSelector((state) => state.cart);
 	const language = useSelector((state) => state.language); //variables
-
+	//variables
 	const uiData =
 		language == 'arabic' ? componentData.arabic : componentData.english; //React Hooks
-
+	//React Hooks
 	useEffect(() => {
 		if (cartItems.length == 0 && window.localStorage.getItem('cart')) {
 			dispatch(
