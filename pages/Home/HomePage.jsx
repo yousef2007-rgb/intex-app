@@ -23,10 +23,7 @@ export default function HomePage() {
 					content="Intex Jo | Official Distributor for Intex In Jordan"
 				/>
 				<meta property="og:type" content="products" />
-				<meta
-					property="og:url"
-					content="https://www.intexjo.com/"
-				/>
+				<meta property="og:url" content="https://www.intexjo.com/" />
 				<meta
 					property="og:image"
 					content="https://www.intexjo.com/Assets/images/www.intexjo.com.png"
@@ -52,7 +49,7 @@ export default function HomePage() {
 				<link rel="icon" href="/icon.jpg" />
 			</Head>
 			<Header />
-			<main className="mt-28 tablet:mt-0">
+			<main className="mt-20 tablet:mt-0">
 				<Intro link={'/Assets/images/intro/hero1.jpg'} />
 				<ProductsContainer />
 			</main>

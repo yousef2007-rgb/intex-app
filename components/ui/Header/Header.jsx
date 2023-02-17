@@ -24,7 +24,7 @@ export default function Header() {
 	return (
 		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
 			<header
-				className={` mx-auto flex h-28 max-w-5xl items-center`}
+				className={` mx-auto flex h-20 max-w-5xl items-center`}
 				style={{
 					flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
 				}}
