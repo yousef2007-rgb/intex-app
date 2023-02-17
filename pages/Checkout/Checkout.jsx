@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/ui/Header/Header';
 import Footer from '../../components/ui/Footer/Footer';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../../slices/cartSlice';
 import WhatsappCheckout from '../../components/ui/CartComponent/WhatsappCheckout';
