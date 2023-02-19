@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Menu({ data }) {
+export default function Menu({ data, tougle }) {
 	return (
-		<div className=" absolute top-full right-1/2 mx-auto  flex   w-full min-w-fit translate-x-1/2 border-t-4 border-secondery bg-white ">
+		<div className="z-50 mx-auto flex  min-w-fit border-t-4 border-secondery">
 			{data.map((item, index) => (
 				<section key={index} className=" flex w-60 flex-col">
 					<img src={item.image} alt="" />
@@ -13,6 +13,7 @@ export default function Menu({ data }) {
 								key={index}
 								className="w-full p-3 font-bold capitalize transition-all hover:bg-secondery hover:text-white"
 								href={element.link}
+								onClick={() => tougle()}
 							>
 								{element.text}
 							</Link>

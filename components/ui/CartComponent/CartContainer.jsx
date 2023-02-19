@@ -21,10 +21,11 @@ function CartContainer() {
 				dispatch={dispatch}
 				visability={visability}
 				tougle={tougleCart}
+				usingRedux={true}
 				messege={
 					<CartBody visability={visability} dispatch={dispatch} />
 				}
-			></PopUp>
+			/>
 		</>
 	);
 }
