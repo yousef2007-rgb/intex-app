@@ -27,8 +27,8 @@ export default function Checkout() {
 		<>
 			<Header />
 			{cartItems.length != 0 ? (
-				<main className=" mx-auto mt-20 flex  h-fit max-w-7xl flex-col justify-center p-5">
-					<div className=" mx-auto flex w-full max-w-2xl flex-col justify-evenly">
+				<main className=" mx-auto mt-20 flex  h-fit max-w-2xl flex-col justify-center p-5">
+					<div className=" flex w-full  flex-col justify-evenly">
 						{cartItems.map((item, index) => (
 							<CartItem key={index} {...item} />
 						))}
