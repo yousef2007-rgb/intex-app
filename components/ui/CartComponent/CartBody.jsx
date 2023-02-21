@@ -30,7 +30,7 @@ export default function CartBody({ visability, dispatch }) {
 	}, []);
 	return (
 		<div
-			className={` absolute top-24  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
+			className={`scrollbar-w-thin absolute top-24 z-50 mx-2 flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
 				language == 'arabic'
 					? 'desktop:left-1/2 desktop:translate-x-[-50%]'
 					: 'desktop:right-1/2 desktop:translate-x-[50%]'
@@ -53,10 +53,11 @@ export default function CartBody({ visability, dispatch }) {
 				<EmptyCart />
 			) : (
 				<>
-					{cartItems.map((item, index) => (
-						<CartItem key={index} {...item} />
-					))}
-
+					<div className=" max-h-72 overflow-y-auto">
+						{cartItems.map((item, index) => (
+							<CartItem key={index} {...item} />
+						))}
+					</div>
 					<CheckoutButton
 						dispatch={dispatch}
 						clearItems={clearItems}

@@ -16,7 +16,7 @@ export default function Navigation({
 		<nav
 			className={`${
 				language == 'english' ? 'ml-auto' : 'mr-auto'
-			} fixed top-0 left-0 z-50 h-screen w-full max-w-xs flex-col bg-white transition-all`}
+			} fixed top-0 left-0 z-40 h-screen w-full max-w-xs flex-col bg-white transition-all`}
 			style={{
 				transform: `translate(${
 					navigationVisability == 'flex' ? 0 : '-1000px'

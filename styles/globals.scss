@@ -1,24 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.scrollbar-w-thin {
+		scrollbar-width: 'thin';
+	}
+}
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	scroll-behavior: smooth;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "PT Sans", sans-serif;
-  font-family: "Cairo", sans-serif;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+	font-family: 'Cairo', sans-serif;
 }

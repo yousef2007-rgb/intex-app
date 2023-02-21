@@ -5,7 +5,7 @@ export default function Background({ visability, tougle, usingRedux }) {
 	console.log(typeof tougle);
 	return (
 		<div
-			className=" fixed top-0 left-0  h-screen w-screen "
+			className=" fixed top-0 left-0 h-screen w-screen "
 			style={{
 				display: visability,
 			}}

@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Menu({ data, tougle }) {
 	return (
-		<div className="z-50 mx-auto flex  min-w-fit border-t-4 border-secondery">
+		<div className="z-40 mx-auto flex  min-w-fit border-t-4 border-secondery">
 			{data.map((item, index) => (
 				<section key={index} className=" flex w-60 flex-col">
 					<img src={item.image} alt="" />
