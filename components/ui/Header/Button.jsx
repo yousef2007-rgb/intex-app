@@ -19,7 +19,7 @@ export default function Button({ text, menu, tougle }) {
 					<span
 						className="mx-2 h-3 w-3 transition-all"
 						style={{
-							rotate: menuVisablity == 'flex' ? '180deg' : '0deg',
+							rotate: menuVisablity == 'none' ? '0deg' : '180deg',
 						}}
 					>
 						<Chevron />
