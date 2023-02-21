@@ -30,7 +30,7 @@ export default function CartBody({ visability, dispatch }) {
 	}, []);
 	return (
 		<div
-			className={` absolute top-32  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
+			className={` absolute top-24  mx-2  flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
 				language == 'arabic'
 					? 'desktop:left-1/2 desktop:translate-x-[-50%]'
 					: 'desktop:right-1/2 desktop:translate-x-[50%]'
