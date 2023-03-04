@@ -8,11 +8,11 @@ export function ProductsCards({
 	limit,
 }) {
 	return (
-		<div className="flex flex-wrap items-center justify-center gap-8 text-center ">
-			{data &&
+		<div className="flex flex-wrap items-center justify-evenly gap-8 text-center">
+			{
 				data.data.res
 					.filter(
-						(x, index) =>
+						(x) =>
 							x.status == 1 &&
 							x.field_subcategory == number &&
 							x.nid != currentProduct

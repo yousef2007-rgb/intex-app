@@ -33,8 +33,7 @@ export default function SearchBody({ visability }) {
 					className="mt-5 flex max-h-[89vh]  w-full flex-row flex-wrap justify-evenly gap-20 overflow-auto"
 				>
 					{textValue != ''
-						? data &&
-						  data.data.res
+						? data.data.res
 								.filter(
 									(x) =>
 										x.label
