@@ -3,7 +3,7 @@ import React from 'react';
 export default function Intro({ intros }) {
 	console.log(intros);
 	return (
-		<div className="relative mx-auto mt-16 flex max-w-3xl flex-wrap justify-evenly pt-5">
+		<div className="relative mx-auto mt-16 flex max-w-7xl flex-row-reverse flex-wrap justify-evenly pt-5">
 			{intros.map((item, index) => (
 				<a
 					style={{
