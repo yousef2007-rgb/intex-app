@@ -8,7 +8,7 @@ export function ProductsCards({
 	limit,
 }) {
 	return (
-		<div className="flex flex-wrap items-center justify-evenly gap-8 text-center">
+		<div className="flex w-full flex-wrap items-center justify-evenly gap-8 text-center">
 			{data.data.res
 				.filter(
 					(x) =>
