@@ -53,13 +53,23 @@ export default function HomePage() {
 				<Intro
 					intros={[
 						{
+							src: '/Assets/images/intro/hero1.jpg',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+						{
+							src: '/Assets/images/intro/hero4.gif',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+						{
 							src: '/Assets/images/intro/hero3.jpg',
 							link: '/',
 							aspectRatio: '16/7',
 						},
 						{
-							src: '/Assets/images/intro/hero1.jpg',
-							link: '/Products/343?title=inflated%20pools',
+							src: '/Assets/images/intro/hero5.gif',
+							link: '/Products/344?title=accessories',
 							aspectRatio: '1/1',
 						},
 						{

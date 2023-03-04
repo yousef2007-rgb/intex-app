@@ -18,7 +18,7 @@ export default function ProductsContainer({
 	return isLoading ? (
 		<Loading />
 	) : (
-		<div className="flex flex-col items-center border-b py-10">
+		<div className="flex flex-col items-center border-b">
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
 				{title}
 			</h1>

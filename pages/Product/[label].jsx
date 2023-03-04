@@ -78,7 +78,7 @@ export default function HomePage({ data, isLoading }) {
 				<div className="h-fit w-full">
 					<div className=" mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly border-b">
 						<img
-							className="aspect-square h-fit w-full max-w-lg object-contain tablet:w-1/2 tablet:min-w-[400px]"
+							className="aspect-square h-fit w-full max-w-lg rounded-xl object-contain tablet:w-1/2 tablet:min-w-[400px]"
 							src={product.image}
 							itemProp="product image"
 						/>
@@ -106,7 +106,7 @@ export default function HomePage({ data, isLoading }) {
 									{product.field_wholesale_price * 1.5} JOD
 								</p>
 
-								<div className=" mx-auto flex w-full text-center shadow-md tablet:mr-0 tablet:w-fit">
+								<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
 									<button
 										onClick={() => {
 											if (counter > 0) {
