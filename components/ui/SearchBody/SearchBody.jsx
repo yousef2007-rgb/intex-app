@@ -19,7 +19,7 @@ export default function SearchBody({ visability }) {
 			style={{ display: searchVisability }}
 			className=" absolute top-0 left-0 flex h-fit w-screen items-start justify-center overflow-x-hidden overflow-y-scroll bg-white"
 		>
-			<div className=" flex h-fit w-full flex-col items-center rounded-lg bg-white  p-5">
+			<div className=" flex h-fit w-full flex-col items-center rounded-lg bg-white  p-4">
 				<div className=" my-0 flex w-full max-w-2xl flex-nowrap items-center justify-center rounded-lg border border-secondery  bg-white px-5 py-2 ">
 					<input
 						ref={input}

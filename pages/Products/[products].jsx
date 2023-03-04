@@ -65,7 +65,20 @@ export default function HomePage({ isLoading, data }) {
 			</Head>
 			<Header />
 			<div className="mt-20 tablet:mt-0">
-				<Intro link={'/Assets/images/intro/hero2.jpg'} />
+				<Intro
+					intros={[
+						{
+							src: '/Assets/images/intro/hero1.jpg',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+						{
+							src: '/Assets/images/intro/hero2.jpg',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+					]}
+				/>
 				<ProductsContainer
 					number={products.products}
 					limit={0}

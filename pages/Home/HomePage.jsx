@@ -50,7 +50,25 @@ export default function HomePage() {
 			</Head>
 			<Header />
 			<main className="mt-20 tablet:mt-0">
-				<Intro link={'/Assets/images/intro/hero1.jpg'} />
+				<Intro
+					intros={[
+						{
+							src: '/Assets/images/intro/hero3.jpg',
+							link: '/',
+							aspectRatio: '16/7',
+						},
+						{
+							src: '/Assets/images/intro/hero1.jpg',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+						{
+							src: '/Assets/images/intro/hero2.jpg',
+							link: '/Products/343?title=inflated%20pools',
+							aspectRatio: '1/1',
+						},
+					]}
+				/>
 				<ProductsContainer />
 			</main>
 			<Footer />
