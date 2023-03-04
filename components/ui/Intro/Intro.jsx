@@ -9,7 +9,7 @@ export default function Intro({ intros }) {
 					style={{
 						width: item.aspectRatio == '1/1' ? '48%' : '98%',
 					}}
-					className="my-1 rounded-xl shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl"
+					className="my-1 rounded-xl shadow-xl transition-all hover:shadow-2xl"
 					key={index}
 					href={item.link}
 				>
