@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 }
 export default function HomePage({ data, isLoading }) {
 	const [relatedData, relatedIsLoading] = useData(
-		'https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151',
+		process.env.NEXT_PUBLIC_URL,
 		'data'
 	);
 	const dispatch = useDispatch();
