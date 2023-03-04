@@ -9,26 +9,25 @@ export function ProductsCards({
 }) {
 	return (
 		<div className="flex flex-wrap items-center justify-evenly gap-8 text-center">
-			{
-				data.data.res
-					.filter(
-						(x) =>
-							x.status == 1 &&
-							x.field_subcategory == number &&
-							x.nid != currentProduct
-					)
-					.filter((_, index) => index < limit || limit == 0)
-					.map((product, index) => (
-						<ProductCard
-							key={index}
-							label={product.label}
-							discription={product.field_item_name}
-							image={product.image}
-							price={product.field_wholesale_price}
-							nid={product.nid}
-							loadingAllowed={loadingAllowed}
-						/>
-					))}
+			{data.data.res
+				.filter(
+					(x) =>
+						x.status == 1 &&
+						x.field_subcategory == number &&
+						x.nid != currentProduct
+				)
+				.filter((_, index) => index < limit || limit == 0)
+				.map((product, index) => (
+					<ProductCard
+						key={index}
+						label={product.label}
+						discription={product.field_item_name}
+						image={product.image}
+						price={product.field_wholesale_price}
+						nid={product.nid}
+						loadingAllowed={loadingAllowed}
+					/>
+				))}
 		</div>
 	);
 }
