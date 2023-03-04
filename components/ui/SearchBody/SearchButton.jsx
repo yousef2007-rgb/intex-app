@@ -9,9 +9,9 @@ export default function SearchBody({ searchVisability }) {
 		<button
 			style={{
 				position: searchVisability == 'none' ? 'relative' : 'absolute',
-				right: '25%',
+				right: searchVisability == 'none' ? 'unset' : '30px',
 			}}
-			className={` z-[${searchVisability == 'none' ? 0 : 50}] w-6`}
+			className={`w-6`}
 			onClick={() => dispatch(tougle())}
 		>
 			{searchVisability == 'none' ? <Search /> : <Close />}

@@ -20,10 +20,10 @@ export default function SearchBody({ visability }) {
 	return (
 		<div
 			style={{ display: searchVisability }}
-			className=" absolute top-0 left-0 flex h-fit w-screen items-start justify-center overflow-x-hidden overflow-y-scroll bg-white  p-5"
+			className=" absolute top-0 left-0 flex h-fit w-screen items-start justify-center overflow-x-hidden overflow-y-scroll bg-white"
 		>
-			<div className=" flex h-screen w-full flex-col items-center rounded-lg bg-white  p-5">
-				<div className=" my-20 flex w-full max-w-2xl flex-nowrap items-center justify-center rounded-lg border border-secondery  bg-white px-5 py-2 ">
+			<div className=" flex h-fit w-full flex-col items-center rounded-lg bg-white  p-5">
+				<div className=" my-0 flex w-full max-w-2xl flex-nowrap items-center justify-center rounded-lg border border-secondery  bg-white px-5 py-2 ">
 					<input
 						ref={input}
 						placeholder="Search for product"
@@ -33,7 +33,7 @@ export default function SearchBody({ visability }) {
 				</div>
 				<div
 					onClick={() => dispatch(tougle())}
-					className="flex max-h-[50vh] w-full flex-row flex-wrap justify-evenly gap-20"
+					className="mt-5 flex max-h-[89vh]  w-full flex-row flex-wrap justify-evenly gap-20 overflow-auto"
 				>
 					{textValue != ''
 						? data &&
