@@ -24,10 +24,10 @@ export default function Checkout() {
 	}, [cartItems]);
 
 	return (
-		<>
+		<div className="flex min-h-screen w-screen flex-col">
 			<Header />
 			{cartItems.length != 0 ? (
-				<main className=" mx-auto mt-20 flex  h-fit max-w-2xl flex-col justify-center p-5">
+				<main className=" mx-auto mt-20 flex h-fit max-w-2xl flex-1 flex-col justify-center p-5">
 					<div className=" flex w-full  flex-col justify-evenly">
 						{cartItems.map((item, index) => (
 							<CartItem key={index} {...item} />
@@ -63,6 +63,6 @@ export default function Checkout() {
 				</h1>
 			)}
 			<Footer />
-		</>
+		</div>
 	);
 }

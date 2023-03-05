@@ -14,9 +14,7 @@ export default function Navigation({
 
 	return (
 		<nav
-			className={`${
-				language == 'english' ? 'ml-auto' : 'mr-auto'
-			} fixed top-0 left-0 z-40 h-screen w-full max-w-xs flex-col bg-white transition-all`}
+			className={`fixed top-0 left-0 z-40 h-screen w-[35vw] max-w-xs flex-col items-center bg-white transition-all tablet:max-w-none`}
 			style={{
 				transform: `translate(${
 					navigationVisability == 'flex' ? 0 : '-1000px'

@@ -18,11 +18,10 @@ export async function getServerSideProps(context) {
 }
 
 export default function HomePage({ isLoading, data }) {
-	// const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
 	const router = useRouter();
 	const products = router.query;
 	return (
-		<div>
+		<>
 			<Head>
 				<title>
 					Intex Jo | {products.title} Official Distributor for Intex
@@ -63,8 +62,9 @@ export default function HomePage({ isLoading, data }) {
 				/>
 				<link rel="icon" href="/icon.jpg" />
 			</Head>
-			<Header />
-			<div className="mt-20 tablet:mt-0">
+
+			<div className="mt-20 flex h-screen flex-col tablet:mt-0">
+				<Header />
 				<ProductsContainer
 					number={products.products}
 					limit={0}
@@ -75,6 +75,6 @@ export default function HomePage({ isLoading, data }) {
 				/>
 				<Footer />
 			</div>
-		</div>
+		</>
 	);
 }
