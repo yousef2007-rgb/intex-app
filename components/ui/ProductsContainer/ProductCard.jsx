@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next';
 
 export default function ProductCard({
 	label,
@@ -12,12 +13,7 @@ export default function ProductCard({
 }) {
 	return (
 		<>
-			<Link
-				href={`/Product/${nid}`}
-				className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
-				itemScope
-				itemType="https://schema.org/Product"
-			>
+			<Head>
 				<meta itemProp="image" content={image} />
 				<meta itemProp="name" content={discription} />
 				<meta itemProp="discription" content={discription} />
@@ -27,6 +23,13 @@ export default function ProductCard({
 					itemProp="availability"
 					content="https://schema.org/InStock"
 				/>
+			</Head>
+			<Link
+				href={`/Product/${nid}`}
+				className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
+				itemScope
+				itemType="https://schema.org/Product"
+			>
 				<div
 					itemProp="reviewRating"
 					itemType="https://schema.org/Rating"
