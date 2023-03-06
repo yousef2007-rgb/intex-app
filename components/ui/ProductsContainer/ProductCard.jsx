@@ -23,13 +23,6 @@ export default function ProductCard({
 					itemProp="availability"
 					content="https://schema.org/InStock"
 				/>
-			</Head>
-			<Link
-				href={`/Product/${nid}`}
-				className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
-				itemScope
-				itemType="https://schema.org/Product"
-			>
 				<div
 					itemProp="reviewRating"
 					itemType="https://schema.org/Rating"
@@ -52,6 +45,13 @@ export default function ProductCard({
 				>
 					<meta itemProp="name" content="ACME" />
 				</div>
+			</Head>
+			<Link
+				href={`/Product/${nid}`}
+				className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
+				itemScope
+				itemType="https://schema.org/Product"
+			>
 				<img
 					src={image}
 					alt={discription + label}
