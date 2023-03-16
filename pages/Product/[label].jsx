@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../../components/ui/Header';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
-import useData from '../../Hooks/useData';
+import useData from '../../hooks/useData';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
 import componentData from '../../data/ProductPage.json';

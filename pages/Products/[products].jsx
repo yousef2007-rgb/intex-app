@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '../../components/ui/Header';
 import Intro from '../../components/ui/Intro/Intro';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
-import useData from '../../Hooks/useData';
+import useData from '../../hooks/useData';
 import Footer from '../../components/ui/Footer/Footer';
 
 export async function getServerSideProps(context) {
