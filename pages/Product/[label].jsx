@@ -74,7 +74,7 @@ export default function HomePage({ data, isLoading }) {
 			</Head>
 			<Header />
 
-			<div className=" flex items-center">
+			<main className=" mx-auto flex max-w-7xl items-center">
 				<div className="h-fit w-full">
 					<div className=" mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly border-b">
 						<img
@@ -167,7 +167,7 @@ export default function HomePage({ data, isLoading }) {
 						loadingAllowed={false}
 					/>
 				</div>
-			</div>
+			</main>
 			<Footer />
 		</div>
 	);

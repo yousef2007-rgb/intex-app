@@ -63,8 +63,8 @@ export default function HomePage({ isLoading, data }) {
 				<link rel="icon" href="/icon.jpg" />
 			</Head>
 
-			<div className="mt-20 flex h-screen flex-col tablet:mt-0">
-				<Header />
+			<Header />
+			<main className="mx-auto mt-20 flex h-screen max-w-7xl flex-col tablet:mt-0">
 				<ProductsContainer
 					number={products.products}
 					limit={0}
@@ -73,8 +73,8 @@ export default function HomePage({ isLoading, data }) {
 					isLoading={isLoading}
 					loadingAllowed={true}
 				/>
-				<Footer />
-			</div>
+			</main>
+			<Footer />
 		</>
 	);
 }

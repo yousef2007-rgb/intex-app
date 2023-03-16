@@ -49,7 +49,7 @@ export default function HomePage() {
 				<link rel="icon" href="/icon.jpg" />
 			</Head>
 			<Header />
-			<main className="mt-20 tablet:mt-0">
+			<main className="mx-auto mt-20 max-w-7xl tablet:mt-0">
 				<Intro
 					intros={[
 						{
