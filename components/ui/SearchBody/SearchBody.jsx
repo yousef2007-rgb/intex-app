@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Search from '../../../public/Assets/icons/Search';
-import useData from '../../../Hooks/useData';
+import useData from '../../../hooks/useData';
 import ProductCard from '../ProductsContainer/ProductCard';
 import Link from 'next/link';
 import Close from '../../../public/Assets/icons/Close';

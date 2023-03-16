@@ -2,7 +2,7 @@ import React from 'react';
 import ProductsContainer from './ProductsContainer';
 import componentData from '../../../data/ProducsContainerBody.json';
 import { useSelector } from 'react-redux';
-import useData from '../../../Hooks/useData';
+import useData from '../../../hooks/useData';
 
 export default function ProductsContainerBody() {
 	const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
