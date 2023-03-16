@@ -64,7 +64,7 @@ export default function HomePage({ isLoading, data }) {
 			</Head>
 
 			<Header />
-			<main className="mx-auto mt-20 flex h-screen max-w-7xl flex-col tablet:mt-0">
+			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
 				<ProductsContainer
 					number={products.products}
 					limit={0}

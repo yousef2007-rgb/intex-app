@@ -2,15 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-export default function ProductCard({
-	label,
-	discription,
-	image,
-	price,
-	cagotary,
-	nid,
-	loadingAllowed,
-}) {
+export default function ProductCard({ label, discription, image, price, nid }) {
 	return (
 		<>
 			<Head>
