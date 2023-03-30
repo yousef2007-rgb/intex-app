@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Intro({ intros }) {
-	console.log(intros);
 	return (
 		<div className="relative mt-16 flex flex-row-reverse flex-wrap justify-evenly pt-5">
 			{intros.map((item, index) => (

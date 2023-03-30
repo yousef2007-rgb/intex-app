@@ -10,7 +10,6 @@ import CartItem from '../../components/ui/CheckoutComponents/CartItem';
 export default function Checkout() {
 	const cartItems = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
-
 	const [totalPrice, setTotalPrice] = useState(0);
 
 	useEffect(() => {
@@ -21,6 +20,15 @@ export default function Checkout() {
 				parseFloat(cartItems[i].item.price * cartItems[i].quantity);
 		}
 		setTotalPrice(num);
+	}, [cartItems]);
+
+	const [cartItemsNumber, setCartItemsNumber] = useState(0);
+	useEffect(() => {
+		let num = 0;
+		for (let i = 0; i < cartItems.length; i++) {
+			num = num + cartItems[i].quantity;
+		}
+		setCartItemsNumber(num);
 	}, [cartItems]);
 
 	return (
@@ -40,9 +48,23 @@ export default function Checkout() {
 					<div className=" flex w-full flex-col items-center justify-evenly font-bold tablet:ml-auto tablet:w-fit tablet:flex-row">
 						<div className="my-4 flex  max-w-xs">
 							<button
-								className=" w-full rounded-xl border-2 border-secondery
-			 bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
-								onClick={() => dispatch(clearItems())}
+								className=" w-full rounded-xl border-2 border-secondery bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
+								onClick={() =>
+									fetch(
+										'http://orders.fore-site.net/media_admin/api/api_secure.php?method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"test_web_1","customer_id":"902930432","order_time":1675528715669,"status":"saved","sync_time":0,"synced":false,"total":27,"total_items":1,"items":"[{"discount":0.0,"id":22,"item_id":"2620","item_price":27.0,"quantity":1.0}]"}]&lang=en&username=28',
+										{
+											method: 'POST',
+											body: '',
+											headers: {
+												'Content-type':
+													'application/json; charset=UTF-8',
+											},
+										}
+									)
+										.then((response) => response.json())
+										.then((json) => console.log(json))
+										.catch((err) => console.error(err))
+								}
 							>
 								Stay Here and CheckOut
 							</button>
