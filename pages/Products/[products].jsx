@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function Products({ isLoading, data }) {
-	// const router = useRouter();
+	//  const router = useRouter();
 	// const products = router.query;
 	return (
 		<>
@@ -63,9 +63,10 @@ export default function Products({ isLoading, data }) {
 			<Header />
 			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
 				<ProductsContainer
-					number={products.products}
+					number={'345'}
+					// {products.products}
 					limit={0}
-					title={products.title}
+					title={'products.title'}
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
