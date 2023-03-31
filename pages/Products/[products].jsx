@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Head from 'next/head';
 import Header from '../../components/ui/Header';
-import Intro from '../../components/ui/Intro/Intro';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
 import Footer from '../../components/ui/Footer/Footer';
 
@@ -62,7 +61,7 @@ export default function Products({ isLoading, data }) {
 
 			<Header />
 			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
-				{/* <ProductsContainer
+				<ProductsContainer
 					number={'345'}
 					// {products.products}
 					limit={0}
@@ -70,7 +69,7 @@ export default function Products({ isLoading, data }) {
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
-				/> */}
+				/>
 			</main>
 			<Footer />
 		</>

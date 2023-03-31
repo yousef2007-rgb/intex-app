@@ -22,13 +22,13 @@ export default function ProductsContainer({
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
 				{title}
 			</h1>
-			<ProductsCards
+			{/* <ProductsCards
 				data={data}
 				currentProduct={currentProduct}
 				loadingAllowed={loadingAllowed}
 				number={number}
 				limit={limit}
-			/>
+			/> */}
 			{limit != 0 ? (
 				<ViewAllButton
 					number={number}
