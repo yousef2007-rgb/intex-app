@@ -18,16 +18,15 @@ export function ProductsCards({
 				)
 				.filter((_, index) => index < limit || limit == 0)
 				.map((product, index) => (
-					// <ProductCard
-					// 	key={index}
-					// 	label={product.label}
-					// 	discription={product.field_item_name}
-					// 	image={product.image}
-					// 	price={product.field_wholesale_price}
-					// 	nid={product.nid}
-					// 	loadingAllowed={loadingAllowed}
-					// />
-					<h1>Hello World</h1>
+					<ProductCard
+						key={index}
+						label={product.label}
+						discription={product.field_item_name}
+						image={product.image}
+						price={product.field_wholesale_price}
+						nid={product.nid}
+						loadingAllowed={loadingAllowed}
+					/>
 				))}
 		</div>
 	);
