@@ -60,9 +60,9 @@ export default function Products({ isLoading, data }) {
 				<link rel="icon" href="/icon.jpg" /> */}
 			</Head>
 
-			{/* <Header /> */}
+			<Header />
 			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
-				<ProductsContainer
+				{/* <ProductsContainer
 					number={'345'}
 					// {products.products}
 					limit={0}
@@ -70,9 +70,9 @@ export default function Products({ isLoading, data }) {
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
-				/>
+				/> */}
 			</main>
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }
