@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Header from '../../components/ui/Header';
 import Intro from '../../components/ui/Intro/Intro';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
-import useData from '../../hooks/useData';
 import Footer from '../../components/ui/Footer/Footer';
 
 export async function getServerSideProps(context) {
@@ -24,8 +23,8 @@ export default function HomePage({ isLoading, data }) {
 		<>
 			<Head>
 				<title>
-					Intex Jo | {products.title} Official Distributor for Intex
-					In Jordan
+					Intex Jo | {products.title ? ptoducts.title : ''} Official
+					Distributor for Intex In Jordan
 				</title>
 
 				{/* <meta
