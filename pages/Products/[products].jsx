@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
 	return { props: { data, isLoading: false } };
 }
 
-export default function HomePage({ isLoading, data }) {
+export default function Products({ isLoading, data }) {
 	const router = useRouter();
 	const products = router.query;
 	return (
