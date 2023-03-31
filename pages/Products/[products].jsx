@@ -28,7 +28,7 @@ export default function HomePage({ isLoading, data }) {
 					In Jordan
 				</title>
 
-				<meta
+				{/* <meta
 					name="keywords"
 					content="مسابح جاهزه للبيع في الأردن, IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs, برك سباحة intex , برك سباحة للاطفال , برك سباحة متنقلة , ,مسابح ,مسابح في الأردن , مسبح نفخ, نفخ , برك سباحة في الاردن , "
 				></meta>
@@ -60,7 +60,7 @@ export default function HomePage({ isLoading, data }) {
 					name="twitter:image"
 					content="https://www.intexjo.com/Assets/images/www.intexjo.com.png"
 				/>
-				<link rel="icon" href="/icon.jpg" />
+				<link rel="icon" href="/icon.jpg" /> */}
 			</Head>
 
 			<Header />
