@@ -17,15 +17,13 @@ export async function getServerSideProps(context) {
 }
 
 export default function Products({ isLoading, data }) {
-	const router = useRouter();
-	const products = router.query;
+	// const router = useRouter();
+	// const products = router.query;
 	return (
 		<>
 			<Head>
-				<title>
-					Intex Jo | {products.title ? products.title : ''} Official
-					Distributor for Intex In Jordan
-				</title>
+				<title>Distributor for Intex In Jordan</title>
+				{/* Intex Jo | {products.title ? products.title : ''} Official */}
 
 				{/* <meta
 					name="keywords"
