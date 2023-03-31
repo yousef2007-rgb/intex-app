@@ -23,7 +23,7 @@ export default function HomePage({ isLoading, data }) {
 		<>
 			<Head>
 				<title>
-					Intex Jo | {products.title ? ptoducts.title : ''} Official
+					Intex Jo | {products.title ? products.title : ''} Official
 					Distributor for Intex In Jordan
 				</title>
 
