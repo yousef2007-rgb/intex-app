@@ -2,7 +2,9 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Head from 'next/head';
 import Header from '../../components/ui/Header';
+import Intro from '../../components/ui/Intro/Intro';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
+import useData from '../../hooks/useData';
 import Footer from '../../components/ui/Footer/Footer';
 
 export async function getServerSideProps(context) {
@@ -15,16 +17,18 @@ export async function getServerSideProps(context) {
 	return { props: { data, isLoading: false } };
 }
 
-export default function Products({ isLoading, data }) {
-	//  const router = useRouter();
-	// const products = router.query;
+export default function HomePage({ isLoading, data }) {
+	const router = useRouter();
+	const products = router.query;
 	return (
 		<>
 			<Head>
-				<title>Distributor for Intex In Jordan</title>
-				{/* Intex Jo | {products.title ? products.title : ''} Official */}
+				<title>
+					Intex Jo | {products.title} Official Distributor for Intex
+					In Jordan
+				</title>
 
-				{/* <meta
+				<meta
 					name="keywords"
 					content="مسابح جاهزه للبيع في الأردن, IntexJo, intex jo, intex, intex jordan, intex product, Swimming pools, above ground pools, outdoor pools, pools, air mattress, airbeds, inflatable spas, spas, purespa, portable spa, dura-beam airbeds, premaire airbeds, realtree airbeds, air furniture, inflatable furniture, pool floats, pool toys, inflatable boats, boats, hot tubs, برك سباحة intex , برك سباحة للاطفال , برك سباحة متنقلة , ,مسابح ,مسابح في الأردن , مسبح نفخ, نفخ , برك سباحة في الاردن , "
 				></meta>
@@ -56,16 +60,15 @@ export default function Products({ isLoading, data }) {
 					name="twitter:image"
 					content="https://www.intexjo.com/Assets/images/www.intexjo.com.png"
 				/>
-				<link rel="icon" href="/icon.jpg" /> */}
+				<link rel="icon" href="/icon.jpg" />
 			</Head>
 
 			<Header />
 			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
 				<ProductsContainer
-					number={'345'}
-					// {products.products}
+					number={products.products}
 					limit={0}
-					title={'products.title'}
+					title={products.title}
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
