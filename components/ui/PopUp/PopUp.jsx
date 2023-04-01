@@ -6,6 +6,7 @@ export default function PopUp({
 	visability,
 	tougle,
 	usingRedux,
+	background,
 }) {
 	return (
 		<>
@@ -13,6 +14,7 @@ export default function PopUp({
 				visability={visability}
 				tougle={tougle}
 				usingRedux={usingRedux}
+				background={background}
 			/>
 			{Messege}
 		</>
