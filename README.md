@@ -1,4 +1,4 @@
-# Intex Pool Store
+## Intex Pool Store
 
 Intex Pool Store is a web application that allows users to browse and purchase Intex products, with a focus on above ground swimming pools. The application provides a range of filters to help users find the perfect pool for their backyard, including size, shape, and features such as built-in filters and pumps.
 
