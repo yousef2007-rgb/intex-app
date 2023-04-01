@@ -140,7 +140,7 @@ const PhoneNumberInput = ({
 }) => {
 	return (
 		<form
-			className="fixed top-[50%] left-1/2 mx-5 flex w-3/4  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
+			className="fixed top-[50%] left-1/2 mx-5 flex max-w-xs w-[90%]  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
 			style={{
 				display: PhoneNumberInputVisable,
 			}}
