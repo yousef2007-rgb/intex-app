@@ -14,7 +14,11 @@ export const cartSlice = createSlice({
 				return [...state, action.payload];
 			}
 			const index = state.indexOf(item);
-			state[index].quantity += action.payload.quantity;
+			if (!action.payload.replace) {
+				state[index].quantity += action.payload.quantity;
+			} else {
+				state[index].quantity = action.payload.quantity;
+			}
 			return state;
 		},
 		clearItems: (state, action) => {

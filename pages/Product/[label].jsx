@@ -144,6 +144,7 @@ export default function HomePage({ data, isLoading }) {
 														nid: product.nid,
 													},
 													quantity: counter,
+													replace: false,
 												})
 											);
 										} else {

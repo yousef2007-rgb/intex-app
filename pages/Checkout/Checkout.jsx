@@ -49,22 +49,39 @@ export default function Checkout() {
 						<div className="my-4 flex  max-w-xs">
 							<button
 								className=" w-full rounded-xl border-2 border-secondery bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
-								onClick={() =>
+								onClick={() =>{
+									const itemsArray = [];
+									cartItems.map((x, index) => {
+										itemsArray.push({
+											"discount": 0.0,
+											"item_id": String(x.item.nid),
+											"item_price": x.item.price,
+											"quantity": x.quantity,
+										})
+									})
+									console.log(itemsArray);
+									let itemsArrayJSON = JSON.stringify(itemsArray);
+									itemsArrayJSON = itemsArrayJSON.replace(/"/g, '\\"');
+									console.log(itemsArrayJSON);
 									fetch(
-										'http://orders.fore-site.net/media_admin/api/api_secure.php?method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"test_web_1","customer_id":"902930432","order_time":1675528715669,"status":"saved","sync_time":0,"synced":false,"total":27,"total_items":1,"items":"[{"discount":0.0,"id":22,"item_id":"2620","item_price":27.0,"quantity":1.0}]"}]&lang=en&username=28',
+										`http://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(+new Date*Math.random(1000))}","customer_id":"441","order_time":${+new Date},"status":"saved","sync_time":0,"synced":false,"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
 										{
 											method: 'POST',
 											body: '',
 											headers: {
-												'Content-type':
-													'application/json; charset=UTF-8',
+												// 'Content-type':
+												// 	'application/json; charset=UTF-8',
+												// 'Access-Control-Allow-Headers':
+												// 	'Content-Type',
 											},
 										}
 									)
 										.then((response) => response.json())
 										.then((json) => console.log(json))
 										.catch((err) => console.error(err))
+									dispatch(clearItems());
 								}
+							}
 							>
 								Stay Here and CheckOut
 							</button>

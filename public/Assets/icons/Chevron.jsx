@@ -11,9 +11,6 @@ export default function Chevron() {
 			<path
 				fill="none"
 				stroke="currentColor"
-				strokeLinecap="round"
-				strokeLlinejoin="round"
-				strokeWidth="48"
 				d="M112 184l144 144 144-144"
 			/>
 		</svg>
