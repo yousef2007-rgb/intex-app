@@ -8,13 +8,20 @@ import useData from '../../hooks/useData';
 import Footer from '../../components/ui/Footer/Footer';
 
 export async function getServerSideProps(context) {
-	const res = await fetch(process.env.NEXT_PUBLIC_URL);
+	const res = await fetch(
+		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=subcategory_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${context.params.products}&lang=en&username=28`
+	);
 	const data = await res.json();
 	context.res.setHeader(
 		'Cache-Control',
 		'public, s-maxage=50, stale-while-revalidate=59'
 	);
-	return { props: { data, isLoading: false } };
+	if (data.data.res[0].field_category == 55) {
+		return { props: { data, isLoading: false } };
+	} else {
+		context.res.writeHead(404);
+		context.res.end();
+	}
 }
 
 export default function HomePage({ isLoading, data }) {
