@@ -140,7 +140,7 @@ const PhoneNumberInput = ({
 }) => {
 	return (
 		<form
-			className="fixed top-[50%] left-1/2 mx-5 flex max-w-xs w-[90%]  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
+			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
 			style={{
 				display: PhoneNumberInputVisable,
 			}}
@@ -148,7 +148,7 @@ const PhoneNumberInput = ({
 		>
 			<div className=" flex flex-1 flex-col justify-evenly font-bold">
 				<label className="my-2" for="phone">
-					Enter your phone so we contact you
+					Enter your phone so we can contact you
 				</label>
 				<div className="flex h-8">
 					<input
@@ -163,7 +163,7 @@ const PhoneNumberInput = ({
 				</div>
 				<small>Format: 791234567</small>
 			</div>
-			<div className="my-5">
+			<div className="mt-5">
 				<input
 					className="cursor-pointer  rounded-lg bg-secondery px-5 py-1 font-bold text-white"
 					value={'submite'}
