@@ -51,7 +51,6 @@ export default function Checkout() {
 				quantity: x.quantity,
 			});
 		});
-		console.log(itemsArray);
 		let itemsArrayJSON = JSON.stringify(itemsArray);
 		itemsArrayJSON = itemsArrayJSON.replace(/"/g, '\\"');
 		fetch(
