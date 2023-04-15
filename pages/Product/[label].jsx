@@ -92,7 +92,7 @@ export default function HomePage({ data, isLoading }) {
 									{product.label}
 								</h2>
 								<div
-									className=" my-2 list-disc border-b pb-10 [&>*]:list-disc"
+									className=" my-2 list-disc border-b px-3 pb-10 [&>*]:list-disc"
 									dangerouslySetInnerHTML={{
 										__html: product.field_details,
 									}}
