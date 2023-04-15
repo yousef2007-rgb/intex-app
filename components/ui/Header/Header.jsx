@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { tougleLanguage } from '../../../slices/languageSlice';
 import PopUp from '../PopUp/PopUp';
 export default function Header() {
-	const language = useSelector((state) => state.language);
+	const content = useSelector((state) => state.language);
 	const [navigationVisability, setNavigationVisability] = useState('none');
 	const tougleNavigationVisability = () => {
 		setNavigationVisability(
@@ -20,7 +20,7 @@ export default function Header() {
 	useEffect(() => {
 		if (
 			JSON.parse(window.localStorage.getItem('language')) == 'arabic' &&
-			language == 'english'
+			content.language == 'english'
 		) {
 			dispatch(tougleLanguage());
 		}
@@ -31,7 +31,8 @@ export default function Header() {
 			<header
 				className={`z-50 mx-auto flex h-20 max-w-5xl items-center`}
 				style={{
-					flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
+					flexDirection:
+						content.language == 'arabic' ? 'row-reverse' : 'row',
 				}}
 			>
 				<NavigationButton

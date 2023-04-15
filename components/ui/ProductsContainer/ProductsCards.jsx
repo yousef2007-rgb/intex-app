@@ -23,7 +23,11 @@ export function ProductsCards({
 						label={product.label}
 						discription={product.field_item_name}
 						image={product.image}
-						price={product.field_wholesale_price}
+						price={
+							product.field_online_price
+								? product.field_online_price
+								: product.field_wholesale_price * 1.5
+						}
 						nid={product.nid}
 						loadingAllowed={loadingAllowed}
 					/>

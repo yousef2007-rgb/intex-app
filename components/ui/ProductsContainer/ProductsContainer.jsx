@@ -14,7 +14,7 @@ export default function ProductsContainer({
 	isLoading,
 	loadingAllowed,
 }) {
-	const language = useSelector((state) => state.language);
+	const content = useSelector((state) => state.language);
 	return isLoading ? (
 		<Loading />
 	) : (
@@ -33,8 +33,7 @@ export default function ProductsContainer({
 				<ViewAllButton
 					number={number}
 					title={title}
-					language={language}
-					uiData={uiData}
+					content={content}
 				/>
 			) : (
 				''

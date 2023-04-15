@@ -30,13 +30,10 @@ export default function HomePage({ data, isLoading }) {
 		'data'
 	);
 	const dispatch = useDispatch();
-	const language = useSelector((state) => state.language);
-	const uiData =
-		language == 'arabic' ? componentData.arabic : componentData.english;
+	const content = useSelector((state) => state.language);
 
 	const [counter, setCounter] = useState(1);
 	const product = data.data.res[0];
-
 	return (
 		<div className=" mt-20">
 			<Head>
@@ -77,11 +74,7 @@ export default function HomePage({ data, isLoading }) {
 			<main className=" mx-auto flex max-w-7xl items-center">
 				<div className="h-fit w-full">
 					<div className=" mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly border-b">
-						<img
-							className="aspect-square h-fit w-full max-w-lg rounded-xl object-contain tablet:w-1/2 tablet:min-w-[400px]"
-							src={product.image}
-							itemProp="product image"
-						/>
+						<Slider product={product} />
 
 						<article className="h-fit w-full p-5 font-bold tablet:ml-4 tablet:w-1/2">
 							<div>
@@ -92,20 +85,68 @@ export default function HomePage({ data, isLoading }) {
 									{product.field_item_name}
 								</h1>
 								<h2
-									className="  w-full border-b pb-10 font-normal capitalize"
+									className="  w-full font-normal capitalize"
 									itemProp="item id"
 								>
-									{uiData.itemNumber}: {product.label}
+									{content.ProductPage.itemNumber}:{' '}
+									{product.label}
 								</h2>
+								<div
+									className=" my-2 list-disc border-b pb-10 [&>*]:list-disc"
+									dangerouslySetInnerHTML={{
+										__html: product.field_details,
+									}}
+								></div>
 							</div>
 							<div className=" flex w-full flex-col">
 								<p
 									itemProp="price"
-									className=" my-5 ml-auto text-2xl capitalize"
+									className=" my-2 ml-auto text-2xl capitalize"
 								>
-									{product.field_wholesale_price * 1.5} JOD
+									<span className="text-2xl font-bold text-red-500">
+										{product.field_special_price
+											? '-' +
+											  parseInt(
+													(product.field_special_price /
+														(product.field_online_price
+															? product.field_online_price
+															: product.field_wholesale_price *
+															  1.5)) *
+														100
+											  ) +
+											  '%'
+											: ''}
+									</span>{' '}
+									{product.field_special_price
+										? product.field_special_price + 'JOD'
+										: (product.field_online_price
+												? product.field_online_price
+												: product.field_wholesale_price *
+												  1.5) + 'JOD'}
 								</p>
-
+								<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
+									{product.field_special_price ? (
+										<>
+											<span>List Price: </span>
+											<p
+												itemProp="price"
+												style={{
+													textDecoration:
+														'line-through',
+												}}
+											>
+												{product.field_online_price
+													? product.field_online_price +
+													  'JOD'
+													: product.field_wholesale_price *
+															1.5 +
+													  'JOD'}
+											</p>
+										</>
+									) : (
+										''
+									)}
+								</div>
 								<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
 									<button
 										onClick={() => {
@@ -153,13 +194,13 @@ export default function HomePage({ data, isLoading }) {
 									}}
 									className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery px-20 py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:w-fit"
 								>
-									{uiData.addToCartButton}
+									{content.ProductPage.addToCartButton}
 								</button>
 							</div>
 						</article>
 					</div>
 					<ProductsContainer
-						title={uiData.relatedProducts}
+						title={content.ProductPage.relatedProducts}
 						limit={3}
 						number={product.field_subcategory}
 						data={relatedData}
@@ -173,3 +214,65 @@ export default function HomePage({ data, isLoading }) {
 		</div>
 	);
 }
+
+const Slider = ({ product }) => {
+	const slides = [product.image, ...product.images];
+	const [activeSlide, setActiveSlide] = useState(0);
+
+	const handlePrev = () => {
+		setActiveSlide(activeSlide === 0 ? slides.length - 1 : activeSlide - 1);
+	};
+
+	const handleNext = () => {
+		setActiveSlide(activeSlide === slides.length - 1 ? 0 : activeSlide + 1);
+	};
+
+	const handleSlideButtonClick = (index) => {
+		setActiveSlide(index);
+	};
+
+	return (
+		<div className="relative h-96 w-full max-w-lg">
+			{slides.map((slide, index) => (
+				<div
+					key={index + 1}
+					className={`absolute top-0 left-0 h-full w-full opacity-0 transition-opacity duration-500 ease-in-out`}
+					style={{
+						opacity: index === activeSlide ? 1 : 0,
+					}}
+				>
+					<img
+						src={slide}
+						alt={`Slide ${slide.id}`}
+						className="h-full w-full rounded-xl object-contain"
+					/>
+				</div>
+			))}
+			<div className="absolute bottom-0 left-0 right-0 mb-4 flex justify-center">
+				{slides.map((slide, index) => (
+					<button
+						key={slide.id}
+						className={`mx-2 h-2 w-2 rounded-full ${
+							index === activeSlide
+								? 'bg-secondery'
+								: 'bg-gray-300'
+						}`}
+						onClick={() => handleSlideButtonClick(index)}
+					/>
+				))}
+			</div>
+			<button
+				className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg hover:bg-secondery hover:text-white"
+				onClick={handlePrev}
+			>
+				&lt;
+			</button>
+			<button
+				className="hover:text-whitebackdrop-blur-lg  absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg transition-all hover:bg-secondery hover:text-white "
+				onClick={handleNext}
+			>
+				&gt;
+			</button>
+		</div>
+	);
+};

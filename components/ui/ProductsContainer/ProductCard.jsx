@@ -20,7 +20,7 @@ export default function ProductCard({ label, discription, image, price, nid }) {
 					{discription}
 				</h1>
 				<h2 className=" w-fit font-bold text-secondery">{label}</h2>
-				<h3 className=" my-2 w-fit font-bold">{price * 1.5}JOD</h3>
+				<h3 className=" my-2 w-fit font-bold">{price}JOD</h3>
 			</div>
 		</Link>
 	);

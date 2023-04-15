@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import data from '../data/content.json'
 
-const initialState = "english";
+const ar = data.ar;
+const en = data.en;
+
+const initialState = en;
 
 export const languageSlice = createSlice({
 	name: "language",
 	initialState,
 	reducers: {
 		tougleLanguage: (state) => {
-			let result = state == "english" ? "arabic" : "english"
-			window.localStorage.setItem("language", JSON.stringify(result))
+			let result = state.language == "english" ? ar : en;
+			// window.localStorage.setItem("language", JSON.stringify(result))
 			return result;
 		},
 	},

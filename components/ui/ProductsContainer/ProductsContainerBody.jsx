@@ -6,12 +6,11 @@ import useData from '../../../hooks/useData';
 
 export default function ProductsContainerBody() {
 	const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
-	const language = useSelector((state) => state.language);
-	const uiData =
-		language == 'arabic' ? componentData.arabic : componentData.english;
+	const content = useSelector((state) => state.language);
+
 	return (
 		<div>
-			{uiData.map((item, index) => (
+			{content.ProductContainerBody.map((item, index) => (
 				<ProductsContainer
 					key={index}
 					title={item.title}

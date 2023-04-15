@@ -1,0 +1,224 @@
+{
+	"en": {
+		"language": "english",
+		"Cart": {
+			"title": "cart",
+			"checkoutButton": "checkout using whatsapp"
+		},
+		"Header": {
+			"navigation": [
+				{
+					"title": "Products",
+					"menu": [
+						{
+							"items": [
+								{
+									"text": "Inflated Products",
+									"link": "/Products/1515?title=inflated%20products"
+								},
+								{
+									"text": "Pools",
+									"link": "/Products/342?title=pools"
+								},
+								{
+									"text": "Inflated Pools",
+									"link": "/Products/343?title=inflated%20pools"
+								},
+								{
+									"text": "Furniture",
+									"link": "/Products/1944?title=furniture"
+								},
+								{
+									"text": "Accessories",
+									"link": "/Products/344?title=accessories"
+								},
+								{
+									"text": "Inflated Boats",
+									"link": "/Products/1514?title=inflated%20boats"
+								},
+								{
+									"text": "Blower",
+									"link": "/Products/346?title=blower"
+								}
+							]
+						}
+					],
+					"link": "/"
+				},
+				{
+					"title": "Replacement parts",
+					"menu": [
+						{
+							"items": [
+								{
+									"text": "Pool Equipment",
+									"link": "/Products/345?title=pool%20equipment"
+								}
+							]
+						}
+					],
+					"link": "/"
+				},
+				{
+					"title": "About us",
+					"menu": null,
+					"link": "/AboutUs"
+				}
+			]
+		},
+		"ProductContainerBody": [
+			{
+				"title": "inflated products",
+				"number": "1515"
+			},
+			{
+				"title": "pools",
+				"number": "342"
+			},
+			{
+				"title": "inflated pools",
+				"number": "343"
+			},
+			{
+				"title": "accessories",
+				"number": "344"
+			},
+			{
+				"title": "blower",
+				"number": "346"
+			},
+			{
+				"title": "inflated boats",
+				"number": "1514"
+			},
+			{
+				"title": "pool equipment",
+				"number": "345"
+			},
+
+			{
+				"title": "furniture",
+				"number": "1944"
+			}
+		],
+		"ProductContainer": {
+			"viewAllButton": "view all"
+		},
+		"ProductPage": {
+			"addToCartButton": "add to cart",
+			"itemNumber": "item number",
+			"relatedProducts": "related products"
+		}
+	},
+	"ar": {
+		"language": "arabic",
+		"Cart": {
+			"title": "قائمة المشتريات",
+			"checkoutButton": "الشراء عبر الواتس اب"
+		},
+		"Header": {
+			"navigation": [
+				{
+					"title": "المنتجات",
+					"menu": [
+						{
+							"items": [
+								{
+									"text": "المنتجات القابلة للنفخ",
+									"link": "/Products/1515?title=المنتجات%20القابلة%20للنفخ"
+								},
+								{
+									"text": "برك",
+									"link": "/Products/342?title=البرك"
+								},
+								{
+									"text": "برك قابلة للنفخ",
+									"link": "/Products/343?title=البرك20%قابلة20%للنفخ"
+								},
+								{
+									"text": "اثاث",
+									"link": "/Products/1944?title=الاثاث"
+								},
+								{
+									"text": "اكسسوارات",
+									"link": "/Products/344?title=اكسسوارات"
+								},
+								{
+									"text": "قوارب قابلة للنفخ",
+									"link": "/Products/1514?title=قوارب%20القابلة%20للنفخ"
+								},
+								{
+									"text": "منفاخ",
+									"link": "/Products/346?title=منافيخ"
+								}
+							]
+						}
+					],
+					"link": "/"
+				},
+				{
+					"title": "قطع غيار",
+					"menu": [
+						{
+							"items": [
+								{
+									"text": "اكسسوارات للبرك",
+									"link": "/Products/345?title=pool%20equipment"
+								}
+							]
+						}
+					],
+					"link": "/"
+				},
+				{
+					"title": "عنا",
+					"menu": null,
+					"link": "/AboutUs"
+				}
+			]
+		},
+
+		"ProductContainerBody": [
+			{
+				"title": "منتجات قابلة للنفخ",
+				"number": "1515"
+			},
+			{
+				"title": "برك",
+				"number": "342"
+			},
+			{
+				"title": "برك قابلة للنفخ",
+				"number": "343"
+			},
+			{
+				"title": "اكسسوارات",
+				"number": "344"
+			},
+			{
+				"title": "منافيخ",
+				"number": "346"
+			},
+			{
+				"title": "قوارب قابلة للنفخ",
+				"number": "1514"
+			},
+			{
+				"title": "اكسسوارات البرك",
+				"number": "345"
+			},
+			{
+				"title": "اثاث",
+				"number": "1944"
+			}
+		],
+		"ProductContainer": {
+			"viewAllButton": "عرض الجميع"
+		},
+		"ProductPage": {
+			"addToCartButton": "اضف الى القائمة",
+			"itemNumber": "رقم المنتج",
+			"relatedProducts": "منتجات لها علاقة"
+		}
+	}
+}

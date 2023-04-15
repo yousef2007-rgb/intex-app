@@ -8,13 +8,14 @@ export default function LanguageButton() {
 		<button
 			className=" flex font-bold capitalize tablet:mx-3"
 			style={{
-				flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
-				marginLeft: language == 'english' ? 'auto' : 'unset',
-				marginRight: language == 'arabic' ? 'auto' : 'unset',
+				flexDirection:
+					language.language == 'arabic' ? 'row-reverse' : 'row',
+				marginLeft: language.language == 'english' ? 'auto' : 'unset',
+				marginRight: language.language == 'arabic' ? 'auto' : 'unset',
 			}}
 			onClick={() => dispatch(tougleLanguage())}
 		>
-			{language == 'arabic' ? 'EN' : 'AR'}
+			{language.language == 'arabic' ? 'EN' : 'AR'}
 		</button>
 	);
 }
