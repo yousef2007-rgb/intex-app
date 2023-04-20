@@ -107,12 +107,13 @@ export default function HomePage({ data, isLoading }) {
 										{product.field_special_price
 											? '-' +
 											  parseInt(
-													(product.field_special_price /
-														(product.field_online_price
-															? product.field_online_price
-															: product.field_wholesale_price *
-															  1.5)) *
-														100
+													100 -
+														(product.field_special_price /
+															(product.field_online_price
+																? product.field_online_price
+																: product.field_wholesale_price *
+																  1.5)) *
+															100
 											  ) +
 											  '%'
 											: ''}
@@ -179,9 +180,12 @@ export default function HomePage({ data, isLoading }) {
 														discription:
 															product.field_item_name,
 														label: product.label,
-														price:
-															product.field_wholesale_price *
-															1.5,
+														price: product.field_special_price
+															? product.field_special_price
+															: product.field_online_price
+															? product.field_online_price
+															: product.field_wholesale_price *
+															  1.5,
 														nid: product.nid,
 													},
 													quantity: counter,

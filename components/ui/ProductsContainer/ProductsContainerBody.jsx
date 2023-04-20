@@ -4,8 +4,7 @@ import componentData from '../../../data/ProducsContainerBody.json';
 import { useSelector } from 'react-redux';
 import useData from '../../../hooks/useData';
 
-export default function ProductsContainerBody() {
-	const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
+export default function ProductsContainerBody({ data }) {
 	const content = useSelector((state) => state.language);
 
 	return (
@@ -17,7 +16,7 @@ export default function ProductsContainerBody() {
 					number={item.number}
 					limit={3}
 					data={data}
-					isLoading={isLoading}
+					isLoading={false}
 					loadingAllowed={true}
 				/>
 			))}

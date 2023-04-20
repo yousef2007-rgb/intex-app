@@ -1,12 +1,25 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../../components/ui/Header';
-import Intro from '../../components/ui/Intro/Intro';
-import ProductsContainer from '../../components/ui/ProductsContainer';
-import Footer from '../../components/ui/Footer/Footer';
-import { addCartItem } from '../../slices/cartSlice';
+import Header from '../components/ui/Header';
+import Intro from '../components/ui/Intro/Intro';
+import ProductsContainerBody from '../components/ui/ProductsContainer/ProductsContainerBody';
+import Footer from '../components/ui/Footer/Footer';
 
-export default function HomePage() {
+export async function getServerSideProps(context) {
+	const res = await fetch(
+		'https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151'
+	);
+	const data = await res.json();
+	context.res.setHeader(
+		'Cache-Control',
+		'public, s-maxage=50, stale-while-revalidate=59'
+	);
+	console.log(data);
+	return { props: { data, isLoading: false } };
+}
+
+export default function HomePage({ data, isLoading }) {
+	// console.log(data);
 	return (
 		<div>
 			<Head>
@@ -79,7 +92,7 @@ export default function HomePage() {
 						},
 					]}
 				/>
-				<ProductsContainer />
+				<ProductsContainerBody data={data} />
 			</main>
 			<Footer />
 		</div>

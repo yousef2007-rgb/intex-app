@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../../../data/Header.json';
 import Buttons from './Button';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -9,8 +8,7 @@ export default function Navigation({
 	setNavigationVisability,
 	tougle,
 }) {
-	const language = useSelector((state) => state.language);
-	const uiData = language == 'english' ? data.english : data.arabic;
+	const content = useSelector((state) => state.language);
 
 	return (
 		<nav
@@ -27,7 +25,7 @@ export default function Navigation({
 			>
 				<Close />
 			</button>
-			{uiData.navigation.map((item, index) => (
+			{content.Header.navigation.map((item, index) => (
 				<Buttons
 					key={index}
 					text={item.title}

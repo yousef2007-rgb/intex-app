@@ -20,7 +20,14 @@ export default function ProductCard({ label, discription, image, price, nid }) {
 					{discription}
 				</h1>
 				<h2 className=" w-fit font-bold text-secondery">{label}</h2>
-				<h3 className=" my-2 w-fit font-bold">{price}JOD</h3>
+				<h3 className=" my-2 w-fit font-bold">
+					{price.specialPrice
+						? price.specialPrice + 'JOD'
+						: price.listPrice + 'JOD'}
+				</h3>
+				<h4 className="text-sm font-bold text-gray-500 line-through">
+					{price.specialPrice ? price.listPrice + 'JOD' : ''}
+				</h4>
 			</div>
 		</Link>
 	);
