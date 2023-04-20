@@ -236,47 +236,55 @@ const Slider = ({ product }) => {
 	};
 
 	return (
-		<div className="relative h-96 w-full max-w-lg">
-			{slides.map((slide, index) => (
-				<div
-					key={index + 1}
-					className={`absolute top-0 left-0 h-full w-full opacity-0 transition-opacity duration-500 ease-in-out`}
-					style={{
-						opacity: index === activeSlide ? 1 : 0,
-					}}
+		<div className="w-full max-w-lg">
+			<div className="relative h-96 w-full max-w-lg">
+				{slides.map((slide, index) => (
+					<div
+						key={index + 1}
+						className={`absolute top-0 left-0 h-full w-full opacity-0 transition-opacity duration-500 ease-in-out`}
+						style={{
+							opacity: index === activeSlide ? 1 : 0,
+						}}
+					>
+						<img
+							src={slide}
+							alt={`Slide ${slide.id}`}
+							className="h-full w-full rounded-xl object-contain"
+						/>
+					</div>
+				))}
+				{/* <button
+					className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg hover:bg-secondery hover:text-white"
+					onClick={handlePrev}
 				>
-					<img
-						src={slide}
-						alt={`Slide ${slide.id}`}
-						className="h-full w-full rounded-xl object-contain"
-					/>
-				</div>
-			))}
-			<div className="absolute bottom-0 left-0 right-0 mb-4 flex justify-center">
+					&lt;
+				</button>
+				<button
+					className="hover:text-whitebackdrop-blur-lg  absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg transition-all hover:bg-secondery hover:text-white "
+					onClick={handleNext}
+				>
+					&gt;
+				</button> */}
+			</div>
+			<div className="my-4 flex flex-wrap justify-evenly">
 				{slides.map((slide, index) => (
 					<button
-						key={slide.id}
-						className={`mx-2 h-2 w-2 rounded-full ${
-							index === activeSlide
-								? 'bg-secondery'
-								: 'bg-gray-300'
-						}`}
-						onClick={() => handleSlideButtonClick(index)}
-					/>
+						className="m-1"
+						key={index}
+						onMouseEnter={() => handleSlideButtonClick(index)}
+					>
+						<img
+							className="h-20 w-20 rounded-xl border  object-contain"
+							style={{
+								borderColor:
+									index === activeSlide ? 'black' : 'silver',
+							}}
+							src={slide}
+							alt={`Thumbnail ${slide.id}`}
+						/>
+					</button>
 				))}
 			</div>
-			<button
-				className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg hover:bg-secondery hover:text-white"
-				onClick={handlePrev}
-			>
-				&lt;
-			</button>
-			<button
-				className="hover:text-whitebackdrop-blur-lg  absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg transition-all hover:bg-secondery hover:text-white "
-				onClick={handleNext}
-			>
-				&gt;
-			</button>
 		</div>
 	);
 };
