@@ -274,7 +274,7 @@ const Slider = ({ product }) => {
 						onMouseEnter={() => handleSlideButtonClick(index)}
 					>
 						<img
-							className="h-20 w-20 rounded-xl border  object-contain"
+							className="h-20 w-20 rounded-xl border-2  object-contain"
 							style={{
 								borderColor:
 									index === activeSlide ? 'black' : 'silver',
