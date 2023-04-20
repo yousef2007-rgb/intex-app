@@ -253,18 +253,6 @@ const Slider = ({ product }) => {
 						/>
 					</div>
 				))}
-				{/* <button
-					className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg hover:bg-secondery hover:text-white"
-					onClick={handlePrev}
-				>
-					&lt;
-				</button>
-				<button
-					className="hover:text-whitebackdrop-blur-lg  absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full border-secondery bg-white bg-opacity-50 p-4 backdrop-blur-lg transition-all hover:bg-secondery hover:text-white "
-					onClick={handleNext}
-				>
-					&gt;
-				</button> */}
 			</div>
 			<div className="my-4 flex flex-wrap justify-evenly">
 				{slides.map((slide, index) => (
@@ -280,7 +268,7 @@ const Slider = ({ product }) => {
 									index === activeSlide ? 'black' : 'silver',
 							}}
 							src={slide}
-							alt={`Thumbnail ${slide.id}`}
+							alt={`Thumbnail ${index}`}
 						/>
 					</button>
 				))}
