@@ -14,12 +14,10 @@ export async function getServerSideProps(context) {
 		'Cache-Control',
 		'public, s-maxage=50, stale-while-revalidate=59'
 	);
-	console.log(data);
 	return { props: { data, isLoading: false } };
 }
 
 export default function HomePage({ data, isLoading }) {
-	// console.log(data);
 	return (
 		<div>
 			<Head>

@@ -55,7 +55,7 @@ export default function Checkout() {
 		let itemsArrayJSON = JSON.stringify(itemsArray);
 		itemsArrayJSON = itemsArrayJSON.replace(/"/g, '\\"');
 		fetch(
-			`http://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(
+			`https://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(
 				+new Date() * Math.random(1000)
 			)}","notes":"${phone}-${name}-${location}","customer_id":"${parseInt(
 				phone
