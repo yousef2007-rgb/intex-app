@@ -15,6 +15,7 @@ export default function Checkout() {
 	const [PhoneNumberInputVisable, setPhoneNumberInputVisability] =
 		useState('none');
 	const [phone, setPhone] = useState('');
+	const [name, setName] = useState('');
 	const [location, setLocation] = useState('');
 	const touglePhoneNumberInputVisablity = () => {
 		setPhoneNumberInputVisability(
@@ -56,7 +57,7 @@ export default function Checkout() {
 		fetch(
 			`http://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(
 				+new Date() * Math.random(1000)
-			)}","customer_id":"${parseInt(
+			)}","notes":"${phone}-${name}-${location}","customer_id":"${parseInt(
 				phone
 			)}","order_time":${+new Date()},"status":"saved","sync_time":0,"synced":false,"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
 			{
@@ -67,7 +68,7 @@ export default function Checkout() {
 			.then((json) => console.log(json))
 			.catch((err) => console.error(err));
 		touglePhoneNumberInputVisablity();
-		dispatch(clearItems());
+		// dispatch(clearItems());
 	};
 
 	return (
@@ -81,12 +82,13 @@ export default function Checkout() {
 						usingRedux={false}
 						background={true}
 						messege={
-							<PhoneNumberInput
+							<UserInfoForm
 								PhoneNumberInputVisable={
 									PhoneNumberInputVisable
 								}
 								setLocation={setLocation}
 								setPhone={setPhone}
+								setName={setName}
 								handleSubmit={handleSubmit}
 							/>
 						}
@@ -131,9 +133,10 @@ export default function Checkout() {
 	);
 }
 
-const PhoneNumberInput = ({
+const UserInfoForm = ({
 	PhoneNumberInputVisable,
 	setPhone,
+	setName,
 	setLocation,
 	handleSubmit,
 }) => {
@@ -146,6 +149,19 @@ const PhoneNumberInput = ({
 			onSubmit={handleSubmit}
 		>
 			<div className=" flex flex-1 flex-col justify-evenly font-bold">
+				<label className="my-2" for="name">
+					Enter your full name
+				</label>
+				<div className="flex h-8">
+					<input
+						className=" flex-1 border outline-none"
+						type="text"
+						id="name"
+						name="name"
+						onChange={(e) => setName(e.target.value)}
+						required
+					/>
+				</div>
 				<label className="my-2" for="phone">
 					Enter your phone so we can contact you
 				</label>
@@ -161,6 +177,19 @@ const PhoneNumberInput = ({
 					/>
 				</div>
 				<small>Format: 791234567</small>
+				<label className="my-2" for="location">
+					Enter your full location
+				</label>
+				<div className="flex h-8">
+					<input
+						className=" flex-1 border outline-none"
+						type="text"
+						id="location"
+						name="location"
+						onChange={(e) => setLocation(e.target.value)}
+						required
+					/>
+				</div>
 			</div>
 			<div className="mt-5">
 				<input

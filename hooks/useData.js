@@ -4,7 +4,7 @@ const useData = (url, key) => {
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		if (window.localStorage.getItem("data")) {
-			const storage = new Promise((resolve, reject) => {
+			new Promise((resolve, reject) => {
 				resolve(window.localStorage.getItem(key));
 			}).then((data) => {
 				setData(JSON.parse(data));
