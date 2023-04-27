@@ -68,7 +68,7 @@ export default function Checkout() {
 			.then((json) => console.log(json))
 			.catch((err) => console.error(err));
 		touglePhoneNumberInputVisablity();
-		// dispatch(clearItems());
+		dispatch(clearItems());
 	};
 
 	return (
