@@ -4,6 +4,7 @@ import Header from '../components/ui/Header';
 import Intro from '../components/ui/Intro/Intro';
 import ProductsContainerBody from '../components/ui/ProductsContainer/ProductsContainerBody';
 import Footer from '../components/ui/Footer/Footer';
+import WhatsappButton from '../components/ui/WhatsappButton';
 
 export async function getServerSideProps(context) {
 	const res = await fetch(
@@ -93,6 +94,7 @@ export default function HomePage({ data, isLoading }) {
 				<ProductsContainerBody data={data} />
 			</main>
 			<Footer />
+			<WhatsappButton />
 		</div>
 	);
 }

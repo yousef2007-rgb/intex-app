@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
 import componentData from '../../data/ProductPage.json';
 import Footer from '../../components/ui/Footer/Footer';
+import WhatsappButton from '../../components/ui/WhatsappButton';
 
 export async function getServerSideProps(context) {
 	const res = await fetch(
@@ -215,6 +216,7 @@ export default function HomePage({ data, isLoading }) {
 				</div>
 			</main>
 			<Footer />
+			<WhatsappButton />
 		</div>
 	);
 }

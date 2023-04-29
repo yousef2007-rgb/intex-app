@@ -7,6 +7,7 @@ import { clearItems } from '../../slices/cartSlice';
 import WhatsappCheckout from '../../components/ui/CartComponent/WhatsappCheckout';
 import CartItem from '../../components/ui/CheckoutComponents/CartItem';
 import PopUp from '../../components/ui/PopUp/PopUp';
+import WhatsappButton from '../../components/ui/WhatsappButton';
 
 export default function Checkout() {
 	const cartItems = useSelector((state) => state.cart);
@@ -129,6 +130,7 @@ export default function Checkout() {
 				</h1>
 			)}
 			<Footer />
+			<WhatsappButton />
 		</div>
 	);
 }
