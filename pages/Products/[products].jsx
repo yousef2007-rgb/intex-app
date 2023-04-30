@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '../../components/ui/Header';
 import Intro from '../../components/ui/Intro/Intro';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
-import useData from '../../hooks/useData';
+import useFetch from '../../hooks/useFetch';
 import Footer from '../../components/ui/Footer/Footer';
 import WhatsappButton from '../../components/ui/WhatsappButton';
 

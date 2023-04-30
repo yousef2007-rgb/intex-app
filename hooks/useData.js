@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-const useData = (url, key) => {
+const useFetch = (url, key) => {
 	const [data, setData] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
@@ -27,4 +27,4 @@ const useData = (url, key) => {
 	}, []);
 	return [data, isLoading];
 };
-export default useData;
+export default useFetch;

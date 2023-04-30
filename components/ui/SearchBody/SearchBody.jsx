@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Search from '../../../public/Assets/icons/Search';
-import useData from '../../../hooks/useData';
+import useFetch from '../../../hooks/useFetch';
 import ProductCard from '../ProductsContainer/ProductCard';
 import Link from 'next/link';
 import Close from '../../../public/Assets/icons/Close';
@@ -11,7 +11,7 @@ export default function SearchBody({ visability }) {
 	const input = useRef(null);
 	const text = 'Hello World'.toLowerCase();
 	const [textValue, setTextValue] = useState('');
-	const [data, isLoading] = useData(process.env.NEXT_PUBLIC_URL, 'data');
+	const [data, isLoading] = useFetch(process.env.NEXT_PUBLIC_URL, 'data');
 	const searchVisability = useSelector((state) => state.searchVisability);
 	const dispatch = useDispatch();
 	return (
@@ -49,11 +49,19 @@ export default function SearchBody({ visability }) {
 									<ProductCard
 										key={index}
 										label={product.label}
-										nid={product.nid}
 										discription={product.field_item_name}
 										image={product.image}
-										price={product.field_wholesale_price}
-										loadingAllowed={true}
+										secondImage={product.images[0]}
+										price={{
+											specialPrice:
+												product.field_special_price,
+											listPrice:
+												product.field_online_price
+													? product.field_online_price
+													: product.field_wholesale_price *
+													  1.5,
+										}}
+										nid={product.nid}
 									/>
 								))
 						: ''}

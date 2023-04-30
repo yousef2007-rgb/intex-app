@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../../components/ui/Header';
 import ProductsContainer from '../../components/ui/ProductsContainer/ProductsContainer';
-import useData from '../../hooks/useData';
+import useFetch from '../../hooks/useFetch';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
 import componentData from '../../data/ProductPage.json';
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 	}
 }
 export default function HomePage({ data, isLoading }) {
-	const [relatedData, relatedIsLoading] = useData(
+	const [relatedData, relatedIsLoading] = useFetch(
 		process.env.NEXT_PUBLIC_URL,
 		'data'
 	);
