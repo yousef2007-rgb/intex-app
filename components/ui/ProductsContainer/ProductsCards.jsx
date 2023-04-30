@@ -23,6 +23,7 @@ export function ProductsCards({
 						label={product.label}
 						discription={product.field_item_name}
 						image={product.image}
+						secondImage={product.images[0]}
 						price={{
 							specialPrice: product.field_special_price,
 							listPrice: product.field_online_price

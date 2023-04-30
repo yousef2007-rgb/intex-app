@@ -1,18 +1,29 @@
 import React from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 
-export default function ProductCard({ label, discription, image, price, nid }) {
+export default function ProductCard({
+	label,
+	discription,
+	image,
+	secondImage,
+	price,
+	nid,
+}) {
+	const [hover, setHover] = useState(false);
 	return (
 		<Link
 			href={`/Product/${nid}`}
 			className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
 			itemScope
 			itemType="https://schema.org/Product"
+			onMouseEnter={() => setHover(true)}
+			onMouseLeave={() => setHover(false)}
 		>
 			<img
-				src={image}
+				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
-				className="aspect-square h-52 w-full rounded-xl object-contain"
+				className="aspect-square h-52 w-full rounded-xl object-contain transition-all"
 				loading="lazy"
 			/>
 			<div className="flex flex-col items-center justify-center p-5  text-center">

@@ -81,7 +81,7 @@ export default function HomePage({ data, isLoading }) {
 							<div>
 								<h1
 									itemProp="discription"
-									className=" my-2 text-3xl text-blue_gray"
+									className="my-2 text-3xl capitalize text-blue_gray"
 								>
 									{product.field_item_name}
 								</h1>
