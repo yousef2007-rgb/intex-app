@@ -1,7 +1,7 @@
 import React from 'react';
-import Search from '../../../public/Assets/icons/SearchIcon';
-import Close from '../../../public/Assets/icons/CloseIcon';
-import { tougle } from '../../../slices/searchVisabilitySlice';
+import Search from '../../../../public/Assets/icons/SearchIcon';
+import Close from '../../../../public/Assets/icons/CloseIcon';
+import { tougle } from '../../../../slices/searchVisabilitySlice';
 import { useDispatch } from 'react-redux';
 export default function SearchBody({ searchVisability }) {
 	const dispatch = useDispatch();

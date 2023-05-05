@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchButton from './SearchBody';
+import SearchButton from './SearchButton';
 import SearchBody from './SearchBody';
 
 import { useSelector } from 'react-redux';
