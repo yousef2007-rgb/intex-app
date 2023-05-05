@@ -1,6 +1,6 @@
 import React, { createRef, useState } from 'react';
-import Chevron from '../../../public/Assets/icons/Chevron';
-import Menu from './Menu';
+import Chevron from '../../../public/Assets/icons/ChevronIcon';
+import Menu from './Navigation/Menu';
 
 export default function Button({ text, menu, tougle }) {
 	const [menuVisablity, setMenuVisablity] = useState('none');

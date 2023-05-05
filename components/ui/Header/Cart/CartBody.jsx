@@ -2,20 +2,17 @@
 //	React Hooks
 import React, { useEffect } from 'react';
 //	Redux Hooks
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //	React Components
 import CartItem from './CartItem';
 import CheckoutButton from './CheckoutButton';
-//	Redux Slices
-import { clearItems } from '../../../slices/cartSlice';
-import { resetCartItem } from '../../../slices/cartSlice';
-//	Data
-import componentData from '../../../data/Cart.json';
-export default function CartBody({ visability, dispatch }) {
-	//Redux State Hooks
-	const cartItems = useSelector((state) => state.cart);
-	const content = useSelector((state) => state.language); //variables
+//	Redux Actions
+import { clearItems } from '../../../../slices/cartSlice';
+import { resetCartItem } from '../../../../slices/cartSlice';
 
+//Main Component
+export default function CartBody({ visability }) {
+	//React Hooks
 	useEffect(() => {
 		if (cartItems.length == 0 && window.localStorage.getItem('cart')) {
 			dispatch(
@@ -25,6 +22,12 @@ export default function CartBody({ visability, dispatch }) {
 			);
 		}
 	}, []);
+
+	//Redux Hooks
+	const cartItems = useSelector((state) => state.cart);
+	const content = useSelector((state) => state.language); //variables
+	const dispatch = useDispatch();
+
 	return (
 		<div
 			className={`scrollbar-w-thin absolute top-24 z-50 mx-2 flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
@@ -66,6 +69,8 @@ export default function CartBody({ visability, dispatch }) {
 		</div>
 	);
 }
+
+//Secondery Components
 function EmptyCart({}) {
 	return (
 		<div>

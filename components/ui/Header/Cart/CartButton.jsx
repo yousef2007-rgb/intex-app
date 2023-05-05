@@ -1,10 +1,22 @@
+//React Hooks
 import React, { useState, useEffect } from 'react';
+
+//Redux Hooks
 import { useDispatch, useSelector } from 'react-redux';
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
-import Cart from '../../../public/Assets/icons/Cart';
+
+//Redux Actions
+import { tougleCart } from '../../../../slices/cartVisabilitySlice';
+
+//Asstes
+import CartIcon from '../../../../public/Assets/icons/CartIcon';
+
+//Main Component
 export default function CartButton() {
+	//Redux Hooks
 	const cart = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
+
+	//React Hooks
 	const [cartItemsNumber, setCartItemsNumber] = useState(0);
 	useEffect(() => {
 		let num = 0;
@@ -13,6 +25,7 @@ export default function CartButton() {
 		}
 		setCartItemsNumber(num);
 	}, [cart]);
+
 	return (
 		<div
 			onClick={() => dispatch(tougleCart())}
@@ -25,7 +38,7 @@ export default function CartButton() {
 			) : (
 				''
 			)}
-			<Cart />
+			<CartIcon />
 		</div>
 	);
 }

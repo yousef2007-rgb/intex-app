@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
+//React Hooks
+import { useState, useEffect } from 'react';
+
+//Redux Hooks
 import { useDispatch } from 'react-redux';
+
+//Main Component
 export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
-	const dispatch = useDispatch();
+	//React Hooks
 	const [whatsappText, setWhatsAppText] = useState('');
 	useEffect(() => {
 		if (cartItems.length != 0) {
@@ -18,6 +23,10 @@ export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
 			);
 		});
 	}, [cartItems]);
+
+	//Redux Hooks
+	const dispatch = useDispatch();
+
 	return (
 		<a
 			className=" w-full rounded-xl border-2 border-green-500 bg-green-500 py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-green-500"

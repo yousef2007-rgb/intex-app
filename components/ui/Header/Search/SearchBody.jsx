@@ -1,17 +1,13 @@
 import React, { useState, useRef } from 'react';
-import Search from '../../../public/Assets/icons/Search';
-import useFetch from '../../../hooks/useFetch';
-import ProductCard from '../ProductsContainer/ProductCard';
-import Link from 'next/link';
-import Close from '../../../public/Assets/icons/Close';
+import useFetch from '../../../../hooks/useFetch';
+import ProductCard from '../../ProductsContainer/ProductCard';
 import { useSelector, useDispatch } from 'react-redux';
-import { tougle } from '../../../slices/searchVisabilitySlice';
+import { tougle } from '../../../../slices/searchVisabilitySlice';
 
 export default function SearchBody({ visability }) {
 	const input = useRef(null);
-	const text = 'Hello World'.toLowerCase();
 	const [textValue, setTextValue] = useState('');
-	const [data, isLoading] = useFetch(process.env.NEXT_PUBLIC_URL, 'data');
+	const [data] = useFetch(process.env.NEXT_PUBLIC_URL, 'data');
 	const searchVisability = useSelector((state) => state.searchVisability);
 	const dispatch = useDispatch();
 	return (

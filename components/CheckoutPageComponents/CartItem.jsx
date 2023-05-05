@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import Trash from '../../../public/Assets/icons/Trash';
-import { removeCartItem, addCartItem } from '../../../slices/cartSlice';
+//React Hooks
+import { useState, useEffect } from 'react';
+
+//Redux Hooks
 import { useDispatch, useSelector } from 'react-redux';
+
+//NextJs Components
 import Link from 'next/link';
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
 
+//Assets
+import Trash from '../../public/Assets/icons/TrashIcon';
+
+//Redux Actions
+import { removeCartItem, addCartItem } from '../../slices/cartSlice';
+
+//Main Component
 export default function CardItem({ item, quantity }) {
-	const dispatch = useDispatch();
-	const language = useSelector((state) => state.language);
-
+	//React Hooks
 	const [inputValue, setInputValue] = useState(quantity);
-	const handleInputChange = (e) => {
-		if (e.target.value > 0) {
-			setInputValue(parseInt(e.target.value));
-		} else {
-			alert('Value Should Be One Or Heigher');
-		}
-	};
-
 	useEffect(() => {
 		dispatch(
 			addCartItem({
@@ -33,6 +32,19 @@ export default function CardItem({ item, quantity }) {
 			})
 		);
 	}, [inputValue]);
+
+	//Redux Hooks
+	const dispatch = useDispatch();
+
+	//Component Fuctions
+	const handleInputChange = (e) => {
+		if (e.target.value > 0) {
+			setInputValue(parseInt(e.target.value));
+		} else {
+			alert('Value Should Be One Or Heigher');
+		}
+	};
+
 	return (
 		<div className=" w-max-4xl my-4 flex items-center rounded-xl border border-gray-100 p-5 font-bold shadow-xl">
 			<img

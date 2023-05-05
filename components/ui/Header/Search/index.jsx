@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SearchButton from '../SearchBody/SearchButton';
-import SearchBody from '../SearchBody/SearchBody';
+import SearchButton from './SearchBody';
+import SearchBody from './SearchBody';
 
 import { useSelector } from 'react-redux';
 

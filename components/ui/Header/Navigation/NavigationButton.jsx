@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuICon from '../../../public/Assets/icons/MenuICon';
+import MenuICon from '../../../../public/Assets/icons/MenuICon';
 
 export default function NavigationButton({ setNavigationVisability }) {
 	return (

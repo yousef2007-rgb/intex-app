@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Logo from './Logo';
-import LanguageButton from './LanguageButton';
-import Navigation from './Navigation';
-import NavigationButton from './NavigationButton';
-import Cart from './Cart';
-import Search from './Searching';
 import { useSelector, useDispatch } from 'react-redux';
-import { tougleLanguage } from '../../../slices/languageSlice';
+
+import Logo from './Logo';
+import LanguageButton from './Language';
+import Navigation from './Navigation';
+import NavigationButton from './Navigation/NavigationButton';
+import Cart from './Cart';
+import Search from './Search';
 import PopUp from '../PopUp/PopUp';
+import { tougleLanguage } from '../../../slices/languageSlice';
+
 export default function Header() {
 	const content = useSelector((state) => state.language);
 	const [navigationVisability, setNavigationVisability] = useState('none');

@@ -1,5 +1,4 @@
-import React from 'react';
-// import SocialMedia from "../SocialMedia";
+//Main Component
 export default function Footer({}) {
 	return (
 		<footer className=" bg-gray-100 p-4  sm:p-6">

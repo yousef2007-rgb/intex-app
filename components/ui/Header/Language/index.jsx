@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { tougleLanguage } from '../../../slices/languageSlice';
-export function LanguageButton({ language }) {
+//Redux Hooks
+import { useDispatch } from 'react-redux';
+
+//Redux Actions
+import { tougleLanguage } from '../../../../slices/languageSlice';
+
+//Main Component
+export default function LanguageButton({ language }) {
+	//Redux Component
 	const dispatch = useDispatch();
 
 	return (

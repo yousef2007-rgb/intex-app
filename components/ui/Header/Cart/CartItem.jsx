@@ -1,13 +1,21 @@
-import React from 'react';
-import Trash from '../../../public/Assets/icons/Trash';
-import { removeCartItem } from '../../../slices/cartSlice';
+//Redux Hooks
 import { useDispatch, useSelector } from 'react-redux';
-import Link from 'next/link';
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
 
+//Redux Actions
+import { removeCartItem } from '../../../../slices/cartSlice';
+import { tougleCart } from '../../../../slices/cartVisabilitySlice';
+
+//Assets
+import Trash from '../../../../public/Assets/icons/TrashIcon';
+
+//NextJs Components
+import Link from 'next/link';
+
+//Main Comopnent
 export default function CardItem({ item, quantity }) {
+	//Redux Hooks
 	const dispatch = useDispatch();
-	const language = useSelector((state) => state.language);
+
 	return (
 		<div className=" flex items-center  p-5 font-bold">
 			<Link

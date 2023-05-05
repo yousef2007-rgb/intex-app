@@ -1,8 +1,8 @@
 import React from 'react';
-import Buttons from './Button';
+import Buttons from '../Button';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import Close from '../../../public/Assets/icons/Close';
+import Close from '../../../../public/Assets/icons/CloseIcon';
 export default function Navigation({
 	navigationVisability,
 	setNavigationVisability,

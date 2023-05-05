@@ -4,10 +4,10 @@ import React from 'react';
 //	Redux Hooks
 import { useDispatch, useSelector } from 'react-redux';
 //	React Components
-import PopUp from '../PopUp/PopUp';
+import PopUp from '../../PopUp/PopUp';
 import CartBody from './CartBody';
 //	Redux Slices
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
+import { tougleCart } from '../../../../slices/cartVisabilitySlice';
 //Ui Component Region
 function CartContainer() {
 	//Redux State Hooks

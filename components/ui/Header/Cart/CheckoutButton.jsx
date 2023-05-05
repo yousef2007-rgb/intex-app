@@ -1,9 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
+//Redux Hooks
 import { useDispatch } from 'react-redux';
-import { tougleCart } from '../../../slices/cartVisabilitySlice';
 
+//Redux Actions
+import { tougleCart } from '../../../../slices/cartVisabilitySlice';
+
+//NextJs Components
+import Link from 'next/link';
+
+//Main Component
 export default function CheckoutButton() {
+	//Redux Hooks
 	const dispatch = useDispatch();
 	return (
 		<Link
