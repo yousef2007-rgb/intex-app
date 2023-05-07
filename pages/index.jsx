@@ -26,28 +26,28 @@ export default function HomePage({ data, isLoading }) {
 	//Components Props
 	const IntroProps = [
 		{
-			src: '/Assets/images/intro/hero1.jpg',
+			src: '/Assets/images/intro/categories-03.jpg',
 			link: '/Products/343?title=inflated%20pools',
 			aspectRatio: '1/1',
 		},
 		{
-			src: '/Assets/images/intro/hero4.gif',
-			link: '/Products/343?title=inflated%20pools',
+			src: '/Assets/images/intro/categories-02.jpg',
+			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
 		},
 		{
-			src: '/Assets/images/intro/hero3.jpg',
-			link: '/',
+			src: '/Assets/images/intro/categories-05.jpg',
+			link: '/Products/342?title=pools',
 			aspectRatio: '16/7',
 		},
 		{
-			src: '/Assets/images/intro/hero5.gif',
+			src: '/Assets/images/intro/categories-01.jpg',
 			link: '/Products/344?title=accessories',
 			aspectRatio: '1/1',
 		},
 		{
-			src: '/Assets/images/intro/hero2.jpg',
-			link: '/Products/343?title=inflated%20pools',
+			src: '/Assets/images/intro/categories-04.jpg',
+			link: '/Products/1944?title=furniture',
 			aspectRatio: '1/1',
 		},
 	];
