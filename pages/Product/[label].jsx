@@ -33,6 +33,7 @@ export async function getServerSideProps(context) {
 	} else {
 		context.res.writeHead(404);
 		context.res.end();
+		return {};
 	}
 }
 

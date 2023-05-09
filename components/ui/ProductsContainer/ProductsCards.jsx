@@ -17,6 +17,15 @@ export function ProductsCards({
 						x.nid != currentProduct
 				)
 				.filter((_, index) => index < limit || limit == 0)
+				.sort((a, b) => {    
+					if (a.field_item_name > b.field_item_name) {
+						return -1;
+					}
+					if (b.field_item_name > a.field_item_name) {
+						return 1;
+					}
+					return 0;
+				})
 				.map((product, index) => (
 					<ProductCard
 						key={index}
