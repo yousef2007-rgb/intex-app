@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 export function HeadComponent({ product }) {
-	console.log(product);
 	return (
 		<Head>
 			<title>Intex Jo | {product.field_item_name}</title>
