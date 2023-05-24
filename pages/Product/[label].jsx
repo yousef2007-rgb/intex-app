@@ -48,7 +48,7 @@ export default function HomePage({ data }) {
 
 	return (
 		<div className=" mt-20">
-			<HeadComponent product />
+			<HeadComponent product={product} />
 			<Header />
 			<main className=" mx-auto flex max-w-7xl items-center">
 				<div className="h-fit w-full">

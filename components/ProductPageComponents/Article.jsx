@@ -4,6 +4,22 @@ import { addCartItem } from '../../slices/cartSlice';
 
 export function Article({ content, product }) {
 	const [counter, setCounter] = useState(1);
+	const price = product.field_special_price
+		? product.field_special_price
+		: product.field_online_price
+		? product.field_online_price
+		: product.field_wholesale_price * 1.5;
+	const listPrice = product.field_online_price
+		? product.field_online_price
+		: product.field_wholesale_price * 1.5;
+	const discount = Math.round(
+		100 -
+			(product.field_special_price /
+				(product.field_online_price
+					? product.field_online_price
+					: product.field_wholesale_price * 1.5)) *
+				100
+	);
 	const dispatch = useDispatch();
 
 	return (
@@ -35,24 +51,10 @@ export function Article({ content, product }) {
 				>
 					<span className="text-2xl font-bold text-red-500">
 						{product.field_special_price
-							? '-' +
-							  parseInt(
-									100 -
-										(product.field_special_price /
-											(product.field_online_price
-												? product.field_online_price
-												: product.field_wholesale_price *
-												  1.5)) *
-											100
-							  ) +
-							  '%'
+							? '-' + discount + '%'
 							: ''}
 					</span>{' '}
-					{product.field_special_price
-						? product.field_special_price + 'JOD'
-						: (product.field_online_price
-								? product.field_online_price
-								: product.field_wholesale_price * 1.5) + 'JOD'}
+					{price + 'JOD'}
 				</p>
 				<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
 					{product.field_special_price ? (
@@ -64,10 +66,7 @@ export function Article({ content, product }) {
 									textDecoration: 'line-through',
 								}}
 							>
-								{product.field_online_price
-									? product.field_online_price + 'JOD'
-									: product.field_wholesale_price * 1.5 +
-									  'JOD'}
+								{listPrice + 'JOD'}
 							</p>
 						</>
 					) : (
@@ -103,12 +102,7 @@ export function Article({ content, product }) {
 										image: product.image,
 										discription: product.field_item_name,
 										label: product.label,
-										price: product.field_special_price
-											? product.field_special_price
-											: product.field_online_price
-											? product.field_online_price
-											: product.field_wholesale_price *
-											  1.5,
+										price: price,
 										nid: product.nid,
 									},
 									quantity: counter,
