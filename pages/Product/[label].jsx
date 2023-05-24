@@ -46,7 +46,6 @@ export default function HomePage({ data }) {
 	);
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
-
 	return (
 		<div className=" mt-20">
 			<HeadComponent product={product} />
