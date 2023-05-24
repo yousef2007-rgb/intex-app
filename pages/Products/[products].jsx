@@ -20,8 +20,8 @@ export async function getServerSideProps(context) {
 		'Cache-Control',
 		'public, s-maxage=50, stale-while-revalidate=59'
 	);
+	return { props: { data, isLoading: false } };
 	if (data.data.res[0].field_category == 55) {
-		return { props: { data, isLoading: false } };
 	} else {
 		context.res.writeHead(404);
 		context.res.end();
