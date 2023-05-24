@@ -3,7 +3,9 @@ import Head from 'next/head';
 export function HeadComponent({ product }) {
 	return (
 		<Head>
-			<title>Intex Jo | {product.field_item_name}</title>
+			<title>
+				Intex Jo | {product.field_item_name} {product.label}
+			</title>
 			<meta
 				name="keywords"
 				content={`intex, jordan, intex in jordan, مسبح,${product.field_item_name}`}
