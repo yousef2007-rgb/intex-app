@@ -26,6 +26,11 @@ export default function HomePage({ data, isLoading }) {
 	//Components Props
 	const IntroProps = [
 		{
+			src: '/Assets/images/intro/categories-05.jpg',
+			link: '/Products/342?title=pools',
+			aspectRatio: '16/7',
+		},
+		{
 			src: '/Assets/images/intro/categories-03.jpg',
 			link: '/Products/343?title=inflated%20pools',
 			aspectRatio: '1/1',
@@ -34,11 +39,6 @@ export default function HomePage({ data, isLoading }) {
 			src: '/Assets/images/intro/categories-02.jpg',
 			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
-		},
-		{
-			src: '/Assets/images/intro/categories-05.jpg',
-			link: '/Products/342?title=pools',
-			aspectRatio: '16/7',
 		},
 		{
 			src: '/Assets/images/intro/categories-01.jpg',
@@ -56,7 +56,14 @@ export default function HomePage({ data, isLoading }) {
 		<>
 			<HeadComponent />
 			<Header />
-			<main className="mx-auto mt-20 max-w-7xl tablet:mt-0">
+			<main className="mx-auto mt-20 max-w-7xl font-bold">
+				<h1 className="py-4 text-center text-4xl capitalize text-primary">
+					Welcome to intexjo
+				</h1>
+				<h2 className=" px-5 text-center text-gray-600">
+					The official intex distributor in jordan detecated to sell
+					intex products in jordan
+				</h2>
 				<Intro intros={IntroProps} />
 				<ProductsContainerBody data={data} />
 			</main>
