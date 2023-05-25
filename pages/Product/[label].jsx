@@ -17,6 +17,7 @@ import WhatsappButton from '../../components/ui/WhatsappButton';
 import { Article } from '../../components/ProductPageComponents/Article';
 import { ImageSlider } from '../../components/ProductPageComponents/ImageSlider';
 import { HeadComponent } from '../../components/ProductPageComponents/HeadComponent';
+import MetaTags from '../../components/ProductPageComponents/MetaTags';
 
 //SSR Fetching Function
 export async function getServerSideProps(context) {
@@ -44,13 +45,19 @@ export default function HomePage({ data }) {
 		process.env.NEXT_PUBLIC_URL,
 		'data'
 	);
+
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
 	return (
 		<div className=" mt-20">
 			<HeadComponent product={product} />
 			<Header />
-			<main className=" mx-auto flex max-w-7xl items-center">
+			<main
+				className=" mx-auto flex max-w-7xl items-center"
+				itemType="https://schema.org/Product"
+				itemScope
+			>
+				<MetaTags product={product} />
 				<div className="h-fit w-full">
 					<div className=" mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly border-b">
 						<ImageSlider product={product} />
