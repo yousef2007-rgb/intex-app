@@ -22,6 +22,7 @@ export const ImageSlider = ({ product }) => {
 							src={slide}
 							alt={`Slide ${index}`}
 							className="h-full w-full rounded-xl object-contain"
+							itemProp="image"
 						/>
 					</div>
 				))}

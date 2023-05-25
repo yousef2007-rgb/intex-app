@@ -49,6 +49,8 @@ export default function MetaTags({ product }) {
 				itemprop="description"
 				content={product.field_item_name + product.label}
 			/>
+			<meta name="rating" content="4.5" />
+			<meta name="reviewCount" content="10" />
 		</>
 	);
 }

@@ -52,6 +52,8 @@ export default function ProductCard({
 				/>
 			</div>
 			<meta itemprop="description" content={discription + label} />
+			<meta name="rating" content="4.5" />
+			<meta name="reviewCount" content="10" />
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
