@@ -11,6 +11,11 @@ export default function ProductCard({
 	nid,
 }) {
 	const [hover, setHover] = useState(false);
+	const price = product.field_special_price
+		? product.field_special_price
+		: product.field_online_price
+		? product.field_online_price
+		: product.field_wholesale_price * 1.5;
 	return (
 		<Link
 			href={`/Product/${nid}`}
@@ -20,6 +25,37 @@ export default function ProductCard({
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
+			<div
+				itemProp="brand"
+				itemType="https://schema.org/Brand"
+				itemScope=""
+			>
+				<meta itemProp="name" content="intex" />
+			</div>
+			<meta
+				itemProp="name"
+				content={product.field_item_name + product.label}
+			></meta>
+			<div
+				itemProp="offers"
+				itemtype="https://schema.org/Offer"
+				itemscope=""
+			>
+				<meta
+					itemProp="itemCondition"
+					content="https://schema.org/NewCondition"
+				/>
+				<meta itemProp="priceCurrency" content="JOD" />
+				<meta itemProp="price" content={price} />
+				<link
+					itemProp="availability"
+					href="https://schema.org/InStock"
+				/>
+			</div>
+			<meta
+				itemprop="description"
+				content={product.field_item_name + product.label}
+			/>
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
