@@ -11,11 +11,6 @@ export default function ProductCard({
 	nid,
 }) {
 	const [hover, setHover] = useState(false);
-	const price = product.field_special_price
-		? product.field_special_price
-		: product.field_online_price
-		? product.field_online_price
-		: product.field_wholesale_price * 1.5;
 	return (
 		<Link
 			href={`/Product/${nid}`}
@@ -32,10 +27,7 @@ export default function ProductCard({
 			>
 				<meta itemProp="name" content="intex" />
 			</div>
-			<meta
-				itemProp="name"
-				content={product.field_item_name + product.label}
-			></meta>
+			<meta itemProp="name" content={discription + label}></meta>
 			<div
 				itemProp="offers"
 				itemtype="https://schema.org/Offer"
@@ -46,21 +38,26 @@ export default function ProductCard({
 					content="https://schema.org/NewCondition"
 				/>
 				<meta itemProp="priceCurrency" content="JOD" />
-				<meta itemProp="price" content={price} />
+				<meta
+					itemProp="price"
+					content={
+						price.specialPrice
+							? price.specialPrice
+							: price.listPrice
+					}
+				/>
 				<link
 					itemProp="availability"
 					href="https://schema.org/InStock"
 				/>
 			</div>
-			<meta
-				itemprop="description"
-				content={product.field_item_name + product.label}
-			/>
+			<meta itemprop="description" content={discription + label} />
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
 				className="aspect-square h-52 w-full rounded-xl object-contain transition-all"
 				loading="lazy"
+				itemProp="image"
 			/>
 			<div className="flex flex-col items-center justify-center p-5  text-center">
 				<h1 className=" text-whi my-2 w-fit whitespace-pre-line font-bold text-primary">
