@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function ProductCard({
 	label,
@@ -11,9 +12,13 @@ export default function ProductCard({
 	nid,
 }) {
 	const [hover, setHover] = useState(false);
+
+	const { lang } = useRouter().query;
 	return (
 		<Link
-			href={`/Product/${nid}`}
+			href={`/Product/${nid}?lang=${
+				lang == undefined ? 'english' : 'arabic'
+			}`}
 			className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
 			itemScope
 			itemType="https://schema.org/Product"

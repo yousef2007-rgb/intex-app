@@ -32,10 +32,10 @@ export default function Header() {
 		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
 			<header
 				className={`z-50 mx-auto flex h-20 max-w-5xl items-center`}
-				style={{
-					flexDirection:
-						content.language == 'arabic' ? 'row-reverse' : 'row',
-				}}
+				// style={{
+				// 	flexDirection:
+				// 		content.language == 'arabic' ? 'row-reverse' : 'row',
+				// }}
 			>
 				<NavigationButton
 					setNavigationVisability={setNavigationVisability}
@@ -53,7 +53,7 @@ export default function Header() {
 					tougle={tougleNavigationVisability}
 					usingRedux={false}
 				/>
-				<LanguageButton />
+				<LanguageButton language={content.language} />
 				<Cart />
 				<Search />
 			</header>

@@ -12,6 +12,7 @@ import Trash from '../../public/Assets/icons/TrashIcon';
 
 //Redux Actions
 import { removeCartItem, addCartItem } from '../../slices/cartSlice';
+import { useRouter } from 'next/router';
 
 //Main Component
 export default function CardItem({ item, quantity }) {
@@ -44,6 +45,7 @@ export default function CardItem({ item, quantity }) {
 			alert('Value Should Be One Or Heigher');
 		}
 	};
+	const { lang } = useRouter().query;
 
 	return (
 		<div className=" w-max-4xl my-4 flex items-center rounded-xl border border-gray-100 p-5 font-bold shadow-xl">
@@ -55,7 +57,9 @@ export default function CardItem({ item, quantity }) {
 			<section className="mx-5 flex-1">
 				<Link
 					className=" flex flex-1 items-center "
-					href={`/Product/${item.nid}`}
+					href={`/Product/${item.nid}?lang=${
+						lang == undefined ? 'english' : 'arabic'
+					}`}
 				>
 					<h1 className=" whitespace-wrap text-blue_gray">
 						{item.discription}

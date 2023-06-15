@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 export default function Menu({ data, tougle }) {
+	const { lang } = useRouter().query;
 	return (
 		<div className="z-40 mx-auto flex  min-w-fit border-t-4 border-secondery">
 			{data.map((item, index) => (
@@ -12,7 +14,9 @@ export default function Menu({ data, tougle }) {
 							<Link
 								key={index}
 								className="w-full p-3 font-bold capitalize transition-all hover:bg-secondery hover:text-white"
-								href={element.link}
+								href={`${element.link}?lang=${
+									lang == undefined ? 'english' : 'arabic'
+								}`}
 								onClick={() => tougle()}
 							>
 								{element.text}

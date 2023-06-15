@@ -10,12 +10,13 @@ import Trash from '../../../../public/Assets/icons/TrashIcon';
 
 //NextJs Components
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 //Main Comopnent
 export default function CardItem({ item, quantity }) {
 	//Redux Hooks
 	const dispatch = useDispatch();
-
+	const { lang } = useRouter().query;
 	return (
 		<div className=" flex items-center  p-5 font-bold">
 			<Link
@@ -23,7 +24,9 @@ export default function CardItem({ item, quantity }) {
 					dispatch(tougleCart());
 				}}
 				className=" flex flex-1 items-center"
-				href={`/Product/${item.nid}`}
+				href={`/Product/${item.nid}?lang=${
+					lang == undefined ? 'english' : 'arabic'
+				}`}
 			>
 				<img
 					className=" aspect-square h-12 w-12 rounded-xl object-cover "

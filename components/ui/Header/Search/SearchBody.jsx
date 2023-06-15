@@ -1,15 +1,27 @@
+//Imports
 import React, { useState, useRef } from 'react';
 import useFetch from '../../../../hooks/useFetch';
 import ProductCard from '../../ProductsContainer/ProductCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { tougle } from '../../../../slices/searchVisabilitySlice';
 
+//UI Component
 export default function SearchBody({ visability }) {
-	const input = useRef(null);
+	//React Hooks
 	const [textValue, setTextValue] = useState('');
+	const input = useRef(null);
+
+	//Custom Hooks
 	const [data] = useFetch(process.env.NEXT_PUBLIC_URL, 'data');
+
+	//Redux Hooks
 	const searchVisability = useSelector((state) => state.searchVisability);
 	const dispatch = useDispatch();
+
+	//Functions
+	const searchFilterFunction = (x) =>
+		x.label.toLowerCase().includes(textValue.toLowerCase()) ||
+		x.field_item_name.toLowerCase().includes(textValue.toLowerCase());
 	return (
 		<div
 			style={{ display: searchVisability }}
@@ -30,17 +42,7 @@ export default function SearchBody({ visability }) {
 				>
 					{textValue != ''
 						? data.data.res
-								.filter(
-									(x) =>
-										x.label
-											.toLowerCase()
-											.includes(
-												textValue.toLowerCase()
-											) ||
-										x.field_item_name
-											.toLowerCase()
-											.includes(textValue.toLowerCase())
-								)
+								.filter(searchFilterFunction)
 								.map((product, index) => (
 									<ProductCard
 										key={index}

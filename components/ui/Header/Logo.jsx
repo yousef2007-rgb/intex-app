@@ -1,8 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 export default function Logo({}) {
+	const { lang } = useRouter().query;
 	return (
-		<Link className=" flex-1" href={'/'}>
+		<Link
+			className=" flex-1"
+			href={`/?lang=${lang == undefined ? 'english' : 'arabic'}`}
+		>
 			<img
 				className="w-3/4 max-w-[176px] "
 				src="/Assets/images/logo.png"

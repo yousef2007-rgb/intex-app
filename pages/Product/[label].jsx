@@ -51,7 +51,6 @@ export default function HomePage({ data }) {
 	return (
 		<div className=" mt-20">
 			<HeadComponent product={product} />
-			<Header />
 			<main
 				className=" mx-auto flex max-w-7xl items-center"
 				itemType="https://schema.org/Product"
@@ -74,6 +73,7 @@ export default function HomePage({ data }) {
 					/>
 				</div>
 			</main>
+			<Header />
 			<Footer />
 			<WhatsappButton />
 		</div>

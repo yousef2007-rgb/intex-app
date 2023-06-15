@@ -56,6 +56,7 @@ export function Article({ content, product }) {
 					</span>{' '}
 					{price + 'JOD'}
 				</p>
+				{/* <p>{product.field_wholesale_price}JOD</p> */}
 				<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
 					{product.field_special_price ? (
 						<>

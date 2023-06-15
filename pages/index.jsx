@@ -4,9 +4,11 @@ import Intro from '../components/HomePageComponents/Intro';
 import ProductsContainerBody from '../components/HomePageComponents/ProductsContainerBody';
 import Footer from '../components/ui/Footer/Footer';
 import WhatsappButton from '../components/ui/WhatsappButton';
+import content from '../data/HomePage.json';
 
 //Components without default exports
 import { HeadComponent } from '../components/HomePageComponents/HeadComponent';
+import { useRouter } from 'next/router';
 
 //SSR Fetching Function
 export async function getServerSideProps(context) {
@@ -52,17 +54,19 @@ export default function HomePage({ data, isLoading }) {
 		},
 	];
 
+	const { lang } = useRouter().query;
+	const welcoming =
+		lang == 'arabic' ? content.welcoming.arabic : content.welcoming.english;
 	return (
 		<>
 			<HeadComponent />
 			<Header />
 			<main className="mx-auto mt-20 max-w-7xl font-bold">
 				<h1 className="py-4 text-center text-4xl capitalize text-primary">
-					Welcome to intexjo
+					{welcoming[0]}
 				</h1>
 				<h2 className=" px-5 text-center text-gray-600">
-					The official intex distributor in jordan detecated to sell
-					intex products in jordan
+					{welcoming[1]}
 				</h2>
 				<Intro intros={IntroProps} />
 				<ProductsContainerBody data={data} />
