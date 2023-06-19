@@ -58,7 +58,7 @@ export default function CardItem({ item, quantity }) {
 				<Link
 					className=" flex flex-1 items-center "
 					href={`/Product/${item.nid}?lang=${
-						lang == undefined ? 'english' : 'arabic'
+						lang == 'arabic' ? 'arabic' : 'english'
 					}`}
 				>
 					<h1 className=" whitespace-wrap text-blue_gray">

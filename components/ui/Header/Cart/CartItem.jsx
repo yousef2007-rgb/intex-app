@@ -25,7 +25,7 @@ export default function CardItem({ item, quantity }) {
 				}}
 				className=" flex flex-1 items-center"
 				href={`/Product/${item.nid}?lang=${
-					lang == undefined ? 'english' : 'arabic'
+					lang == 'arabic' ? 'arabic' : 'english'
 				}`}
 			>
 				<img

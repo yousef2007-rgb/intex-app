@@ -6,7 +6,7 @@ export default function Logo({}) {
 	return (
 		<Link
 			className=" flex-1"
-			href={`/?lang=${lang == undefined ? 'english' : 'arabic'}`}
+			href={`/?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
 		>
 			<img
 				className="w-3/4 max-w-[176px] "

@@ -17,7 +17,7 @@ export default function ProductCard({
 	return (
 		<Link
 			href={`/Product/${nid}?lang=${
-				lang == undefined ? 'english' : 'arabic'
+				lang == 'arabic' ? 'arabic' : 'english'
 			}`}
 			className="z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
 			itemScope
