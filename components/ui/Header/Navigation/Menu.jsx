@@ -14,7 +14,7 @@ export default function Menu({ data, tougle }) {
 							<Link
 								key={index}
 								className="w-full p-3 font-bold capitalize transition-all hover:bg-secondery hover:text-white"
-								href={`${element.link}?lang=${
+								href={`${element.link}&lang=${
 									lang == 'arabic' ? 'arabic' : 'english'
 								}`}
 								onClick={() => tougle()}
