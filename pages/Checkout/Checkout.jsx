@@ -61,7 +61,7 @@ export default function Checkout() {
 				+new Date() * Math.random(1000)
 			)}","notes":"${phone}-${name}-${location}","customer_id":"${parseInt(
 				phone
-			)}","order_time":${+new Date()},"status":"saved","sync_time":0,"synced":false,"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
+			)}","order_time":${+new Date()},"status":"saved","sync_time":0,"synced":false,"total":${totalPrice},"total_items":${cartItemsNumber},"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
 			{
 				method: 'POST',
 			}
