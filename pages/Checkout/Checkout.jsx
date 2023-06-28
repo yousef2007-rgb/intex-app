@@ -92,6 +92,7 @@ export default function Checkout() {
 								setPhone={setPhone}
 								setName={setName}
 								handleSubmit={handleSubmit}
+								totalPrice={totalPrice}
 							/>
 						}
 					/>

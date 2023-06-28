@@ -5,6 +5,7 @@ export const UserInfoForm = ({
 	setName,
 	setLocation,
 	handleSubmit,
+	totalPrice,
 }) => {
 	const [city, setCity] = useState(2.5);
 	return (
@@ -44,12 +45,14 @@ export const UserInfoForm = ({
 					/>
 				</div>
 				<small>Format: 791234567</small>
-				<label htmlFor="city-select">Choose a city:</label>
+				<label className="mt-2" htmlFor="city-select">
+					Choose a city:
+				</label>
 				<select
 					name="city"
 					id="city-select"
 					onChange={(e) => setCity(e.target.value)}
-					className="my-2"
+					className="my-2 border"
 				>
 					<option value={2.5}>Amman</option>
 					<option value={3}>Zarqa</option>
@@ -81,6 +84,9 @@ export const UserInfoForm = ({
 					/>
 				</div>
 			</div>
+			<h1 className=" mx-auto my-6 font-bold capitalize tablet:mx-0">
+				total price with delivery is: {totalPrice + city}JOD
+			</h1>
 			<div className="mt-5">
 				<input
 					className="cursor-pointer  rounded-lg bg-secondery px-5 py-1 font-bold text-white"
