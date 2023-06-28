@@ -6,7 +6,7 @@ export const UserInfoForm = ({
 	setLocation,
 	handleSubmit,
 }) => {
-	const [city, setCity] = useState('Amman');
+	const [city, setCity] = useState(2.5);
 	return (
 		<form
 			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
