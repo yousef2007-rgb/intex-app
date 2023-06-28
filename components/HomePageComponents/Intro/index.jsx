@@ -6,7 +6,7 @@ export default function Intro({ intros }) {
 			{intros.map((item, index) => (
 				<a
 					style={{
-						width: item.aspectRatio == '1/1' ? '23%' : '98%',
+						width: item.aspectRatio == '1/1' ? '23%' : '100%',
 						minWidth: '180px',
 					}}
 					className="m-1 rounded-xl shadow-xl transition-all hover:shadow-2xl"
