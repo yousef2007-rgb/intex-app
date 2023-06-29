@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 export const UserInfoForm = ({
 	PhoneNumberInputVisable,
 	setPhone,
@@ -8,6 +10,8 @@ export const UserInfoForm = ({
 	totalPrice,
 }) => {
 	const [city, setCity] = useState(2.5);
+	const { lang } = useRouter().query;
+
 	return (
 		<form
 			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "

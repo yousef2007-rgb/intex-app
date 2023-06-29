@@ -3,14 +3,17 @@ import Header from '../../components/ui/Header/Header';
 import Footer from '../../components/ui/Footer/Footer';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { clearItems } from '../../slices/cartSlice';
+import { addCartItem, clearItems } from '../../slices/cartSlice';
+import { addCartItems } from '../../slices/checkedoutSlice';
 import WhatsappCheckout from '../../components/CheckoutPageComponents/WhatsappCheckout';
 import CartItem from '../../components/CheckoutPageComponents/CartItem';
 import PopUp from '../../components/ui/PopUp/PopUp';
 import WhatsappButton from '../../components/ui/WhatsappButton';
 import { UserInfoForm } from '../../components/CheckoutPageComponents/UserInfoForm';
-
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 export default function Checkout() {
+	const { lang } = useRouter().query;
 	const cartItems = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
 	const [totalPrice, setTotalPrice] = useState(0);
@@ -71,6 +74,9 @@ export default function Checkout() {
 			.catch((err) => console.error(err));
 		touglePhoneNumberInputVisablity();
 		dispatch(clearItems());
+		window.location.href = `/Checkedout?lang=${
+			lang == 'arabic' ? 'arabic' : 'english'
+		}`;
 	};
 
 	return (

@@ -22,6 +22,7 @@ export const cartSlice = createSlice({
 			return state;
 		},
 		clearItems: (state, action) => {
+			window.localStorage.setItem("checkedout", JSON.stringify(state));
 			window.localStorage.setItem("cart", []);
 			return [];
 		},
