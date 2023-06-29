@@ -23,6 +23,7 @@ export default function Checkout() {
 	const [name, setName] = useState('');
 	const [location, setLocation] = useState('');
 	const touglePhoneNumberInputVisablity = () => {
+		console.log('tougled');
 		setPhoneNumberInputVisability(
 			PhoneNumberInputVisable == 'none' ? 'block' : 'none'
 		);
@@ -71,12 +72,13 @@ export default function Checkout() {
 		)
 			.then((response) => response.json())
 			.then((json) => console.log(json))
+			.then(
+				() =>
+					(window.location.href = `/Checkedout?lang=${
+						lang == 'arabic' ? 'arabic' : 'english'
+					}`)
+			)
 			.catch((err) => console.error(err));
-		touglePhoneNumberInputVisablity();
-		dispatch(clearItems());
-		window.location.href = `/Checkedout?lang=${
-			lang == 'arabic' ? 'arabic' : 'english'
-		}`;
 	};
 
 	return (
@@ -98,7 +100,7 @@ export default function Checkout() {
 								setPhone={setPhone}
 								setName={setName}
 								handleSubmit={handleSubmit}
-								totalPrice={totalPrice}
+								totalPrice={parseFloat(totalPrice)}
 							/>
 						}
 					/>

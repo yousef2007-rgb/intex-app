@@ -2,24 +2,26 @@ import React, { use, useEffect, useState } from 'react';
 import Footer from '../../components/ui/Footer/Footer';
 import Header from '../../components/ui/Header/Header';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import CartItem from '../../components/CheckoutPageComponents/CartItem';
+import { clearItems } from '../../slices/cartSlice';
 
 const ThankYouPage = () => {
-	const [cartItems, setCartItems] = useState([]);
+	const [checkedoutItems, setCheckedoutItems] = useState([]);
 	const { lang } = useRouter().query;
-
-	useEffect(
-		() =>
-			setCartItems(JSON.parse(window.localStorage.getItem('checkedout'))),
-		[]
-	);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		setCheckedoutItems(
+			JSON.parse(window.localStorage.getItem('checkedout'))
+		);
+		dispatch(clearItems());
+	}, []);
 	return (
 		<main className="mt-20 flex min-h-screen flex-col">
 			<Header />
-			<div className="flex flex-1 flex-col items-center justify-center bg-gray-100">
-				<div className="mx-auto  my-10 max-w-2xl bg-white p-8 shadow-md">
+			<div className="flex flex-1 flex-col items-center justify-center bg-gray-100 px-3">
+				<div className="mx-auto my-10  max-w-2xl bg-white p-8 shadow-md">
 					<h2 className="mb-4 text-2xl font-bold">
 						Thank You for Your Purchase!
 					</h2>
@@ -38,7 +40,7 @@ const ThankYouPage = () => {
 					<h1 className="my-4 text-2xl font-bold capitalize">
 						you have orderd:
 					</h1>
-					{cartItems.map((item, index) => (
+					{checkedoutItems.map((item, index) => (
 						<div className=" w-max-4xl my-4 flex items-center rounded-xl border border-gray-100 p-5 font-bold shadow-xl">
 							<img
 								className=" aspect-square h-12 w-12 rounded-xl object-contain tablet:h-48 tablet:w-48  "

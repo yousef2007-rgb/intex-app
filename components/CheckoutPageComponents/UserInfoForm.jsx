@@ -9,9 +9,9 @@ export const UserInfoForm = ({
 	handleSubmit,
 	totalPrice,
 }) => {
-	const [city, setCity] = useState(2.5);
+	const [city, setCity] = useState(parseFloat(2.5));
 	const { lang } = useRouter().query;
-
+	const total = parseFloat(totalPrice) + parseFloat(city);
 	return (
 		<form
 			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
@@ -89,7 +89,7 @@ export const UserInfoForm = ({
 				</div>
 			</div>
 			<h1 className=" mx-auto my-6 font-bold capitalize tablet:mx-0">
-				total price with delivery is: {totalPrice + city}JOD
+				total price with delivery is: {total}JOD
 			</h1>
 			<div className="mt-5">
 				<input
