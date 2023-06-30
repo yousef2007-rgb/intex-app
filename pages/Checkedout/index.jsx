@@ -12,10 +12,10 @@ const ThankYouPage = () => {
 	const { lang } = useRouter().query;
 	const dispatch = useDispatch();
 	useEffect(() => {
+		dispatch(clearItems());
 		setCheckedoutItems(
 			JSON.parse(window.localStorage.getItem('checkedout'))
 		);
-		dispatch(clearItems());
 	}, []);
 	return (
 		<main className="mt-20 flex min-h-screen flex-col">
