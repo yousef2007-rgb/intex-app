@@ -41,7 +41,10 @@ const ThankYouPage = () => {
 						you have orderd:
 					</h1>
 					{checkedoutItems.map((item, index) => (
-						<div className=" w-max-4xl my-4 flex items-center rounded-xl border border-gray-100 p-5 font-bold shadow-xl">
+						<div
+							key={index}
+							className=" w-max-4xl my-4 flex items-center rounded-xl border border-gray-100 p-5 font-bold shadow-xl"
+						>
 							<img
 								className=" aspect-square h-12 w-12 rounded-xl object-contain tablet:h-48 tablet:w-48  "
 								src={item.item.image}
