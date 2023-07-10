@@ -13,8 +13,12 @@ import { HeadComponent } from '../../components/ProductsPageComponents/HeadCompo
 //SSR Fetching Function
 export async function getServerSideProps(context) {
 	const res = await fetch(
-		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=subcategory_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${context.params.products}&lang=en&username=28`
+		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=subcategory_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${
+			context.params.products
+		}&lang=${context.query.lang == 'arabic' ? 'ar' : 'en'}&username=28`
 	);
+
+	console.log(context.query.lang);
 	const data = await res.json();
 	context.res.setHeader(
 		'Cache-Control',

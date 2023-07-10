@@ -23,7 +23,12 @@ export function Article({ content, product }) {
 	const dispatch = useDispatch();
 
 	return (
-		<article className="h-fit w-full p-5 font-bold tablet:ml-4 tablet:w-1/2">
+		<article
+			style={{
+				textAlign: content.language == 'arabic' ? 'right' : 'left',
+			}}
+			className="h-fit w-full p-5 font-bold tablet:ml-4 tablet:w-1/2"
+		>
 			<div>
 				<h1
 					itemProp="discription"

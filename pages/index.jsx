@@ -13,7 +13,9 @@ import { useRouter } from 'next/router';
 //SSR Fetching Function
 export async function getServerSideProps(context) {
 	const res = await fetch(
-		'https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=en&username=28&field_subcategory=151'
+		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=category_products&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=55&lang=${
+			context.query.lang == 'arabic' ? 'ar' : 'en'
+		}&username=28&field_subcategory=151`
 	);
 	const data = await res.json();
 	context.res.setHeader(

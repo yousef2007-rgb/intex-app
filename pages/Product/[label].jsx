@@ -18,11 +18,16 @@ import { Article } from '../../components/ProductPageComponents/Article';
 import { ImageSlider } from '../../components/ProductPageComponents/ImageSlider';
 import { HeadComponent } from '../../components/ProductPageComponents/HeadComponent';
 import MetaTags from '../../components/ProductPageComponents/MetaTags';
+import { useRouter } from 'next/router';
 
 //SSR Fetching Function
 export async function getServerSideProps(context) {
 	const res = await fetch(
-		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=get_product&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${context.params.label}&lang=en&username=28&field_subcategory=151`
+		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=get_product&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${
+			context.params.label
+		}&lang=${
+			context.query.lang == 'arabic' ? 'ar' : 'en'
+		}&username=28&field_subcategory=151`
 	);
 	const data = await res.json();
 	context.res.setHeader(
@@ -40,11 +45,12 @@ export async function getServerSideProps(context) {
 
 //Main Component
 export default function HomePage({ data }) {
+	const linkUrl =
+		useRouter().query.lang == 'arabic'
+			? process.env.NEXT_PUBLIC_URL_AR
+			: process.env.NEXT_PUBLIC_URL;
 	//Component Data
-	const [relatedData, relatedIsLoading] = useFetch(
-		process.env.NEXT_PUBLIC_URL,
-		'data'
-	);
+	const [relatedData, relatedIsLoading] = useFetch(linkUrl, 'data');
 
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
