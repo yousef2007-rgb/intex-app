@@ -1,10 +1,15 @@
 //Components with default exports
-import Header from '../components/ui/Header';
-import Intro from '../components/HomePageComponents/Intro';
+// import Header from '../components/ui/Header';
+// import Intro from '../components/HomePageComponents/Intro';
 import ProductsContainerBody from '../components/HomePageComponents/ProductsContainerBody';
-import Footer from '../components/ui/Footer/Footer';
+// import Footer from '../components/ui/Footer/Footer';
 import WhatsappButton from '../components/ui/WhatsappButton';
 import content from '../data/HomePage.json';
+import dynamic from 'next/dynamic';
+
+const Header = dynamic(() => import('../components/ui/Header'));
+const Intro = dynamic(() => import('../components/HomePageComponents/Intro'));
+const Footer = dynamic(() => import('../components/ui/Footer/Footer'));
 
 //Components without default exports
 import { HeadComponent } from '../components/HomePageComponents/HeadComponent';
@@ -20,7 +25,7 @@ export async function getServerSideProps(context) {
 	const data = await res.json();
 	context.res.setHeader(
 		'Cache-Control',
-		'public, s-maxage=50, stale-while-revalidate=59'
+		's-maxage=1, stale-while-revalidate'
 	);
 	return { props: { data, isLoading: false } };
 }
