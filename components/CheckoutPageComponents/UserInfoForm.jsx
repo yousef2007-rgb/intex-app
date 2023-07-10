@@ -9,9 +9,11 @@ export const UserInfoForm = ({
 	handleSubmit,
 	totalPrice,
 }) => {
-	const [city, setCity] = useState(parseFloat(2.5));
+	const [city, setCity] = useState({ name: 'Amman', price: parseFloat(2.5) });
 	const { lang } = useRouter().query;
-	const total = parseFloat(totalPrice) + parseFloat(city);
+	const total = parseFloat(totalPrice) + parseFloat(city.price);
+
+	console.log(city);
 	return (
 		<form
 			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
@@ -55,24 +57,68 @@ export const UserInfoForm = ({
 				<select
 					name="city"
 					id="city-select"
-					onChange={(e) => setCity(e.target.value)}
+					onChange={(e) => setCity(JSON.parse(e.target.value))}
 					className="my-2 border"
 				>
-					<option value={2.5}>Amman</option>
-					<option value={3}>Zarqa</option>
-					<option value={4}>Irbid</option>
-					<option value={4}>Jerash</option>
-					<option value={4}>Aqaba</option>
-					<option value={4}>Ajloun</option>
-					<option value={4}>Alsalt</option>
-					<option value={4}>Almafraq</option>
-					<option value={4}>Altafila</option>
-					<option value={4}>Alkarek</option>
-					<option value={4}>Maan</option>
-					<option value={4}>Madaba</option>
-					<option value={5}>Alagwar</option>
+					<option
+						value={JSON.stringify({ name: 'Amman', price: 2.5 })}
+					>
+						Amman
+					</option>
+					<option value={JSON.stringify({ name: 'Zarqa', price: 3 })}>
+						Zarqa
+					</option>
+					<option value={JSON.stringify({ name: 'Irbid', price: 4 })}>
+						Irbid
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Jerash', price: 4 })}
+					>
+						Jerash
+					</option>
+					<option value={JSON.stringify({ name: 'Aqaba', price: 4 })}>
+						Aqaba
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Ajloun', price: 4 })}
+					>
+						Ajloun
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Alsalt', price: 4 })}
+					>
+						Alsalt
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Almafraq', price: 4 })}
+					>
+						Almafraq
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Altafila', price: 4 })}
+					>
+						Altafila
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Alkarek', price: 4 })}
+					>
+						Alkarek
+					</option>
+					<option value={JSON.stringify({ name: 'Maan', price: 4 })}>
+						Maan
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Madaba', price: 4 })}
+					>
+						Madaba
+					</option>
+					<option
+						value={JSON.stringify({ name: 'Alagwar', price: 5 })}
+					>
+						Alagwar
+					</option>
 				</select>
-				<small>Dilivery is {city}JOD</small>
+				<small>Dilivery is {city.price}JOD</small>
 
 				<label className="my-2" for="location">
 					Enter your exact location
@@ -83,7 +129,9 @@ export const UserInfoForm = ({
 						type="text"
 						id="location"
 						name="location"
-						onChange={(e) => setLocation(e.target.value)}
+						onChange={(e) =>
+							setLocation(`${e.target.value} ${city.name}`)
+						}
 						required
 					/>
 				</div>

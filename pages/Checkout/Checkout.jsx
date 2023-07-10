@@ -63,7 +63,7 @@ export default function Checkout() {
 		fetch(
 			`https://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(
 				+new Date() * Math.random(1000)
-			)}","notes":"${phone}-${name}-${location}","customer_id":"${parseInt(
+			)}","notes":"${phone}-${name}-${location} ","customer_id":"${parseInt(
 				phone
 			)}","order_time":${+new Date()},"status":"saved","sync_time":0,"synced":false,"total":${totalPrice},"total_items":${cartItemsNumber},"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
 			{
