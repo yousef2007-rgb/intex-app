@@ -20,8 +20,11 @@ export default function SearchBody({ visability }) {
 
 	//Functions
 	const searchFilterFunction = (x) =>
-		x.label.toLowerCase().includes(textValue.toLowerCase()) ||
-		x.field_item_name.toLowerCase().includes(textValue.toLowerCase());
+		(x.label.toLowerCase().includes(textValue.toLowerCase()) ||
+			x.field_item_name
+				.toLowerCase()
+				.includes(textValue.toLowerCase())) &&
+		x.status == 1;
 	return (
 		<div
 			style={{ display: searchVisability }}
