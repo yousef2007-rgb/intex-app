@@ -6,6 +6,7 @@ export function ProductsCards({
 	number,
 	currentProduct,
 	limit,
+	sortByValue,
 }) {
 	return (
 		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly gap-8 py-5 text-center">
@@ -17,14 +18,16 @@ export function ProductsCards({
 						x.nid != currentProduct
 				)
 				.filter((_, index) => index < limit || limit == 0)
-				.sort((a, b) => {    
-					if (a.field_item_name > b.field_item_name) {
-						return -1;
+				.sort((a, b) => {
+					if (sortByValue == 'high-low') {
+						return (
+							b.field_wholesale_price - a.field_wholesale_price
+						);
+					} else {
+						return (
+							a.field_wholesale_price - b.field_wholesale_price
+						);
 					}
-					if (b.field_item_name > a.field_item_name) {
-						return 1;
-					}
-					return 0;
 				})
 				.map((product, index) => (
 					<ProductCard

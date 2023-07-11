@@ -13,21 +13,24 @@ export default function ProductsContainer({
 	currentProduct,
 	isLoading,
 	loadingAllowed,
+	sortByValue,
 }) {
 	const content = useSelector((state) => state.language);
 	return isLoading ? (
 		<Loading />
 	) : (
-		<div className="mt-20 flex flex-1 flex-col items-center border-b">
+		<div className=" flex flex-1 flex-col items-center border-b">
 			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
 				{title}
 			</h1>
+
 			<ProductsCards
 				data={data}
 				currentProduct={currentProduct}
 				loadingAllowed={loadingAllowed}
 				number={number}
 				limit={limit}
+				sortByValue={sortByValue}
 			/>
 			{limit != 0 ? (
 				<ViewAllButton

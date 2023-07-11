@@ -9,6 +9,7 @@ import WhatsappButton from '../../components/ui/WhatsappButton';
 
 //Components without default export
 import { HeadComponent } from '../../components/ProductsPageComponents/HeadComponent';
+import { useState } from 'react';
 
 //SSR Fetching Function
 export async function getServerSideProps(context) {
@@ -35,12 +36,27 @@ export async function getServerSideProps(context) {
 export default function HomePage({ isLoading, data }) {
 	const router = useRouter();
 	const products = router.query;
-
+	const [sortByValue, setSortByValue] = useState('low-high');
+	console.log(sortByValue);
 	return (
 		<>
 			<HeadComponent products />
 			<Header />
-			<main className="mx-auto mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
+			<main className="mx-auto  flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
+				<div className="mt-20 ml-auto flex items-center px-5 font-bold capitalize">
+					<label className="my-5" htmlFor="storBySelect">
+						sort by:
+					</label>
+					<select
+						className="my-5 h-fit border"
+						name="sortBy"
+						id="storBySelect"
+						onChange={(e) => setSortByValue(e.target.value)}
+					>
+						<option value="low-high">low - high</option>
+						<option value="high-low">high - low</option>
+					</select>
+				</div>
 				<ProductsContainer
 					number={products.products}
 					limit={0}
@@ -48,6 +64,7 @@ export default function HomePage({ isLoading, data }) {
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
+					sortByValue={sortByValue}
 				/>
 			</main>
 			<Footer />
