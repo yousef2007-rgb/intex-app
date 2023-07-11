@@ -8,6 +8,10 @@ export function HeadComponent({}) {
 	const content = lang == 'arabic' ? data.Head.arabic : data.Head.english;
 	return (
 		<Head>
+				<meta
+				name="google-site-verification"
+				content="tzwZyToxpHnxh4irkfCAS021QDswX81YZttE_tHMob8"
+			/>
 			<title>{content.title}</title>
 			<meta name="description" content={content.discription} />
 			<meta name="robots" content="index, follow" />
