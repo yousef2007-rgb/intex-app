@@ -12,7 +12,10 @@ export function HeadComponent({}) {
 			<meta name="description" content={content.discription} />
 			<meta name="robots" content="index, follow" />
 			<meta name="author" content="IntexJo" />
-
+			<meta
+				name="google-site-verification"
+				content="tzwZyToxpHnxh4irkfCAS021QDswX81YZttE_tHMob8"
+			/>
 			<meta
 				name="viewport"
 				content="width=device-width, initial-scale=1.0"
