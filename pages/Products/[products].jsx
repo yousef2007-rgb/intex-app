@@ -37,7 +37,7 @@ export default function HomePage({ isLoading, data }) {
 	const router = useRouter();
 	const products = router.query;
 	const [sortByValue, setSortByValue] = useState('low-high');
-	console.log(sortByValue);
+
 	return (
 		<>
 			<HeadComponent products />
@@ -45,7 +45,7 @@ export default function HomePage({ isLoading, data }) {
 			<main className="mx-auto  flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
 				<div className="mt-20 ml-auto flex items-center px-5 font-bold capitalize">
 					<label className="my-5" htmlFor="storBySelect">
-						sort by:
+						sort by price:
 					</label>
 					<select
 						className="my-5 h-fit border"

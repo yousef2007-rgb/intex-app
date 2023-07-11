@@ -20,13 +20,9 @@ export function ProductsCards({
 				.filter((_, index) => index < limit || limit == 0)
 				.sort((a, b) => {
 					if (sortByValue == 'high-low') {
-						return (
-							b.field_wholesale_price - a.field_wholesale_price
-						);
+						return b.field_special_price - a.field_special_price;
 					} else {
-						return (
-							a.field_wholesale_price - b.field_wholesale_price
-						);
+						return a.field_special_price - b.field_special_price;
 					}
 				})
 				.map((product, index) => (
