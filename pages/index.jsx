@@ -69,12 +69,12 @@ export default function HomePage({ data, isLoading }) {
 			<HeadComponent />
 			<Header />
 			<main className="mx-auto mt-20 max-w-7xl font-bold">
-				<h1 className="py-4 text-center text-4xl capitalize text-primary">
+				<p className="py-4 text-center text-4xl capitalize text-primary">
 					{welcoming[0]}
-				</h1>
-				<h2 className=" px-5 text-center text-gray-600">
+				</p>
+				<p className=" px-5 text-center text-gray-600">
 					{welcoming[1]}
-				</h2>
+				</p>
 				<Intro intros={IntroProps} />
 				<ProductsContainerBody data={data} />
 			</main>
