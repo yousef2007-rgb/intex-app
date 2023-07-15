@@ -25,13 +25,14 @@ export default function ProductCard({
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
+			<meta itemprop="description" content={discription + label} />
+			<meta name="rating" content="4.5" />
+			<meta name="reviewCount" content="10" />
 			<div
 				itemProp="brand"
 				itemType="https://schema.org/Brand"
 				itemScope=""
-			>
-				<meta itemProp="name" content="intex" />
-			</div>
+			></div>
 			<meta itemProp="name" content={discription + label}></meta>
 			<div
 				itemProp="offers"
@@ -56,9 +57,6 @@ export default function ProductCard({
 					href="https://schema.org/InStock"
 				/>
 			</div>
-			<meta itemprop="description" content={discription + label} />
-			<meta name="rating" content="4.5" />
-			<meta name="reviewCount" content="10" />
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
