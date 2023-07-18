@@ -17,9 +17,7 @@ export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
 				`%0D${whatsappText} item=%20${x.item.discription.replace(
 					' ',
 					'%20'
-				)}X${x.quantity}%20total%20price=${
-					x.quantity * x.item.price * 1.5
-				}`
+				)}X${x.quantity}%20total%20price=${x.quantity * x.item.price}`
 			);
 		});
 	}, [cartItems]);
