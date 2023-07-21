@@ -5,7 +5,7 @@ export default function Intro({ intros }) {
 		<div className="relative flex flex-row-reverse flex-wrap justify-evenly pt-5">
 			{intros.map((item, index) => (
 				<a
-					className={`my-1  ${
+					className={`my-[0.6vw]  ${
 						item.aspectRatio == '1/1' ? 'w-[47%]' : 'w-[97%]'
 					}  rounded-xl shadow-xl transition-all hover:shadow-2xl ${
 						item.aspectRatio == '1/1' ? 'mobile:w-[23%]' : ''
