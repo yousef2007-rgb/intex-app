@@ -5,11 +5,11 @@ export default function Intro({ intros }) {
 		<div className="relative flex flex-row-reverse flex-wrap justify-evenly pt-5">
 			{intros.map((item, index) => (
 				<a
-					style={{
-						width: item.aspectRatio == '1/1' ? '23%' : '100%',
-						minWidth: '150px',
-					}}
-					className="m-1 rounded-xl shadow-xl transition-all hover:shadow-2xl"
+					className={`my-[0.125rem] min-w-[150px] ${
+						item.aspectRatio == '1/1' ? 'w-[49%]' : 'w-[99%]'
+					}  rounded-xl shadow-xl transition-all hover:shadow-2xl ${
+						item.aspectRatio == '1/1' ? 'mobile:w-[24%]' : ''
+					} `}
 					key={index}
 					href={item.link}
 				>
