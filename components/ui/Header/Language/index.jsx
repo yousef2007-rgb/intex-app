@@ -1,6 +1,5 @@
 //NextJS Hooks
 import { useRouter } from 'next/router';
-import ProductsContainerBodyData from '../../../../data/ProducsContainerBody.json';
 
 //Redux Hooks
 import { useDispatch } from 'react-redux';
@@ -8,14 +7,12 @@ import { useDispatch } from 'react-redux';
 //Redux Actions
 import { tougleLanguage } from '../../../../slices/languageSlice';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 //Main Component
 export default function LanguageButton({ language }) {
 	//Redux Component
 	const dispatch = useDispatch();
 
-	// console.log(content);
 	//Router
 
 	const router = useRouter();

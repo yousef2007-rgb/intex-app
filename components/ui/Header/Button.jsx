@@ -5,7 +5,7 @@ import Menu from './Navigation/Menu';
 export default function Button({ text, menu, tougle }) {
 	const [menuVisablity, setMenuVisablity] = useState('none');
 	return (
-		<div>
+		<div className=" text-xl">
 			<button
 				className="relative mx-3 flex h-20 items-center border-t-4 border-transparent font-extrabold uppercase hover:border-secondery"
 				onClick={() =>
