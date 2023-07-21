@@ -19,22 +19,17 @@ export default function LanguageButton({ language }) {
 	//Router
 
 	const router = useRouter();
-	const { lang } = router.query;
-	const { title } = router.query;
+	const query = router.query;
+	const { lang } = query;
 	const { asPath } = router;
-	const { products } = router.query;
-	const content =
-		lang == 'arabic'
-			? ProductsContainerBodyData.english
-			: ProductsContainerBodyData.arabic;
-	const page = content.find((x) => x.number == products);
+
 	if (
 		(lang == 'arabic' && language == 'english') ||
 		(lang == 'english' && language == 'arabic')
 	) {
 		dispatch(tougleLanguage());
 	}
-
+	console.log(asPath);
 	return (
 		<Link
 			className=" flex font-bold capitalize tablet:mx-3"
@@ -42,13 +37,14 @@ export default function LanguageButton({ language }) {
 				flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
 			}}
 			href={
-				title == undefined
-					? `${asPath.replace(`?lang=${lang}`, '')}?lang=${
-							lang == 'arabic' ? 'english' : 'arabic'
-					  }`
-					: `/Products/${products}?title=${page.title}&lang=${
-							lang == 'arabic' ? 'english' : 'arabic'
-					  }`
+				lang
+					? `${asPath.replace(
+							`lang=${lang}`,
+							`lang=${lang == 'arabic' ? 'english' : 'arabic'}`
+					  )}`
+					: !query
+					? asPath + '?lang=arabic'
+					: asPath + '&lang=arabic'
 			}
 		>
 			{language == 'arabic' ? 'EN' : 'AR'}
