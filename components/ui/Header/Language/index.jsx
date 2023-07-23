@@ -25,6 +25,7 @@ export default function LanguageButton({ language }) {
 	) {
 		dispatch(tougleLanguage());
 	}
+
 	return (
 		<Link
 			className=" flex font-bold capitalize tablet:mx-3"
@@ -37,9 +38,9 @@ export default function LanguageButton({ language }) {
 							`lang=${lang}`,
 							`lang=${lang == 'arabic' ? 'english' : 'arabic'}`
 					  )}`
-					: query == {}
-					? asPath + '?lang=arabic'
-					: asPath + '&lang=arabic'
+					: Object.keys(query).length != 0
+					? asPath + '&lang=arabic'
+					: asPath + '?lang=arabic'
 			}
 		>
 			{language == 'arabic' ? 'EN' : 'AR'}
