@@ -14,19 +14,17 @@ export default function LanguageButton({ language }) {
 	const dispatch = useDispatch();
 
 	//Router
-
 	const router = useRouter();
 	const query = router.query;
 	const { lang } = query;
 	const { asPath } = router;
-
+	console.log(query);
 	if (
 		(lang == 'arabic' && language == 'english') ||
 		(lang == 'english' && language == 'arabic')
 	) {
 		dispatch(tougleLanguage());
 	}
-	console.log(asPath);
 	return (
 		<Link
 			className=" flex font-bold capitalize tablet:mx-3"
@@ -39,7 +37,7 @@ export default function LanguageButton({ language }) {
 							`lang=${lang}`,
 							`lang=${lang == 'arabic' ? 'english' : 'arabic'}`
 					  )}`
-					: query != {}
+					: query == {}
 					? asPath + '?lang=arabic'
 					: asPath + '&lang=arabic'
 			}
