@@ -39,7 +39,7 @@ export default function LanguageButton({ language }) {
 							`lang=${lang}`,
 							`lang=${lang == 'arabic' ? 'english' : 'arabic'}`
 					  )}`
-					: !query
+					: query != {}
 					? asPath + '?lang=arabic'
 					: asPath + '&lang=arabic'
 			}
