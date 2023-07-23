@@ -20,9 +20,31 @@ export function ProductsCards({
 				.filter((_, index) => index < limit || limit == 0)
 				.sort((a, b) => {
 					if (sortByValue == 'high-low') {
-						return b.field_special_price - a.field_special_price;
+						return (
+							(b.field_special_price
+								? b.field_special_price
+								: !b.field_online_price
+								? b.field_wholesale_price * 1.5
+								: b.field_online_price) -
+							(a.field_special_price
+								? a.field_special_price
+								: !a.field_online_price
+								? a.field_wholesale_price * 1.5
+								: a.field_online_price)
+						);
 					} else {
-						return a.field_special_price - b.field_special_price;
+						return (
+							(a.field_special_price
+								? a.field_special_price
+								: !a.field_online_price
+								? a.field_wholesale_price * 1.5
+								: a.field_online_price) -
+							(b.field_special_price
+								? b.field_special_price
+								: !b.field_online_price
+								? b.field_wholesale_price * 1.5
+								: b.field_online_price)
+						);
 					}
 				})
 				.map((product, index) => (
