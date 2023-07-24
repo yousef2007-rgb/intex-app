@@ -9,7 +9,7 @@ export default function Menu({ data, tougle }) {
 			{data.map((item, index) => (
 				<section key={index} className=" flex w-60 flex-col">
 					<img src={item.image} alt="" />
-					<div className=" flex flex-col">
+					<div className="flex flex-col">
 						{item.items.map((element, index) => (
 							<Link
 								key={index}

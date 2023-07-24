@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductsContainer from '../ui/ProductsContainer/ProductsContainer';
 import { useSelector } from 'react-redux';
+import useContent from '../../hooks/useContent';
 
 export default function ProductsContainerBody({ data }) {
 	const content = useSelector((state) => state.language);
