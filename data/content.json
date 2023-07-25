@@ -37,8 +37,8 @@
 									"link": "/Products/1514?title=inflated%20boats"
 								},
 								{
-									"text": "Blower",
-									"link": "/Products/346?title=blower"
+									"text": "pums",
+									"link": "/Products/346?title=pumps"
 								}
 							]
 						}
@@ -84,7 +84,7 @@
 				"number": "344"
 			},
 			{
-				"title": "blower",
+				"title": "pumps",
 				"number": "346"
 			},
 			{
@@ -132,8 +132,8 @@
 									"link": "/Products/1515?title=المنتجات%20القابلة%20للنفخ"
 								},
 								{
-									"text": "برك قابلة للنفخ",
-									"link": "/Products/343?title=البرك20%قابلة20%للنفخ"
+									"text": "برك نفخ",
+									"link": "/Products/343?title=برك%20نفخ"
 								},
 								{
 									"text": "اثاث",
@@ -163,7 +163,7 @@
 							"items": [
 								{
 									"text": "اكسسوارات للبرك",
-									"link": "/Products/345?title=pool%20equipment"
+									"link": "/Products/345?title=اكسسوارات%20البرك"
 								}
 							]
 						}
@@ -188,7 +188,7 @@
 				"number": "1515"
 			},
 			{
-				"title": "برك قابلة للنفخ",
+				"title": "برك نفخ",
 				"number": "343"
 			},
 			{
