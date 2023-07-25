@@ -40,7 +40,7 @@ export default function HomePage({ isLoading, data }) {
 
 	return (
 		<>
-			<HeadComponent products />
+			<HeadComponent products={products} />
 			<Header />
 			<main className="mx-auto  flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-0">
 				<div className="mt-20 ml-auto flex items-center px-5 font-bold capitalize">
