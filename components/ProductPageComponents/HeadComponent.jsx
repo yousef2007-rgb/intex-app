@@ -20,7 +20,8 @@ export function HeadComponent({ product }) {
 	return (
 		<Head>
 			<title>
-				Intex Jo | {product.field_item_name} {product.label}
+				{product.field_item_name} | {product.label} | Intex | Jordan |
+				Intexjo.com
 			</title>
 			<meta
 				name="description"

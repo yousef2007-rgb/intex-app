@@ -3,7 +3,7 @@ import Head from 'next/head';
 export function HeadComponent({ products }) {
 	return (
 		<Head>
-			<title>Intex Jo | {products.title}</title>
+			<title>{products.title} | Intex | Jordan | Intex Jo</title>
 			<meta
 				name="description"
 				content={`${products.title} | Intexjo.com is a leading provider of high-quality and affordable Intex products in jordan. With a wide range of Intex products in jordan including pools, floats, accessories, pool equipment, furniture, and more. intex jordan `}
