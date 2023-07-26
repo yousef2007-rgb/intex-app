@@ -41,7 +41,7 @@ export default function SearchBody({ visability }) {
 				</div>
 				<div
 					onClick={() => dispatch(tougle())}
-					className="mt-5 flex max-h-[89vh]  w-full flex-row flex-wrap justify-evenly gap-20 overflow-auto"
+					className="mt-5 flex max-h-[89vh]  w-full flex-row flex-wrap justify-evenly gap-20 overflow-auto p-5 "
 				>
 					{textValue != ''
 						? data.data.res

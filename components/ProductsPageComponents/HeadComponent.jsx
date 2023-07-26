@@ -1,12 +1,20 @@
 import React from 'react';
 import Head from 'next/head';
+import data from '../../data/HomePage.json';
+import { useRouter } from 'next/router';
 export function HeadComponent({ products }) {
+	const content = data.Head;
+	const { lang } = useRouter().query;
 	return (
 		<Head>
 			<title>{products.title} | Intex | Jordan | Intex Jo</title>
 			<meta
 				name="description"
-				content={`${products.title} | Intexjo.com is a leading provider of high-quality and affordable Intex products in jordan. With a wide range of Intex products in jordan including pools, floats, accessories, pool equipment, furniture, and more. intex jordan `}
+				content={`${products.title} | ${
+					lang == 'arabic'
+						? content.arabic.discription
+						: content.english.discription
+				}`}
 			/>
 			<meta name="robots" content="index, follow" />
 			<meta name="author" content="IntexJo" />
@@ -31,13 +39,21 @@ export function HeadComponent({ products }) {
 			/>
 			<meta
 				property="og:description"
-				content={`${products.title} | Intexjo.com is a leading provider of high-quality and affordable Intex products in jordan. With a wide range of Intex products in jordan including pools, floats, accessories, pool equipment, furniture, and more. intex jordan `}
+				content={`${products.title} | ${
+					lang == 'arabic'
+						? content.arabic.discription
+						: content.english.discription
+				}`}
 			/>
 			<meta name="twitter:card" content="summary" />
 			<meta name="twitter:site" content="@intex-jo" />
 			<meta
 				name="twitter:title"
-				content="Intex Jo | Official Distributor for Intex In Jordan"
+				content={`${products.title} | ${
+					lang == 'arabic'
+						? content.arabic.discription
+						: content.english.discription
+				}`}
 			/>
 			<meta
 				name="twitter:description"

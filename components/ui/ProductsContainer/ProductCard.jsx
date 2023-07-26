@@ -19,7 +19,7 @@ export default function ProductCard({
 			href={`/Product/${nid}?lang=${
 				lang == 'arabic' ? 'arabic' : 'english'
 			}`}
-			className="relative z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl"
+			className="relative z-0 mx-1 flex w-full max-w-xs flex-col items-center justify-center rounded-xl bg-white text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl "
 			itemScope
 			itemType="https://schema.org/Product"
 			onMouseEnter={() => setHover(true)}
