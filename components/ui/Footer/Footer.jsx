@@ -1,13 +1,7 @@
 //Main Component
 export default function Footer({}) {
 	return (
-		<footer
-			className=" bg-gray-100 p-4  sm:p-6"
-			style={{
-				backgroundImage: "url('/Assets/bg2.png')",
-				backgroundSize: '400px',
-			}}
-		>
+		<footer className=" bg-gray-100 p-4  sm:p-6">
 			<div className="mx-auto max-w-6xl sm:flex sm:justify-between">
 				<div className="mx-auto mb-6 w-fit max-w-[175px] sm:mx-0 md:mb-0">
 					<a
