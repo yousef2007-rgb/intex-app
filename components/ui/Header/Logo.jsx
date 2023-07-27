@@ -11,6 +11,7 @@ export default function Logo({}) {
 			<img
 				className="w-3/4 max-w-[176px] "
 				src="/Assets/images/logo.png"
+				alt="intex logo"
 			/>
 		</Link>
 	);
