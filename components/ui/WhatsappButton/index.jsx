@@ -1,9 +1,13 @@
 import React from 'react';
 
-export default function index() {
+export default function index({ nid }) {
 	return (
 		<a
-			href="https://wa.me/798642783"
+			href={
+				nid
+					? `https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${nid}`
+					: 'https://wa.me/798642783'
+			}
 			target="blank"
 			className="fixed right-4 bottom-4"
 		>

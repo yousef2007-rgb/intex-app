@@ -81,7 +81,7 @@ export default function HomePage({ data }) {
 			</main>
 			<Header />
 			<Footer />
-			<WhatsappButton />
+			<WhatsappButton nid={product.nid} />
 		</div>
 	);
 }
