@@ -19,7 +19,6 @@ export async function getServerSideProps(context) {
 		}&lang=${context.query.lang == 'arabic' ? 'ar' : 'en'}&username=28`
 	);
 
-	console.log(context.query.lang);
 	const data = await res.json();
 	context.res.setHeader(
 		'Cache-Control',

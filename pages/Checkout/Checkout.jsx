@@ -70,8 +70,6 @@ export default function Checkout() {
 				method: 'POST',
 			}
 		)
-			.then((response) => response.json())
-			.then((json) => console.log(json))
 			.then(
 				() =>
 					(window.location.href = `/Checkedout?lang=${

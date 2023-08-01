@@ -100,6 +100,7 @@ export function Article({ content, product }) {
 					</button>
 				</div>
 				<button
+					className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
 					onClick={() => {
 						if (counter != 0) {
 							dispatch(
@@ -119,10 +120,16 @@ export function Article({ content, product }) {
 							alert('Set A Quantity Please!');
 						}
 					}}
-					className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery px-20 py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:w-fit"
 				>
 					{content.ProductPage.addToCartButton}
 				</button>
+				<a
+					className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
+					href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
+					target="blank"
+				>
+					ask for help
+				</a>
 			</div>
 		</article>
 	);
