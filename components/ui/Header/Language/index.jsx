@@ -43,7 +43,7 @@ export default function LanguageButton({ language }) {
 					: asPath + '?lang=arabic'
 			}
 		>
-			{language == 'arabic' ? 'EN' : 'AR'}
+			{lang == 'arabic' ? 'EN' : 'AR'}
 		</Link>
 	);
 }

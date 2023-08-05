@@ -9,7 +9,7 @@ export function ProductsCards({
 	sortByValue,
 }) {
 	return (
-		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly gap-8 py-5 text-center">
+		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly gap-8  text-center">
 			{data.data.res
 				.filter(
 					(x) =>

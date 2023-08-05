@@ -9,7 +9,7 @@ export function ViewAllButton({ number, title, content }) {
 		<>
 			<Link
 				href={`/Products/${number}?title=${title}&lang=${lang}`}
-				className="mx-auto my-12 rounded-xl border-2 border-transparent bg-primary px-12 py-2 font-bold text-white transition-all duration-200 ease-in-out hover:border-primary hover:bg-white hover:text-primary"
+				className="mx-auto my-10 rounded-xl border-2 border-transparent bg-primary px-12 py-2 font-bold text-white transition-all duration-200 ease-in-out hover:border-primary hover:bg-white hover:text-primary"
 			>
 				{content.language == 'arabic'
 					? content.ProductContainer.viewAllButton

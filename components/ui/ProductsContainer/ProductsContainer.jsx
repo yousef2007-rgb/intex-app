@@ -20,7 +20,7 @@ export default function ProductsContainer({
 		<Loading />
 	) : (
 		<div className=" flex flex-1 flex-col items-center border-b">
-			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold uppercase text-blue_gray  ">
+			<h1 className=" my-10 mx-auto w-fit text-3xl font-bold capitalize text-blue_gray  ">
 				{title}
 			</h1>
 

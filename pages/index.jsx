@@ -38,26 +38,31 @@ export default function HomePage({ data, isLoading }) {
 			src: '/Assets/images/intro/categories-05.jpg',
 			link: '/Products/342?title=pools',
 			aspectRatio: '16/7',
+			text: { en: 'pools', ar: 'برك' },
 		},
 		{
 			src: '/Assets/images/intro/categories-03.jpg',
 			link: '/Products/343?title=inflated%20pools',
 			aspectRatio: '1/1',
+			text: { en: 'inflated pools', ar: 'برك نفخ' },
 		},
 		{
 			src: '/Assets/images/intro/categories-02.jpg',
 			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
+			text: { en: 'inflated products', ar: 'منتجات نفخ' },
 		},
 		{
 			src: '/Assets/images/intro/categories-01.jpg',
 			link: '/Products/344?title=accessories',
 			aspectRatio: '1/1',
+			text: { en: 'accessories', ar: 'اكسسوارات' },
 		},
 		{
 			src: '/Assets/images/intro/categories-04.jpg',
 			link: '/Products/1944?title=furniture',
 			aspectRatio: '1/1',
+			text: { en: 'furniture', ar: 'اثاث' },
 		},
 	];
 
@@ -69,13 +74,15 @@ export default function HomePage({ data, isLoading }) {
 			<HeadComponent />
 			<Header />
 			<main className="mx-auto mt-20 max-w-7xl font-bold">
-				<p className="py-4 text-center text-4xl capitalize text-primary">
-					{welcoming[0]}
-				</p>
-				<p className=" px-5 text-center text-gray-600">
-					{welcoming[1]}
-				</p>
 				<Intro intros={IntroProps} />
+				<article className=" px-5 py-10 text-center ">
+					<h1 className="py-4 text-center text-4xl uppercase text-blue_gray">
+						{welcoming[0]}
+					</h1>
+					<p className=" text- text-gray px-5 text-gray-700">
+						{welcoming[1]}
+					</p>
+				</article>
 				<ProductsContainerBody data={data} />
 			</main>
 			<Footer />
