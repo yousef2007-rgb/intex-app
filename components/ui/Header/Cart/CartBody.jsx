@@ -72,9 +72,18 @@ export default function CartBody({ visability }) {
 
 //Secondery Components
 function EmptyCart({}) {
+	const content = useSelector((state) => state.language); //variables
+
 	return (
 		<div>
-			<h1 className="py-10 font-bold">Your Cart Is Empty</h1>
+			<h1
+				className="py-10 font-bold"
+				style={{
+					textAlign: content.language == 'arabic' ? 'right' : 'left',
+				}}
+			>
+				{content.Cart.emptyCart}
+			</h1>
 		</div>
 	);
 }

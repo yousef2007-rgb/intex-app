@@ -3,7 +3,8 @@
 		"language": "english",
 		"Cart": {
 			"title": "cart",
-			"checkoutButton": "checkout using whatsapp"
+			"checkoutButton": "View Cart",
+			"emptyCart": "your cart is empty"
 		},
 		"Header": {
 			"navigation": [
@@ -107,14 +108,21 @@
 		"ProductPage": {
 			"addToCartButton": "add to cart",
 			"itemNumber": "item number",
-			"relatedProducts": "related products"
+			"relatedProducts": "related products",
+			"help": "ask for help",
+			"listPrice": "list price"
+		},
+		"footer": {
+			"followUs": "follow us",
+			"customerService": "customer service"
 		}
 	},
 	"ar": {
 		"language": "arabic",
 		"Cart": {
 			"title": "قائمة المشتريات",
-			"checkoutButton": "الشراء عبر الواتس اب"
+			"checkoutButton": "عرض القائمة",
+			"emptyCart": "قائمتك فارغة"
 		},
 		"Header": {
 			"navigation": [
@@ -218,7 +226,13 @@
 		"ProductPage": {
 			"addToCartButton": "اضف الى القائمة",
 			"itemNumber": "رقم المنتج",
-			"relatedProducts": "منتجات لها علاقة"
+			"relatedProducts": "منتجات لها علاقة",
+			"help": "اطلب المساعدة",
+			"listPrice": "السعر الأصلي"
+		},
+		"footer": {
+			"followUs": "تابعنا",
+			"customerService": "خدمة العملاء"
 		}
 	}
 }

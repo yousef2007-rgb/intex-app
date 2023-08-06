@@ -1,5 +1,5 @@
 //Redux Hooks
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 //Redux Actions
 import { tougleCart } from '../../../../slices/cartVisabilitySlice';
@@ -13,6 +13,7 @@ export default function CheckoutButton() {
 	//Redux Hooks
 	const dispatch = useDispatch();
 	const { lang } = useRouter().query;
+	const content = useSelector((state) => state.language);
 	return (
 		<Link
 			className=" w-full rounded-xl border-2 border-secondery
@@ -20,7 +21,7 @@ export default function CheckoutButton() {
 			href={`/Checkout?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
 			onClick={() => dispatch(tougleCart())}
 		>
-			CheckOut
+			{content.Cart.checkoutButton}
 		</Link>
 	);
 }

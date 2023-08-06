@@ -1,7 +1,15 @@
+import { useSelector } from 'react-redux';
 //Main Component
 export default function Footer({}) {
+	const content = useSelector((state) => state.language);
+
 	return (
-		<footer className=" bg-gray-100 p-4  sm:p-6">
+		<footer
+			className=" bg-gray-100 p-4  sm:p-6"
+			style={{
+				textAlign: content.language == 'arabic' ? 'right' : 'left',
+			}}
+		>
 			<div className="mx-auto max-w-6xl sm:flex sm:justify-between">
 				<div className="mx-auto mb-6 w-fit max-w-[175px] sm:mx-0 md:mb-0">
 					<a
@@ -18,7 +26,7 @@ export default function Footer({}) {
 				<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6 ">
 					<div className=" flex flex-col items-center text-center sm:items-start sm:text-left">
 						<h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 ">
-							Follow us
+							{content.footer.followUs}
 						</h2>
 						<ul className="text-gray-600 ">
 							<li className="mb-4">
@@ -65,7 +73,7 @@ export default function Footer({}) {
 					</div>
 					<div className=" flex flex-col items-center text-center sm:items-start sm:text-left">
 						<h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 ">
-							CUSTOMER SERVICE
+							{content.footer.customerService}
 						</h2>
 						<ul className="font-bold text-green-500 ">
 							<li className="mb-4">

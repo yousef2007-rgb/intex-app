@@ -74,7 +74,13 @@ export default function HomePage({ data, isLoading }) {
 			<HeadComponent />
 			<Header />
 			<main className="mx-auto mt-20 max-w-7xl font-bold">
+				<p className="pt-6 text-center text-4xl uppercase text-blue_gray">
+					{lang == 'arabic'
+						? content.categories.arabic
+						: content.categories.english}
+				</p>
 				<Intro intros={IntroProps} />
+				<ProductsContainerBody data={data} />
 				<article className=" px-5 py-10 text-center ">
 					<h1 className="py-4 text-center text-4xl uppercase text-blue_gray">
 						{welcoming[0]}
@@ -83,7 +89,6 @@ export default function HomePage({ data, isLoading }) {
 						{welcoming[1]}
 					</p>
 				</article>
-				<ProductsContainerBody data={data} />
 			</main>
 			<Footer />
 			<WhatsappButton />

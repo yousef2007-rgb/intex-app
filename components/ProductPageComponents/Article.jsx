@@ -65,7 +65,7 @@ export function Article({ content, product }) {
 				<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
 					{product.field_special_price ? (
 						<>
-							<span>List Price: </span>
+							<span>{content.ProductPage.listPrice}: </span>
 							<p
 								itemProp="price"
 								style={{
@@ -128,7 +128,7 @@ export function Article({ content, product }) {
 					href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
 					target="blank"
 				>
-					ask for help
+					{content.ProductPage.help}
 				</a>
 			</div>
 		</article>
