@@ -79,57 +79,70 @@ export function Article({ content, product }) {
 						''
 					)}
 				</div>
-				<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
-					<button
-						onClick={() => {
-							if (counter > 0) {
-								setCounter(counter - 1);
-							}
-						}}
-						className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
-					>
-						-
-					</button>
-					<p className=" flex-1 py-2 tablet:px-24">{counter}</p>
+				{product.status == 0 ? (
+					<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500">
+						out of stock
+					</h1>
+				) : (
+					<>
+						<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
+							<button
+								onClick={() => {
+									if (counter > 0) {
+										setCounter(counter - 1);
+									}
+								}}
+								className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
+							>
+								-
+							</button>
+							<p className=" flex-1 py-2 tablet:px-24">
+								{counter}
+							</p>
 
-					<button
-						onClick={() => setCounter(counter + 1)}
-						className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
-					>
-						+
-					</button>
-				</div>
-				<button
-					className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
-					onClick={() => {
-						if (counter != 0) {
-							dispatch(
-								addCartItem({
-									item: {
-										image: product.image,
-										discription: product.field_item_name,
-										label: product.label,
-										price: price,
-										nid: product.nid,
-									},
-									quantity: counter,
-									replace: false,
-								})
-							);
-						} else {
-							alert('Set A Quantity Please!');
-						}
-					}}
-				>
-					{content.ProductPage.addToCartButton}
-				</button>
-				<a
-					className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
-					href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
-					target="blank"
-				>
-					{content.ProductPage.help}
-				</a>
+							<button
+								onClick={() => setCounter(counter + 1)}
+								className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
+							>
+								+
+							</button>
+						</div>
+
+						<button
+							className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
+							onClick={() => {
+								if (counter != 0) {
+									dispatch(
+										addCartItem({
+											item: {
+												image: product.image,
+												discription:
+													product.field_item_name,
+												label: product.label,
+												price: price,
+												nid: product.nid,
+											},
+											quantity: counter,
+											replace: false,
+										})
+									);
+								} else {
+									alert('Set A Quantity Please!');
+								}
+							}}
+						>
+							{content.ProductPage.addToCartButton}
+						</button>
+
+						<a
+							className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
+							href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
+							target="blank"
+						>
+							{content.ProductPage.help}
+						</a>
+					</>
+				)}
 			</div>
 		</article>
 	);
