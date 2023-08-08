@@ -17,7 +17,15 @@ export function ProductsCards({
 						x.field_subcategory == number &&
 						x.nid != currentProduct
 				)
-				.filter((_, index) => index < limit || limit == 0)
+				.filter((x) =>
+					sortByValue == 'related'
+						? (x.field_special_price
+								? x.field_special_price
+								: !x.field_online_price
+								? x.field_wholesale_price * 1.5
+								: x.field_online_price) >= 6
+						: true
+				)
 				.sort((a, b) => {
 					if (sortByValue == 'high-low') {
 						return (
@@ -47,6 +55,7 @@ export function ProductsCards({
 						);
 					}
 				})
+				.filter((_, index) => index < limit || limit == 0)
 				.map((product, index) => (
 					<ProductCard
 						key={index}

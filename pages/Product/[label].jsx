@@ -69,7 +69,7 @@ export default function HomePage({ data }) {
 						<Article content={content} product={product} />
 					</div>
 					<ProductsContainer
-						title={content.ProductPage.relatedProducts}
+						title={content.ProductPage.similarProducts}
 						limit={3}
 						number={product.field_subcategory}
 						data={relatedData}
@@ -77,6 +77,38 @@ export default function HomePage({ data }) {
 						currentProduct={product.nid}
 						loadingAllowed={false}
 					/>
+					{product.field_subcategory == 342 ? (
+						<ProductsContainer
+							title={content.ProductPage.relatedProducts}
+							limit={3}
+							number={345}
+							data={relatedData}
+							isLoading={relatedIsLoading}
+							currentProduct={product.nid}
+							loadingAllowed={false}
+							sortByValue="related"
+						/>
+					) : (
+						''
+					)}
+					{product.field_subcategory == 2693 ||
+					product.field_subcategory == 1515 ||
+					product.field_subcategory == 1514 ||
+					product.field_subcategory == 1944 ||
+					product.field_subcategory == 343 ? (
+						<ProductsContainer
+							title={content.ProductPage.relatedProducts}
+							limit={3}
+							number={346}
+							data={relatedData}
+							isLoading={relatedIsLoading}
+							currentProduct={product.nid}
+							loadingAllowed={false}
+							sortByValue="high-low"
+						/>
+					) : (
+						''
+					)}
 				</div>
 			</main>
 			<Header />

@@ -13,7 +13,6 @@ const useFetch = (url, key) => {
 			.then((data) => {
 				setIsLoading(false);
 				setData(data);
-				window.localStorage.setItem("data", JSON.stringify(data));
 			}).catch(err => console.log(err));
 	}, []);
 	return [data, isLoading];

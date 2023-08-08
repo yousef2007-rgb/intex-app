@@ -5,7 +5,7 @@ export default function Footer({}) {
 
 	return (
 		<footer
-			className=" bg-gray-100 p-4  sm:p-6"
+			className=" mt-[50px] bg-gray-100 p-4 sm:p-6"
 			style={{
 				textAlign: content.language == 'arabic' ? 'right' : 'left',
 			}}
