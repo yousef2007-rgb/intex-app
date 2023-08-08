@@ -9,6 +9,7 @@ import CheckoutButton from './CheckoutButton';
 //	Redux Actions
 import { clearItems } from '../../../../slices/cartSlice';
 import { resetCartItem } from '../../../../slices/cartSlice';
+import { useRouter } from 'next/router';
 
 //Main Component
 export default function CartBody({ visability }) {
@@ -27,18 +28,12 @@ export default function CartBody({ visability }) {
 	const cartItems = useSelector((state) => state.cart);
 	const content = useSelector((state) => state.language); //variables
 	const dispatch = useDispatch();
-
+	const { lang } = useRouter().query;
 	return (
 		<div
-			className={`scrollbar-w-thin absolute top-24 z-50 mx-2 flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg ${
-				content.language == 'arabic'
-					? 'desktop:left-1/2 desktop:translate-x-[-50%]'
-					: 'desktop:right-1/2 desktop:translate-x-[50%]'
-			}`}
+			className={`scrollbar-w-thin absolute right-0 top-24 z-50 mx-2 flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg`}
 			style={{
 				display: visability,
-				left: content.language == 'english' ? 'unset' : 0,
-				right: content.language == 'english' ? 0 : 'unset',
 			}}
 		>
 			<h1

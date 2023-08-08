@@ -15,6 +15,7 @@ export default function index({ nid }) {
 				className="h-16 w-16 "
 				src="/Assets/images/whatsapp-logo.png"
 				alt="whatsapp logo"
+				title="ask for help"
 			/>
 		</a>
 	);
