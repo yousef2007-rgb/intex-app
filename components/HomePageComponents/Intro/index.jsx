@@ -24,9 +24,15 @@ export default function Intro({ intros }) {
 						}}
 					/>
 					<span
-						className={`absolute  bottom-[6%] w-full text-center capitalize text-white mobile:!text-[${
-							item.aspectRatio == '1/1' ? '2.7vw' : '4vw'
-						}]`}
+						className={`absolute bottom-[6%] w-full text-center capitalize text-white ${
+							item.aspectRatio == '1/1'
+								? 'mobile:!text-[2.7vw]'
+								: 'mobile:!text-[5vw]'
+						} ${
+							item.aspectRatio == '1/1'
+								? 'desktop:!text-4xl'
+								: 'desktop:!text-6xl'
+						}`}
 						style={{
 							fontSize: item.aspectRatio == '1/1' ? '5vw' : '6vw',
 						}}
