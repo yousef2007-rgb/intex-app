@@ -13,7 +13,7 @@ import { tougleLanguage } from '../../../slices/languageSlice';
 export default function Header() {
 	const content = useSelector((state) => state.language);
 	const [navigationVisability, setNavigationVisability] = useState('none');
-	const tougleNavigationVisability = () => {
+	const toggleNavigationVisability = () => {
 		setNavigationVisability(
 			navigationVisability == 'flex' ? 'none' : 'flex'
 		);
@@ -42,11 +42,11 @@ export default function Header() {
 						<Navigation
 							navigationVisability={navigationVisability}
 							setNavigationVisability={setNavigationVisability}
-							tougle={tougleNavigationVisability}
+							tougle={toggleNavigationVisability}
 						/>
 					}
 					visability={navigationVisability}
-					tougle={tougleNavigationVisability}
+					tougle={toggleNavigationVisability}
 					usingRedux={false}
 				/>
 				<LanguageButton language={content.language} />
