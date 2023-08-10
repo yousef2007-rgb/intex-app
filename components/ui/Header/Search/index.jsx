@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Close from '../../../../public/Assets/icons/CloseIcon';
 import categories from '../../../../data/content.json';
 import PopUp from './../../PopUp/PopUp';
-export default function index() {
+export default function Search() {
 	const [textValue, setTextValue] = useState('');
 	const input = useRef(null);
 	const claerText = () => {
