@@ -3,14 +3,12 @@ import Header from '../../components/ui/Header/Header';
 import Footer from '../../components/ui/Footer/Footer';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addCartItem, clearItems } from '../../slices/cartSlice';
-import { addCartItems } from '../../slices/checkedoutSlice';
+import { clearItems } from '../../slices/cartSlice';
 import WhatsappCheckout from '../../components/CheckoutPageComponents/WhatsappCheckout';
 import CartItem from '../../components/CheckoutPageComponents/CartItem';
 import PopUp from '../../components/ui/PopUp/PopUp';
 import WhatsappButton from '../../components/ui/WhatsappButton';
 import { UserInfoForm } from '../../components/CheckoutPageComponents/UserInfoForm';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 export default function Checkout() {
 	const { lang } = useRouter().query;

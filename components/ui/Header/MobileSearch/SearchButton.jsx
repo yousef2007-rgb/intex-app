@@ -7,11 +7,11 @@ export default function SearchBody({ searchVisability }) {
 	const dispatch = useDispatch();
 	return (
 		<button
+			className={`w-6`}
 			style={{
 				position: searchVisability == 'none' ? 'relative' : 'absolute',
 				right: searchVisability == 'none' ? 'unset' : '30px',
 			}}
-			className={`w-6`}
 			onClick={() => dispatch(tougle())}
 		>
 			{searchVisability == 'none' ? <Search /> : <Close />}

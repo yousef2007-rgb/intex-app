@@ -46,3 +46,8 @@ a {
 .slide.active {
 	opacity: 1;
 }
+
+.search-visability {
+	// @media (min-width: 800px) {
+	display: none;
+}

@@ -33,9 +33,9 @@ export default function SearchBody({ visability }) {
 			<div className=" flex h-fit w-full flex-col items-center rounded-xl bg-white  p-4">
 				<div className=" my-0 flex w-full max-w-2xl flex-nowrap items-center justify-center rounded-xl border border-secondery  bg-white px-5 py-2 ">
 					<input
-						ref={input}
 						placeholder="Search for product"
 						className=" fex-1 h-full w-full font-bold text-black outline-none"
+						ref={input}
 						onChange={() => setTextValue(input.current.value)}
 					/>
 				</div>

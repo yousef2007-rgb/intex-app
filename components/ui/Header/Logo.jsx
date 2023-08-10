@@ -5,7 +5,7 @@ export default function Logo({}) {
 	const { lang } = useRouter().query;
 	return (
 		<Link
-			className=" flex-1"
+			className=" "
 			href={`/?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
 		>
 			<img

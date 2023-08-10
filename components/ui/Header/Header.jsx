@@ -6,9 +6,13 @@ import LanguageButton from './Language';
 import Navigation from './Navigation';
 import NavigationButton from './Navigation/NavigationButton';
 import Cart from './Cart';
-import Search from './Search';
+import MobileSearch from './MobileSearch';
 import PopUp from '../PopUp/PopUp';
 import { tougleLanguage } from '../../../slices/languageSlice';
+import SearchIcon from '../../../public/Assets/icons/SearchIcon';
+// import searchIcon from '../../../';
+import { Link } from 'next/link';
+import Search from './Search';
 
 export default function Header() {
 	const content = useSelector((state) => state.language);
@@ -30,9 +34,7 @@ export default function Header() {
 
 	return (
 		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
-			<header
-				className={`z-50 mx-auto flex h-20 max-w-5xl items-center `}
-			>
+			<header className={`z-50 flex h-20 items-center px-5`}>
 				<NavigationButton
 					setNavigationVisability={setNavigationVisability}
 				/>
@@ -49,9 +51,10 @@ export default function Header() {
 					tougle={toggleNavigationVisability}
 					usingRedux={false}
 				/>
+				<Search />
 				<LanguageButton language={content.language} />
 				<Cart />
-				<Search />
+				<MobileSearch />
 			</header>
 		</div>
 	);

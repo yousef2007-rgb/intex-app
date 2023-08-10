@@ -70,36 +70,44 @@
 		"ProductContainerBody": [
 			{
 				"title": "pools",
-				"number": "342"
+				"number": "342",
+				"keywords": "Ring easy set metal frame prism round rectangular filter swimming ultra xtr"
 			},
 			{
 				"title": "inflated products",
-				"number": "1515"
+				"number": "1515",
+				"keywords": "float mat baby kids play center island flamingo unicorn ring"
 			},
 			{
 				"title": "inflated pools",
-				"number": "343"
+				"number": "343",
+				"keywords": "kids baby box circular circle disney crystal blue glow swimming"
 			},
 			{
 				"title": "accessories",
-				"number": "344"
+				"number": "344",
+				"keywords": "goggles armbands ring float ball jacket vest cruiser "
 			},
 			{
 				"title": "pumps",
-				"number": "346"
-			},
-			{
-				"title": "inflated boats",
-				"number": "1514"
+				"number": "346",
+				"keywords": "electric pump"
 			},
 			{
 				"title": "pool equipment",
-				"number": "345"
+				"number": "345",
+				"keywords": "chlor حشوة رقع repair chemical filter leaf rake cartridge A B light heater ladder سلم"
+			},
+			{
+				"title": "inflated boats",
+				"number": "1514",
+				"keywords": "boat"
 			},
 
 			{
 				"title": "furniture",
-				"number": "1944"
+				"number": "1944",
+				"keywords": "chair bed mattres"
 			}
 		],
 		"ProductContainer": {
@@ -190,35 +198,43 @@
 		"ProductContainerBody": [
 			{
 				"title": "برك",
-				"number": "342"
+				"number": "342",
+				"keywords": "عجل مجموعة سهلة إطار معدني بريزم دائري مستطيل فلتر سباحة متعدد مسابح الأشكال XTR"
 			},
 			{
-				"title": "منتجات قابلة للنفخ",
-				"number": "1515"
+				"title": "منتجات نفخ",
+				"number": "1515",
+				"keywords": "عوامة حصيرة طفل أطفال مركز لعب جزيرة فلامنغو يونيكورن عجل"
 			},
 			{
 				"title": "برك نفخ",
-				"number": "343"
+				"number": "343",
+				"keywords": "أطفال طفل صندوق دائري دائري ديزني كريستال بلو مسابح توهّج سباحة"
 			},
 			{
 				"title": "اكسسوارات",
-				"number": "344"
+				"number": "344",
+				"keywords": "نظارات سوار عجل عائم كرة سترة سترة مركب رحّال"
 			},
 			{
 				"title": "منافيخ",
-				"number": "346"
-			},
-			{
-				"title": "قوارب قابلة للنفخ",
-				"number": "1514"
+				"number": "346",
+				"keywords": "مضخة كهربائية"
 			},
 			{
 				"title": "اكسسوارات البرك",
-				"number": "345"
+				"number": "345",
+				"keywords": "كلور حشوة رقعة إصلاح كيميائي فلتر مغرفة ورقة كرتوشة ضوء مُدفأ سلم"
 			},
 			{
-				"title": "اثاث",
-				"number": "1944"
+				"title": "قوارب معدّة",
+				"number": "1514",
+				"keywords": "قارب"
+			},
+			{
+				"title": "أثاث",
+				"number": "1944",
+				"keywords": "كرسي سرير فراش"
 			}
 		],
 		"ProductContainer": {
