@@ -62,6 +62,7 @@ export default function index() {
 											`/Products/${products.number}/?title=${products.title}&lang=english`
 										)
 									}
+									key={index}
 								>
 									<span className="mr-2 w-4">
 										<SearchIcon />
@@ -86,6 +87,7 @@ export default function index() {
 											`/Products/${products.number}/?title=${products.title}&lang=arabic`
 										)
 									}
+									key={index}
 								>
 									<span className="mr-2 w-4">
 										<SearchIcon />
@@ -110,6 +112,7 @@ export default function index() {
 												`/Product/${product.nid}?lang=english`
 											)
 										}
+										key={index}
 									>
 										<span className="mr-2 w-4">
 											<SearchIcon />
@@ -134,6 +137,7 @@ export default function index() {
 												`/Product/${product.nid}/?lang=arabic`
 											)
 										}
+										key={index}
 									>
 										<span className="mr-2 w-4">
 											<SearchIcon />
