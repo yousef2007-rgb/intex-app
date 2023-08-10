@@ -28,7 +28,7 @@ export default function LanguageButton({ language }) {
 
 	return (
 		<Link
-			className=" flex font-bold capitalize tablet:mx-3"
+			className=" felx mx-2 flex h-full items-center text-lg font-bold capitalize"
 			style={{
 				flexDirection: language == 'arabic' ? 'row-reverse' : 'row',
 			}}

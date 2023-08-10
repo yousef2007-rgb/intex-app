@@ -4,7 +4,7 @@ import MenuICon from '../../../../public/Assets/icons/MenuICon';
 export default function NavigationButton({ setNavigationVisability }) {
 	return (
 		<button
-			className=" mx-4 h-8 w-8"
+			className="mx-2 block h-full w-10 tablet:hidden"
 			onClick={() => setNavigationVisability('flex')}
 		>
 			<MenuICon />

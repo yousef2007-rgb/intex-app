@@ -5,7 +5,7 @@ import CartButton from './CartButton';
 //Main Component
 export default function Cart() {
 	return (
-		<div className=" mx-2 flex h-28 w-8 cursor-pointer items-center border-t-4 border-transparent hover:border-secondery desktop:relative ">
+		<div className=" mx-2 flex h-full w-8 cursor-pointer items-center border-t-4 border-transparent hover:border-secondery desktop:relative ">
 			<CartButton />
 			<CartContainer />
 		</div>
