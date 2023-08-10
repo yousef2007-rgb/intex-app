@@ -10,12 +10,16 @@ import MobileSearch from './MobileSearch';
 import PopUp from '../PopUp/PopUp';
 import { tougleLanguage } from '../../../slices/languageSlice';
 import SearchIcon from '../../../public/Assets/icons/SearchIcon';
+import categories from '../../../data/content.json';
+
 // import searchIcon from '../../../';
-import { Link } from 'next/link';
+import Link from 'next/link';
 import Search from './Search';
+import { useRouter } from 'next/router';
 
 export default function Header() {
 	const content = useSelector((state) => state.language);
+	const { lang } = useRouter().query;
 	const [navigationVisability, setNavigationVisability] = useState('none');
 	const toggleNavigationVisability = () => {
 		setNavigationVisability(
@@ -31,7 +35,7 @@ export default function Header() {
 			dispatch(tougleLanguage());
 		}
 	}, []);
-
+	const categoriesData = lang == 'arabic' ? categories.ar : categories.en;
 	return (
 		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
 			<header className={`z-50 flex h-20 items-center px-5`}>
@@ -56,6 +60,17 @@ export default function Header() {
 				<Cart />
 				<MobileSearch />
 			</header>
+			<div className="hidden w-full justify-evenly py-2 tablet:flex">
+				{categoriesData.ProductContainerBody.map((category, index) => (
+					<Link
+						className="rounded-lg py-1  px-2  text-xs font-bold capitalize hover:underline "
+						key={index}
+						href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
+					>
+						{category.title}
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 }

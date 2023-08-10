@@ -18,7 +18,7 @@ const ThankYouPage = () => {
 		);
 	}, []);
 	return (
-		<main className="mt-20 flex min-h-screen flex-col">
+		<main className="mt-20 flex min-h-screen flex-col tablet:mt-32">
 			<Header />
 			<div className="flex flex-1 flex-col items-center justify-center bg-gray-100 px-3">
 				<div className="mx-auto my-10  max-w-2xl bg-white p-8 shadow-md">

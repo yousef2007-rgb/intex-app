@@ -78,10 +78,10 @@ export default function Checkout() {
 	};
 
 	return (
-		<div className="flex min-h-screen w-screen flex-col">
+		<div className="flex min-h-screen w-screen flex-col ">
 			<Header />
 			{cartItems.length != 0 ? (
-				<main className=" mx-auto mt-20 flex h-fit max-w-2xl flex-1 flex-col justify-center p-5">
+				<main className=" mx-auto mt-20 flex h-fit max-w-2xl flex-1 flex-col justify-center p-5 tablet:mt-32">
 					<PopUp
 						visability={PhoneNumberInputVisable}
 						tougle={touglePhoneNumberInputVisablity}

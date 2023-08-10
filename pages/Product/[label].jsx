@@ -55,7 +55,7 @@ export default function HomePage({ data }) {
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
 	return (
-		<div className=" mt-20">
+		<div className=" mt-20 tablet:mt-32">
 			<HeadComponent product={product} />
 			<main
 				className=" mx-auto flex max-w-7xl items-center"

@@ -3,6 +3,7 @@ import Buttons from '../Button';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import Close from '../../../../public/Assets/icons/CloseIcon';
+import Logo from './../Logo';
 export default function Navigation({
 	navigationVisability,
 	setNavigationVisability,
@@ -19,12 +20,15 @@ export default function Navigation({
 				},0)`,
 			}}
 		>
-			<button
-				className="my-4 h-6 w-6"
-				onClick={() => setNavigationVisability('none')}
-			>
-				<Close />
-			</button>
+			<div className="my-4 flex items-center">
+				<button
+					className="my-4 mx-4 h-6 w-6"
+					onClick={() => setNavigationVisability('none')}
+				>
+					<Close />
+				</button>
+				<Logo />
+			</div>
 			{content.Header.navigation.map((item, index) => (
 				<Buttons
 					key={index}

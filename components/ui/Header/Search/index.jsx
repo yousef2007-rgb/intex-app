@@ -37,7 +37,7 @@ export default function index() {
 				.includes(textValue.toLowerCase())) &&
 		x.status == 1;
 	return (
-		<div className="relative mx-auto hidden max-w-xl flex-1 items-center rounded-full border-2  px-5 py-2 tablet:flex">
+		<div className="relative mx-auto hidden max-w-[60vw] flex-1 items-center rounded-full border-2  px-5 py-2 tablet:flex">
 			<input
 				className="h-full flex-1 font-bold text-black outline-none"
 				type="text"
