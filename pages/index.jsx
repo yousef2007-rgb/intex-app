@@ -38,19 +38,19 @@ export default function HomePage({ data, isLoading }) {
 			src: '/Assets/images/intro/categories-05.jpg',
 			link: '/Products/342?title=pools',
 			aspectRatio: '16/7',
-			text: { en: 'pools', ar: 'برك' },
+			text: { en: 'Above Ground Pools', ar: 'مسابح كبيرة' },
 		},
 		{
 			src: '/Assets/images/intro/categories-03.jpg',
 			link: '/Products/343?title=inflated%20pools',
 			aspectRatio: '1/1',
-			text: { en: 'inflated pools', ar: 'برك نفخ' },
+			text: { en: 'inflatable pools', ar: 'برك نفخ' },
 		},
 		{
 			src: '/Assets/images/intro/categories-02.jpg',
 			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
-			text: { en: 'inflated products', ar: 'منتجات نفخ' },
+			text: { en: 'inflatable products', ar: 'منتجات نفخ' },
 		},
 		{
 			src: '/Assets/images/intro/categories-01.jpg',
