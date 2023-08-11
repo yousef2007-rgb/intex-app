@@ -14,15 +14,15 @@
 						{
 							"items": [
 								{
-									"text": "Pools",
+									"text": "Above Ground Pools",
 									"link": "/Products/342?title=pools"
 								},
 								{
-									"text": "Inflated Products",
+									"text": "Inflatable Products",
 									"link": "/Products/1515?title=inflated%20products"
 								},
 								{
-									"text": "Inflated Pools",
+									"text": "Inflatable Pools",
 									"link": "/Products/343?title=inflated%20pools"
 								},
 								{
@@ -34,7 +34,7 @@
 									"link": "/Products/344?title=accessories"
 								},
 								{
-									"text": "Inflated Boats",
+									"text": "inflatable Boats",
 									"link": "/Products/1514?title=inflated%20boats"
 								},
 								{
@@ -69,17 +69,17 @@
 		},
 		"ProductContainerBody": [
 			{
-				"title": "pools",
+				"title": "Above Ground Pools",
 				"number": "342",
 				"keywords": "Ring easy set metal frame prism round rectangular filter swimming ultra xtr"
 			},
 			{
-				"title": "inflated products",
+				"title": "inflatable products",
 				"number": "1515",
 				"keywords": "float mat baby kids play center island flamingo unicorn ring"
 			},
 			{
-				"title": "inflated pools",
+				"title": "inflatable pools",
 				"number": "343",
 				"keywords": "kids baby box circular circle disney crystal blue glow swimming"
 			},
@@ -99,7 +99,7 @@
 				"keywords": "chlor حشوة رقع repair chemical filter leaf rake cartridge A B light heater ladder سلم"
 			},
 			{
-				"title": "inflated boats",
+				"title": "inflatable boats",
 				"number": "1514",
 				"keywords": "boat"
 			},
@@ -141,7 +141,7 @@
 						{
 							"items": [
 								{
-									"text": "برك",
+									"text": "مسابح كبيرة",
 									"link": "/Products/342?title=البرك"
 								},
 								{
@@ -197,7 +197,7 @@
 
 		"ProductContainerBody": [
 			{
-				"title": "برك",
+				"title": "مسابح",
 				"number": "342",
 				"keywords": "عجل مجموعة سهلة إطار معدني بريزم دائري مستطيل فلتر سباحة متعدد مسابح الأشكال XTR"
 			},
