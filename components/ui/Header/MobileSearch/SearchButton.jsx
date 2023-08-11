@@ -7,7 +7,7 @@ export default function SearchBody({ searchVisability }) {
 	const dispatch = useDispatch();
 	return (
 		<button
-			className={`h-full`}
+			className={`h-full w-8`}
 			style={{
 				position: searchVisability == 'none' ? 'relative' : 'absolute',
 				right: searchVisability == 'none' ? 'unset' : '30px',
