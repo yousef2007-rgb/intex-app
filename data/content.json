@@ -71,22 +71,26 @@
 			{
 				"title": "Above Ground Pools",
 				"number": "342",
-				"keywords": "Ring easy set metal frame prism round rectangular filter swimming ultra xtr"
+				"keywords": "Ring easy set metal frame prism round rectangular filter swimming ultra xtr",
+				"image": "categories-05.jpg"
 			},
 			{
 				"title": "inflatable products",
 				"number": "1515",
-				"keywords": "float mat baby kids play center island flamingo unicorn ring"
+				"keywords": "float mat baby kids play center island flamingo unicorn ring",
+				"image": "categories-02.jpg"
 			},
 			{
 				"title": "inflatable pools",
 				"number": "343",
-				"keywords": "kids baby box circular circle disney crystal blue glow swimming"
+				"keywords": "kids baby box circular circle disney crystal blue glow swimming",
+				"image": "categories-03.jpg"
 			},
 			{
 				"title": "accessories",
 				"number": "344",
-				"keywords": "goggles armbands ring float ball jacket vest cruiser "
+				"keywords": "goggles armbands ring float ball jacket vest cruiser ",
+				"image": "categories-01.jpg"
 			},
 			{
 				"title": "pumps",
@@ -107,7 +111,8 @@
 			{
 				"title": "furniture",
 				"number": "1944",
-				"keywords": "chair bed mattres"
+				"keywords": "chair bed mattres",
+				"image": "categories-04.jpg"
 			}
 		],
 		"ProductContainer": {
@@ -199,22 +204,26 @@
 			{
 				"title": "مسابح",
 				"number": "342",
-				"keywords": "عجل مجموعة سهلة إطار معدني بريزم دائري مستطيل فلتر سباحة متعدد مسابح الأشكال XTR"
+				"keywords": "عجل مجموعة سهلة إطار معدني بريزم دائري مستطيل فلتر سباحة متعدد مسابح الأشكال XTR",
+				"image": "categories-05.jpg"
 			},
 			{
 				"title": "منتجات نفخ",
 				"number": "1515",
-				"keywords": "عوامة حصيرة طفل أطفال مركز لعب جزيرة فلامنغو يونيكورن عجل"
+				"keywords": "عوامة حصيرة طفل أطفال مركز لعب جزيرة فلامنغو يونيكورن عجل",
+				"image": "categories-02.jpg"
 			},
 			{
 				"title": "برك نفخ",
 				"number": "343",
-				"keywords": "أطفال طفل صندوق دائري دائري ديزني كريستال بلو مسابح توهّج سباحة"
+				"keywords": "أطفال طفل صندوق دائري دائري ديزني كريستال بلو مسابح توهّج سباحة",
+				"image": "categories-03.jpg"
 			},
 			{
 				"title": "اكسسوارات",
 				"number": "344",
-				"keywords": "نظارات سوار عجل عائم كرة سترة سترة مركب رحّال"
+				"keywords": "نظارات سوار عجل عائم كرة سترة سترة مركب رحّال",
+				"image": "categories-01.jpg"
 			},
 			{
 				"title": "منافيخ",
@@ -234,7 +243,8 @@
 			{
 				"title": "أثاث",
 				"number": "1944",
-				"keywords": "كرسي سرير فراش"
+				"keywords": "كرسي سرير فراش",
+				"image": "categories-04.jpg"
 			}
 		],
 		"ProductContainer": {

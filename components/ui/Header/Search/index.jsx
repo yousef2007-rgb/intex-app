@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Close from '../../../../public/Assets/icons/CloseIcon';
 import categories from '../../../../data/content.json';
 import PopUp from './../../PopUp/PopUp';
+
 export default function Search() {
 	const [textValue, setTextValue] = useState('');
 	const input = useRef(null);
@@ -70,9 +71,6 @@ export default function Search() {
 									<span className="flex-1">
 										{products.title}
 									</span>
-									<span className="text-secondery">
-										{products.number}
-									</span>
 								</button>
 						  ))
 						: ''}
@@ -95,9 +93,6 @@ export default function Search() {
 									<span className="flex-1">
 										{products.title}
 									</span>
-									<span className="text-secondery">
-										{products.number}
-									</span>
 								</button>
 						  ))
 						: ''}
@@ -117,12 +112,19 @@ export default function Search() {
 										<span className="mr-2 w-4">
 											<SearchIcon />
 										</span>
-										<span className="mr-2 flex-1">
-											{product.field_item_name}
-										</span>
-										<span className="text-secondery">
-											{product.label}
-										</span>
+										<div className="flex flex-1">
+											<span className="mr-2">
+												{product.field_item_name}
+											</span>
+											<span className="text-secondery">
+												{product.label}
+											</span>
+										</div>
+										<img
+											className="ml-auto aspect-square w-16 object-contain"
+											src={product.image}
+											alt={`${product.field_item_name} ${product.label}`}
+										/>
 									</button>
 								))
 						: ''}
@@ -142,12 +144,20 @@ export default function Search() {
 										<span className="mr-2 w-4">
 											<SearchIcon />
 										</span>
-										<span className="mr-2 flex-1">
-											{product.field_item_name}
-										</span>
-										<span className="text-secondery">
-											{product.label}
-										</span>
+										<div className="flex flex-1 text-left">
+											<span className="mr-2">
+												{product.field_item_name}
+											</span>
+											<span className="text-secondery">
+												{product.label}
+											</span>
+										</div>
+
+										<img
+											className="ml-auto aspect-square w-16 object-contain"
+											src={product.image}
+											alt={`${product.field_item_name} ${product.label}`}
+										/>
 									</button>
 								))
 						: ''}
