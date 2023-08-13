@@ -16,17 +16,22 @@ export default function Button({ text, menu, tougle }) {
 			}}
 		>
 			<button
-				className="relative flex h-20 w-full items-center border-t-4 border-transparent px-3 font-extrabold uppercase hover:border-secondery"
-				style={{
-					justifyContent: lang == 'arabic' ? 'end' : 'start',
-				}}
+				className="relative my-4 flex h-fit w-full items-center justify-center  rounded-xl bg-gray-300 bg-opacity-50 p-3 text-center font-extrabold uppercase outline-none drop-shadow-xl backdrop-blur-xl hover:bg-opacity-20"
 				onClick={() =>
 					menuVisablity == 'none'
 						? setMenuVisablity('flex')
 						: setMenuVisablity('none')
 				}
 			>
-				{text}
+				<span className="mx-2">{text}</span>
+				<span
+					className="w-4 transition-all"
+					style={{
+						rotate: menuVisablity != 'none' ? '-180deg' : 'unset',
+					}}
+				>
+					<Chevron />
+				</span>
 			</button>
 			<div
 				style={{

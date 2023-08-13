@@ -50,7 +50,7 @@ export default function HomePage({ data, isLoading }) {
 			src: '/Assets/images/intro/categories-02.jpg',
 			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
-			text: { en: 'inflatable products', ar: 'منتجات نفخ' },
+			text: { en: 'inflatables', ar: 'منتجات نفخ' },
 		},
 		{
 			src: '/Assets/images/intro/categories-01.jpg',

@@ -18,7 +18,7 @@
 									"link": "/Products/342?title=pools"
 								},
 								{
-									"text": "Inflatable Products",
+									"text": "Inflatables",
 									"link": "/Products/1515?title=inflated%20products"
 								},
 								{
@@ -59,11 +59,6 @@
 						}
 					],
 					"link": "/"
-				},
-				{
-					"title": "About us",
-					"menu": null,
-					"link": "/AboutUs"
 				}
 			]
 		},
@@ -75,7 +70,7 @@
 				"image": "categories-05.jpg"
 			},
 			{
-				"title": "inflatable products",
+				"title": "Inflatables",
 				"number": "1515",
 				"keywords": "float mat baby kids play center island flamingo unicorn ring",
 				"image": "categories-02.jpg"
@@ -191,11 +186,6 @@
 						}
 					],
 					"link": "/"
-				},
-				{
-					"title": "عنا",
-					"menu": null,
-					"link": "/AboutUs"
 				}
 			]
 		},

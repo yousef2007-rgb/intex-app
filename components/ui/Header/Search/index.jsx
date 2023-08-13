@@ -113,10 +113,10 @@ export default function Search() {
 											<SearchIcon />
 										</span>
 										<div className="flex flex-1">
-											<span className="mr-2">
+											<span className="mr-2 max-w-lg">
 												{product.field_item_name}
 											</span>
-											<span className="text-secondery">
+											<span className="mr-2 text-secondery">
 												{product.label}
 											</span>
 										</div>
@@ -148,7 +148,7 @@ export default function Search() {
 											<span className="mr-2">
 												{product.field_item_name}
 											</span>
-											<span className="text-secondery">
+											<span className="mr-2 text-secondery">
 												{product.label}
 											</span>
 										</div>
