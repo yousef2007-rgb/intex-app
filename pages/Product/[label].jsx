@@ -104,7 +104,7 @@ export default function HomePage({ data }) {
 							isLoading={relatedIsLoading}
 							currentProduct={product.nid}
 							loadingAllowed={false}
-							sortByValue="high-low"
+							sortByValue="related"
 						/>
 					) : (
 						''

@@ -1,11 +1,8 @@
 import React, { useState, useRef } from 'react';
 import SearchIcon from '../../../../public/Assets/icons/SearchIcon';
 import useFetch from '../../../../hooks/useFetch';
-import ProductCard from '../../ProductsContainer/ProductCard';
-import Link from 'next/link';
 import Close from '../../../../public/Assets/icons/CloseIcon';
 import categories from '../../../../data/content.json';
-import PopUp from './../../PopUp/PopUp';
 
 export default function Search() {
 	const [textValue, setTextValue] = useState('');
@@ -37,6 +34,21 @@ export default function Search() {
 				.toLowerCase()
 				.includes(textValue.toLowerCase())) &&
 		x.status == 1;
+
+	const resultDev = useRef(null);
+
+	const handleKeyPress = (e) => {
+		if (e.key == 'Enter') {
+			const containerElement = resultDev.current;
+
+			const firstChild = containerElement.querySelector(':first-child');
+
+			if (firstChild) {
+				firstChild.click();
+			}
+		}
+	};
+
 	return (
 		<div className="relative mx-auto hidden max-w-[60vw] flex-1 items-center rounded-full border-2  px-5 py-2 tablet:flex">
 			<input
@@ -45,13 +57,17 @@ export default function Search() {
 				placeholder="Search for product"
 				ref={input}
 				onChange={() => setTextValue(input.current.value)}
+				onKeyDown={handleKeyPress}
 			/>
 			<button className="h-full w-5 fill-gray-500" onClick={claerText}>
 				{textValue == '' ? <SearchIcon /> : <Close />}
 			</button>
 
 			{textValue != '' ? (
-				<div className="absolute top-full left-0 flex max-h-[70vh] w-full translate-y-2 flex-col overflow-auto rounded-3xl bg-white py-5 text-left shadow-2xl  ">
+				<div
+					className="absolute top-full left-0 flex max-h-[70vh] w-full translate-y-2 flex-col overflow-auto rounded-3xl bg-white py-5 text-left shadow-2xl  "
+					ref={resultDev}
+				>
 					{textValue != ''
 						? categories.en.ProductContainerBody.filter(
 								searchFilterFunctionCategories
