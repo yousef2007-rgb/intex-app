@@ -1,4 +1,4 @@
-const ProductMetaData = (discription, label, price) => {
+const ProductMetaData = ({ discription, label, price }) => {
 	return (
 		<>
 			<meta itemprop="description" content={discription + label} />

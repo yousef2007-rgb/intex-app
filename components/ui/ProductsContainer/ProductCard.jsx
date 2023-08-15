@@ -13,8 +13,8 @@ export default function ProductCard({
 	nid,
 }) {
 	const [hover, setHover] = useState(false);
-
 	const { lang } = useRouter().query;
+
 	return (
 		<Link
 			href={`/Product/${nid}?lang=${
@@ -27,9 +27,9 @@ export default function ProductCard({
 			onMouseLeave={() => setHover(false)}
 		>
 			<ProductMetaData
+				discription={discription}
 				label={label}
 				price={price}
-				discription={discription}
 			/>
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
