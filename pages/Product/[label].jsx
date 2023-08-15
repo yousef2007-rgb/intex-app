@@ -51,9 +51,9 @@ export default function HomePage({ data }) {
 			: process.env.NEXT_PUBLIC_URL;
 	//Component Data
 	const [relatedData, relatedIsLoading] = useFetch(linkUrl, 'data');
-
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
+
 	return (
 		<div className=" mt-20 tablet:mt-32">
 			<HeadComponent product={product} />

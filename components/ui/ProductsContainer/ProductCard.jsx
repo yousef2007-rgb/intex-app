@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import ProductMetaData from './ProductMetaData';
 
 export default function ProductCard({
 	label,
@@ -25,38 +26,11 @@ export default function ProductCard({
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
-			<meta itemprop="description" content={discription + label} />
-			<meta name="rating" content="4.5" />
-			<meta name="reviewCount" content="10" />
-			<div
-				itemProp="brand"
-				itemType="https://schema.org/Brand"
-				itemScope=""
-			></div>
-			<meta itemProp="name" content={discription + label}></meta>
-			<div
-				itemProp="offers"
-				itemtype="https://schema.org/Offer"
-				itemscope=""
-			>
-				<meta
-					itemProp="itemCondition"
-					content="https://schema.org/NewCondition"
-				/>
-				<meta itemProp="priceCurrency" content="JOD" />
-				<meta
-					itemProp="price"
-					content={
-						price.specialPrice
-							? price.specialPrice
-							: price.listPrice
-					}
-				/>
-				<link
-					itemProp="availability"
-					href="https://schema.org/InStock"
-				/>
-			</div>
+			<ProductMetaData
+				label={label}
+				price={price}
+				discription={discription}
+			/>
 			<img
 				src={secondImage ? (hover ? secondImage : image) : image}
 				alt={discription + label}
