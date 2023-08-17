@@ -13,7 +13,7 @@ export default function ProductsContainerBody({ data }) {
 					key={index}
 					title={item.title}
 					number={item.number}
-					limit={3}
+					limit={4}
 					data={data}
 					isLoading={false}
 					loadingAllowed={true}

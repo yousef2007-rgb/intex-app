@@ -63,7 +63,7 @@ export default function Header() {
 			<nav className="hidden w-full justify-evenly bg-primary text-white tablet:flex">
 				{categoriesData.ProductContainerBody.map((category, index) => (
 					<Link
-						className="h-full py-2  px-1  font-bold capitalize hover:bg-secondery "
+						className="h-full  py-2 px-1 text-center font-bold capitalize hover:bg-secondery"
 						key={index}
 						href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
 					>

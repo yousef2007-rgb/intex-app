@@ -8,55 +8,25 @@ export function ProductsCards({
 	limit,
 	sortByValue,
 }) {
+	const price = (product) => {
+		return {
+			specialPrice: product.field_special_price,
+			listPrice: product.field_online_price
+				? product.field_online_price
+				: product.field_wholesale_price * 1.5,
+		};
+	};
 	return (
 		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly gap-8  text-center">
 			{data.data.res
-				.filter(
-					(x) =>
-						x.status == 1 &&
-						x.field_subcategory == number &&
-						x.nid != currentProduct
+				.sort((a, b) => sortingFunction(a, b, sortByValue))
+				.filter((item) =>
+					mainFilteringFunction(item, number, currentProduct)
 				)
-
-				.sort((a, b) => {
-					if (sortByValue == 'high-low') {
-						return (
-							(b.field_special_price
-								? b.field_special_price
-								: !b.field_online_price
-								? b.field_wholesale_price * 1.5
-								: b.field_online_price) -
-							(a.field_special_price
-								? a.field_special_price
-								: !a.field_online_price
-								? a.field_wholesale_price * 1.5
-								: a.field_online_price)
-						);
-					} else {
-						return (
-							(a.field_special_price
-								? a.field_special_price
-								: !a.field_online_price
-								? a.field_wholesale_price * 1.5
-								: a.field_online_price) -
-							(b.field_special_price
-								? b.field_special_price
-								: !b.field_online_price
-								? b.field_wholesale_price * 1.5
-								: b.field_online_price)
-						);
-					}
-				})
-				.filter((x) =>
-					sortByValue == 'related'
-						? (x.field_special_price
-								? x.field_special_price
-								: !x.field_online_price
-								? x.field_wholesale_price * 1.5
-								: x.field_online_price) >= 6
-						: true
+				.filter((item) =>
+					relatedProductsFilteringFunction(item, sortByValue)
 				)
-				.filter((_, index) => index < limit || limit == 0)
+				.filter((_, index) => limitsFilteringFunction(index, limit))
 				.map((product, index) => (
 					<ProductCard
 						key={index}
@@ -64,12 +34,7 @@ export function ProductsCards({
 						discription={product.field_item_name}
 						image={product.image}
 						secondImage={product.images[0]}
-						price={{
-							specialPrice: product.field_special_price,
-							listPrice: product.field_online_price
-								? product.field_online_price
-								: product.field_wholesale_price * 1.5,
-						}}
+						price={price(product)}
 						nid={product.nid}
 						loadingAllowed={loadingAllowed}
 					/>
@@ -77,3 +42,45 @@ export function ProductsCards({
 		</div>
 	);
 }
+const mainFilteringFunction = (x, number, currentProduct) =>
+	x.status == 1 && x.field_subcategory == number && x.nid != currentProduct;
+
+const sortingFunction = (a, b, sortByValue) => {
+	if (sortByValue == 'high-low') {
+		return (
+			(b.field_special_price
+				? b.field_special_price
+				: !b.field_online_price
+				? b.field_wholesale_price * 1.5
+				: b.field_online_price) -
+			(a.field_special_price
+				? a.field_special_price
+				: !a.field_online_price
+				? a.field_wholesale_price * 1.5
+				: a.field_online_price)
+		);
+	} else {
+		return (
+			(a.field_special_price
+				? a.field_special_price
+				: !a.field_online_price
+				? a.field_wholesale_price * 1.5
+				: a.field_online_price) -
+			(b.field_special_price
+				? b.field_special_price
+				: !b.field_online_price
+				? b.field_wholesale_price * 1.5
+				: b.field_online_price)
+		);
+	}
+};
+const relatedProductsFilteringFunction = (item, sortByValue) =>
+	sortByValue == 'related'
+		? (item.field_special_price
+				? item.field_special_price
+				: !item.field_online_price
+				? item.field_wholesale_price * 1.5
+				: item.field_online_price) >= 6
+		: true;
+
+const limitsFilteringFunction = (index, limit) => index < limit || limit == 0;
