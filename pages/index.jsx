@@ -7,14 +7,14 @@ import WhatsappButton from '../components/ui/WhatsappButton';
 import content from '../data/HomePage.json';
 import dynamic from 'next/dynamic';
 
-const Header = dynamic(() => import('../components/ui/Header'));
-const Intro = dynamic(() => import('../components/HomePageComponents/Intro'));
-const Footer = dynamic(() => import('../components/ui/Footer/Footer'));
-
 //Components without default exports
 import { HeadComponent } from '../components/HomePageComponents/HeadComponent';
 import { useRouter } from 'next/router';
+import { Suspense, lazy } from 'react';
 
+const Header = dynamic(() => import('../components/ui/Header'));
+const Intro = lazy(() => import('../components/HomePageComponents/Intro'));
+const Footer = lazy(() => import('../components/ui/Footer'));
 //SSR Fetching Function
 export async function getServerSideProps(context) {
 	const res = await fetch(
@@ -80,7 +80,9 @@ export default function HomePage({ data, isLoading }) {
 						? content.categories.arabic
 						: content.categories.english}
 				</p> */}
-				<Intro intros={IntroProps} />
+				<Suspense fallback={'loading'}>
+					<Intro intros={IntroProps} />
+				</Suspense>
 				<ProductsContainerBody data={data} />
 				<article className=" px-5 py-10 text-center ">
 					<h1 className="py-4 text-center text-4xl uppercase text-blue_gray">
@@ -91,7 +93,9 @@ export default function HomePage({ data, isLoading }) {
 					</p>
 				</article>
 			</main>
-			<Footer />
+			<Suspense fallback={'loading'}>
+				<Footer />
+			</Suspense>
 			<WhatsappButton />
 		</>
 	);
