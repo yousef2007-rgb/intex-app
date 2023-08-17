@@ -60,10 +60,10 @@ export default function Header() {
 				<Cart />
 				<MobileSearch />
 			</header>
-			<nav className="hidden w-full justify-evenly bg-primary text-white tablet:flex">
+			<nav className="hidden w-full justify-between bg-white px-5 text-black tablet:flex">
 				{categoriesData.ProductContainerBody.map((category, index) => (
 					<Link
-						className="h-full  py-2 px-1 text-center font-bold capitalize hover:bg-secondery"
+						className="h-full  border-b-4 border-transparent py-4 px-1 text-center font-bold capitalize hover:border-secondery"
 						key={index}
 						href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
 					>
