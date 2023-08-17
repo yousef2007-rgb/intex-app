@@ -35,31 +35,31 @@ export default function HomePage({ data, isLoading }) {
 	//Components Props
 	const IntroProps = [
 		{
-			src: '/Assets/images/intro/categories-05.jpg',
+			src: '/Assets/images/intro/categories-05-min.jpg',
 			link: '/Products/342?title=pools',
 			aspectRatio: '16/7',
 			text: { en: 'Above Ground Pools', ar: 'مسابح كبيرة' },
 		},
 		{
-			src: '/Assets/images/intro/categories-03.jpg',
+			src: '/Assets/images/intro/categories-03-min.jpg',
 			link: '/Products/343?title=inflated%20pools',
 			aspectRatio: '1/1',
 			text: { en: 'inflatable pools', ar: 'برك نفخ' },
 		},
 		{
-			src: '/Assets/images/intro/categories-02.jpg',
+			src: '/Assets/images/intro/categories-02-min.jpg',
 			link: '/Products/1515?title=inflated%20products',
 			aspectRatio: '1/1',
 			text: { en: 'inflatables', ar: 'منتجات نفخ' },
 		},
 		{
-			src: '/Assets/images/intro/categories-01.jpg',
+			src: '/Assets/images/intro/categories-01-min.jpg',
 			link: '/Products/344?title=accessories',
 			aspectRatio: '1/1',
 			text: { en: 'accessories', ar: 'اكسسوارات' },
 		},
 		{
-			src: '/Assets/images/intro/categories-04.jpg',
+			src: '/Assets/images/intro/categories-04-min.jpg',
 			link: '/Products/1944?title=furniture',
 			aspectRatio: '1/1',
 			text: { en: 'furniture', ar: 'اثاث' },
