@@ -75,12 +75,7 @@ export default function HomePage({ data, isLoading }) {
 			<Header />
 
 			<main className="mx-auto  font-bold tablet:mt-32">
-				{/* <p className="pt-6 text-center text-4xl uppercase text-blue_gray tablet:mt-32">
-					{lang == 'arabic'
-						? content.categories.arabic
-						: content.categories.english}
-				</p> */}
-				<Suspense fallback={'loading'}>
+				<Suspense>
 					<Intro intros={IntroProps} />
 				</Suspense>
 				<ProductsContainerBody data={data} />
@@ -93,7 +88,7 @@ export default function HomePage({ data, isLoading }) {
 					</p>
 				</article>
 			</main>
-			<Suspense fallback={'loading'}>
+			<Suspense>
 				<Footer />
 			</Suspense>
 			<WhatsappButton />

@@ -4,7 +4,7 @@ import React from 'react';
 export default function Intro({ intros }) {
 	const { lang } = useRouter().query;
 	return (
-		<div className=" mx-auto flex max-w-7xl flex-row-reverse flex-wrap justify-evenly rounded-2xl bg-white pt-5">
+		<div className=" mx-auto flex max-w-7xl flex-row-reverse flex-wrap justify-evenly rounded-2xl bg-white">
 			{intros.map((item, index) => (
 				<a
 					className={`relative my-[1vw] ${

@@ -13,7 +13,7 @@ export const ImageSlider = ({ product }) => {
 				{slides.map((slide, index) => (
 					<div
 						key={index + 1}
-						className={`absolute top-0 left-0 h-full w-full opacity-0 transition-opacity duration-500 ease-in-out`}
+						className={`absolute top-0 left-0 mx-2 h-full w-full opacity-0 transition-opacity duration-500 ease-in-out`}
 						style={{
 							opacity: index === activeSlide ? 1 : 0,
 						}}

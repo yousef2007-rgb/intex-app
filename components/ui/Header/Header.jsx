@@ -58,7 +58,9 @@ export default function Header() {
 				<div className="mx-auto hidden w-full max-w-[60vw] tablet:block">
 					<Search mobile={false} />
 				</div>
-				<LanguageButton language={content.language} />
+				<div className="hidden tablet:block">
+					<LanguageButton language={content.language} />
+				</div>
 				<Cart />
 				{/* <MobileSearch /> */}
 			</header>
@@ -73,8 +75,9 @@ export default function Header() {
 					</Link>
 				))}
 			</nav>
-			<div className="block w-full tablet:hidden">
+			<div className="flex w-full items-center tablet:hidden">
 				<Search mobile={true} />
+				<LanguageButton language={content.language} />
 			</div>
 		</div>
 	);
