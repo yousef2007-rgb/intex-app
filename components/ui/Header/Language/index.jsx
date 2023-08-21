@@ -69,7 +69,7 @@ export default function LanguageButton({ language }) {
 			</button>
 
 			{isOpen && (
-				<div className="absolute right-0 mt-2 w-10 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+				<div className="absolute right-0 z-30 mt-2 w-10 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
 					<div
 						className="py-1"
 						role="menu"
