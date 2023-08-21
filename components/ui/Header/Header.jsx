@@ -37,8 +37,10 @@ export default function Header() {
 	}, []);
 	const categoriesData = lang == 'arabic' ? categories.ar : categories.en;
 	return (
-		<div className=" top-0 z-50 mb-5 w-full bg-white px-2 pb-5 shadow-lg tablet:fixed tablet:mb-0 tablet:pb-0">
-			<header className={`z-50 mx-auto flex h-20 max-w-7xl items-center`}>
+		<div className=" top-0 z-50 mb-5 w-full bg-white  pb-5 shadow-lg tablet:fixed tablet:mb-0 tablet:pb-0">
+			<header
+				className={`z-50 mx-auto flex h-20 max-w-7xl items-center px-2`}
+			>
 				<NavigationButton
 					setNavigationVisability={setNavigationVisability}
 				/>
@@ -64,10 +66,10 @@ export default function Header() {
 				<Cart />
 				{/* <MobileSearch /> */}
 			</header>
-			<nav className="mx-auto hidden w-full max-w-7xl justify-between bg-white text-black tablet:flex">
+			<nav className="mx-auto hidden w-full max-w-7xl justify-between bg-blue_gray px-2 text-white tablet:flex">
 				{categoriesData.ProductContainerBody.map((category, index) => (
 					<Link
-						className="h-full  border-b-4 border-transparent py-4 px-1 text-center font-bold capitalize hover:border-secondery"
+						className="h-full  border-b-4 border-transparent py-3 px-1 text-center font-bold capitalize hover:border-white"
 						key={index}
 						href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
 					>
@@ -75,7 +77,7 @@ export default function Header() {
 					</Link>
 				))}
 			</nav>
-			<div className="flex w-full items-center tablet:hidden">
+			<div className="flex w-full items-center px-2 tablet:hidden">
 				<Search mobile={true} />
 				<LanguageButton language={content.language} />
 			</div>

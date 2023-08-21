@@ -94,6 +94,7 @@ export default function LanguageButton({ language }) {
 									? asPath + '&lang=english'
 									: asPath + '?lang=english'
 							}
+							onClick={() => setIsOpen(false)}
 						>
 							EN
 						</Link>
@@ -115,6 +116,7 @@ export default function LanguageButton({ language }) {
 									? asPath + '&lang=arabic'
 									: asPath + '?lang=arabic'
 							}
+							onClick={() => setIsOpen(false)}
 						>
 							AR
 						</Link>
