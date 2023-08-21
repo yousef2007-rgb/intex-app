@@ -56,6 +56,7 @@ export default function HomePage({ data }) {
 
 	return (
 		<div className=" ">
+			<Header />
 			<HeadComponent product={product} />
 			<main
 				className=" mx-auto  flex max-w-7xl items-center tablet:mt-36"
@@ -111,7 +112,6 @@ export default function HomePage({ data }) {
 					)}
 				</div>
 			</main>
-			<Header />
 			<Footer />
 			<WhatsappButton nid={product.nid} />
 		</div>
