@@ -4,7 +4,7 @@ import useFetch from '../../../../hooks/useFetch';
 import Close from '../../../../public/Assets/icons/CloseIcon';
 import categories from '../../../../data/content.json';
 
-export default function Search() {
+export default function Search({ mobile }) {
 	const [textValue, setTextValue] = useState('');
 	const input = useRef(null);
 	const claerText = () => {
@@ -48,9 +48,11 @@ export default function Search() {
 			}
 		}
 	};
-
+	console.log('mobile is ' + mobile);
 	return (
-		<div className="relative mx-auto hidden max-w-[60vw] flex-1 items-center rounded-xl border-2  px-5 py-2 tablet:flex">
+		<div
+			className={`relative z-30 flex w-full flex-1 items-center rounded-xl border-2 px-5 py-2 tablet:mx-auto `}
+		>
 			<input
 				className="h-full flex-1 font-bold text-black outline-none"
 				type="text"
@@ -128,11 +130,11 @@ export default function Search() {
 										<span className="mr-2 w-4">
 											<SearchIcon />
 										</span>
-										<div className="flex flex-1">
+										<div className="flex flex-1 items-center">
 											<span className="mr-2 max-w-lg">
 												{product.field_item_name}
 											</span>
-											<span className="mr-2 text-secondery">
+											<span className="mr-2 h-fit text-secondery">
 												{product.label}
 											</span>
 										</div>

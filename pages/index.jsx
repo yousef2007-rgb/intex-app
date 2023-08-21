@@ -74,7 +74,7 @@ export default function HomePage({ data, isLoading }) {
 			<HeadComponent />
 			<Header />
 
-			<main className="mx-auto  mt-20 font-bold tablet:mt-32">
+			<main className="mx-auto  font-bold tablet:mt-32">
 				{/* <p className="pt-6 text-center text-4xl uppercase text-blue_gray tablet:mt-32">
 					{lang == 'arabic'
 						? content.categories.arabic

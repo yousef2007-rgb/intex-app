@@ -41,7 +41,7 @@ export default function HomePage({ isLoading, data }) {
 		<>
 			<HeadComponent products={products} />
 			<Header />
-			<main className="mx-auto  mt-20 flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-32">
+			<main className="mx-auto   flex h-fit min-h-screen max-w-7xl flex-col tablet:mt-32">
 				<ProductsContainer
 					number={products.products}
 					limit={0}

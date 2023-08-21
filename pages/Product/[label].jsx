@@ -55,10 +55,10 @@ export default function HomePage({ data }) {
 	const content = useSelector((state) => state.language);
 
 	return (
-		<div className=" mt-20 tablet:mt-32">
+		<div className=" ">
 			<HeadComponent product={product} />
 			<main
-				className=" mx-auto flex max-w-7xl items-center"
+				className=" mx-auto  flex max-w-7xl items-center tablet:mt-36"
 				itemType="https://schema.org/Product"
 				itemScope
 			>

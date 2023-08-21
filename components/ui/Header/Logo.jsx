@@ -5,11 +5,11 @@ export default function Logo({}) {
 	const { lang } = useRouter().query;
 	return (
 		<Link
-			className=" flex-1 tablet:flex-[unset]"
+			className="ml-auto tablet:ml-0"
 			href={`/?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
 		>
 			<img
-				className="w-3/4 max-w-[176px] "
+				className="w-3/4 min-w-[100px] max-w-[176px] "
 				src="/Assets/images/logo.png"
 				alt="intex logo"
 			/>

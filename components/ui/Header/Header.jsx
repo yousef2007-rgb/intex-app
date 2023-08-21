@@ -37,8 +37,8 @@ export default function Header() {
 	}, []);
 	const categoriesData = lang == 'arabic' ? categories.ar : categories.en;
 	return (
-		<div className=" fixed top-0 z-50 w-full bg-white shadow-lg ">
-			<header className={`z-50 flex h-20 items-center px-5`}>
+		<div className=" top-0 z-50 mb-5 w-full bg-white px-2 pb-5 shadow-lg tablet:fixed tablet:mb-0 tablet:pb-0">
+			<header className={`z-50 mx-auto flex h-20 max-w-7xl items-center`}>
 				<NavigationButton
 					setNavigationVisability={setNavigationVisability}
 				/>
@@ -55,12 +55,14 @@ export default function Header() {
 					tougle={toggleNavigationVisability}
 					usingRedux={false}
 				/>
-				<Search />
+				<div className="mx-auto hidden w-full max-w-[60vw] tablet:block">
+					<Search mobile={false} />
+				</div>
 				<LanguageButton language={content.language} />
 				<Cart />
-				<MobileSearch />
+				{/* <MobileSearch /> */}
 			</header>
-			<nav className="hidden w-full justify-between bg-white px-5 text-black tablet:flex">
+			<nav className="mx-auto hidden w-full max-w-7xl justify-between bg-white text-black tablet:flex">
 				{categoriesData.ProductContainerBody.map((category, index) => (
 					<Link
 						className="h-full  border-b-4 border-transparent py-4 px-1 text-center font-bold capitalize hover:border-secondery"
@@ -71,6 +73,9 @@ export default function Header() {
 					</Link>
 				))}
 			</nav>
+			<div className="block w-full tablet:hidden">
+				<Search mobile={true} />
+			</div>
 		</div>
 	);
 }
