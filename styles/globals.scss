@@ -69,3 +69,16 @@ a {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+/* styles/globals.css */
+/* Add these styles to customize the appearance of the card slider */
+.product-card-slider {
+	overflow: hidden;
+}
+
+.product-card-slider .flex {
+	transition: transform 0.3s ease-in-out;
+}
+
+.product-card-slider .flex-shrink-0 {
+	min-width: 300px; /* Adjust this to your card's width */
+}

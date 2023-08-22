@@ -1,20 +1,24 @@
+//React Hooks
 import React, { useEffect, useState } from 'react';
+
+//Redux Hooks
 import { useSelector, useDispatch } from 'react-redux';
 
+//Custom Components
 import Logo from './Logo';
 import LanguageButton from './Language';
 import Navigation from './Navigation';
 import NavigationButton from './Navigation/NavigationButton';
 import Cart from './Cart';
-import MobileSearch from './MobileSearch';
 import PopUp from '../PopUp/PopUp';
-import { tougleLanguage } from '../../../slices/languageSlice';
-import SearchIcon from '../../../public/Assets/icons/SearchIcon';
 import categories from '../../../data/content.json';
-
-// import searchIcon from '../../../';
-import Link from 'next/link';
 import Search from './Search';
+
+//Redux slice
+import { tougleLanguage } from '../../../slices/languageSlice';
+
+//NextJs Components
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Header() {
@@ -35,11 +39,12 @@ export default function Header() {
 			dispatch(tougleLanguage());
 		}
 	}, []);
+
 	const categoriesData = lang == 'arabic' ? categories.ar : categories.en;
 	return (
 		<div className=" top-0 z-50 mb-5 w-full bg-white  pb-5 shadow-lg tablet:fixed tablet:mb-0 tablet:pb-0">
 			<header
-				className={`z-50 mx-auto flex h-20 max-w-7xl items-center px-2`}
+				className={`z-50 mx-auto flex  h-20 max-w-7xl items-center px-2`}
 			>
 				<NavigationButton
 					setNavigationVisability={setNavigationVisability}
@@ -64,19 +69,22 @@ export default function Header() {
 					<LanguageButton language={content.language} />
 				</div>
 				<Cart />
-				{/* <MobileSearch /> */}
 			</header>
-			<nav className="mx-auto hidden w-full max-w-7xl justify-between bg-blue_gray px-2 text-white tablet:flex">
-				{categoriesData.ProductContainerBody.map((category, index) => (
-					<Link
-						className="h-full  border-b-4 border-transparent py-3 px-1 text-center font-bold capitalize hover:border-white"
-						key={index}
-						href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
-					>
-						{category.title}
-					</Link>
-				))}
-			</nav>
+			<div className="  bg-blue_gray">
+				<nav className="mx-auto hidden w-full max-w-7xl justify-between  px-2 text-white tablet:flex">
+					{categoriesData.ProductContainerBody.map(
+						(category, index) => (
+							<Link
+								className="h-full  border-b-4 border-transparent py-3 px-1 text-center font-bold capitalize hover:border-white"
+								key={index}
+								href={`/Products/${category.number}/?title=${category.title}&lang=${lang}`}
+							>
+								{category.title}
+							</Link>
+						)
+					)}
+				</nav>
+			</div>
 			<div className="flex w-full items-center px-2 tablet:hidden">
 				<Search mobile={true} />
 				<LanguageButton language={content.language} />

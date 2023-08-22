@@ -13,15 +13,14 @@ import { useState } from 'react';
 export default function LanguageButton({ language }) {
 	//Redux Component
 	const dispatch = useDispatch();
-	const [languageSelectedValue, setLanguageSelectedValue] =
-		useState('english');
 
 	//Router
 	const router = useRouter();
 	const query = router.query;
 	const { lang } = query;
 	const { asPath } = router;
-	console.log(query);
+
+	//Change the language according to the router query
 	if (
 		(lang == 'arabic' && language == 'english') ||
 		(lang == 'english' && language == 'arabic')
@@ -29,11 +28,14 @@ export default function LanguageButton({ language }) {
 		dispatch(tougleLanguage());
 	}
 
+	//React Hooks
 	const [isOpen, setIsOpen] = useState(false);
 
+	//Functions
 	const toggleDropdown = () => {
 		setIsOpen(!isOpen);
 	};
+
 	return (
 		<div className="relative mx-2 inline-block h-full text-left">
 			<button
