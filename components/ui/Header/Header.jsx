@@ -42,7 +42,7 @@ export default function Header() {
 
 	const categoriesData = lang == 'arabic' ? categories.ar : categories.en;
 	return (
-		<div className=" top-0 z-50 mb-[1vw] w-full bg-white  pb-5 shadow-md tablet:fixed tablet:mb-0 tablet:pb-0">
+		<div className=" top-0 z-50 mb-2 w-full bg-white  pb-5 shadow-md tablet:fixed tablet:mb-0 tablet:pb-0">
 			<header
 				className={`z-50 mx-auto flex  h-20 max-w-7xl items-center px-2`}
 			>
