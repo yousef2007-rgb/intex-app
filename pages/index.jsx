@@ -74,7 +74,7 @@ export default function HomePage({ data, isLoading }) {
 			<HeadComponent />
 			<Header />
 
-			<main className="mx-auto  font-bold tablet:mt-32">
+			<main className="mx-auto  font-bold tablet:mt-36">
 				<Suspense>
 					<Intro intros={IntroProps} />
 				</Suspense>

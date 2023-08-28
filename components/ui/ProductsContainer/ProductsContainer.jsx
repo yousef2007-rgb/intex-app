@@ -4,7 +4,7 @@ import { ProductsCards } from './ProductsCards';
 import { ViewAllButton } from './ViewAllButton';
 import uiData from '../../../data/ProductContainer.json';
 import { useSelector } from 'react-redux';
-
+import { useRouter } from 'next/router';
 export default function ProductsContainer({
 	title,
 	number,
@@ -17,6 +17,7 @@ export default function ProductsContainer({
 	const content = useSelector((state) => state.language);
 
 	const [sortByValue, setSortByValue] = useState('low-high');
+	const { lang } = useRouter().query;
 	return isLoading ? (
 		<Loading />
 	) : (

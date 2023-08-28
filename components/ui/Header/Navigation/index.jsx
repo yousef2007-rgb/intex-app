@@ -13,15 +13,15 @@ export default function Navigation({
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 z-40 h-screen  w-full max-w-xs flex-col items-center overflow-auto bg-white p-5 transition-all tablet:w-[35vw] tablet:max-w-none`}
+			className={`fixed top-0 left-0 z-40 h-screen  w-full flex-col items-center overflow-auto bg-white p-5 transition-all tablet:w-[35vw] `}
 			style={{
 				transform: `translate(${
-					navigationVisability == 'flex' ? '0' : '-1000px'
+					navigationVisability == 'flex' ? '0' : '-100vw'
 				},0)`,
 			}}
 		>
 			<div className="my-4 flex items-center">
-				<Logo />
+				<Logo navigation={true} />
 				<button
 					className="my-4 mr-4 ml-auto h-6 w-6"
 					onClick={() => setNavigationVisability('none')}

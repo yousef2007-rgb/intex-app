@@ -31,7 +31,7 @@ export default function CartBody({ visability }) {
 	const { lang } = useRouter().query;
 	return (
 		<div
-			className={`scrollbar-w-thin absolute right-0 top-24 z-50 mx-2 flex w-screen max-w-[340px] flex-col rounded-2xl  bg-white p-5 shadow-lg`}
+			className={`scrollbar-w-thin absolute right-1/2 top-40 z-50 flex w-[90vw] translate-x-1/2 flex-col rounded-2xl bg-white p-5 shadow-lg tablet:top-36 tablet:right-0  tablet:mx-4 tablet:max-w-[340px] tablet:translate-x-0`}
 			style={{
 				display: visability,
 			}}

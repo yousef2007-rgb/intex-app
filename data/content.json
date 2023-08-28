@@ -111,7 +111,14 @@
 			}
 		],
 		"ProductContainer": {
-			"viewAllButton": "view all"
+			"viewAllButton": "view all",
+			"sortBy": {
+				"title": "sort by price",
+				"sorts": [
+					{ "title": "low-high", "value": "low-high" },
+					{ "title": "high-low", "value": "high-low" }
+				]
+			}
 		},
 		"ProductPage": {
 			"addToCartButton": "add to cart",
@@ -238,7 +245,20 @@
 			}
 		],
 		"ProductContainer": {
-			"viewAllButton": "عرض الجميع"
+			"viewAllButton": "عرض الجميع",
+			"sortBy": {
+				"title": "ترتيب حسب السعر",
+				"sorts": [
+					{
+						"title": "من الأدنى إلى الأعلى",
+						"value": "من الأدنى إلى الأعلى"
+					},
+					{
+						"title": "low-high",
+						"value": "high-low"
+					}
+				]
+			}
 		},
 		"ProductPage": {
 			"addToCartButton": "اضف الى القائمة",

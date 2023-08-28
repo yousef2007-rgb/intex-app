@@ -11,6 +11,8 @@ import WhatsappButton from '../../components/ui/WhatsappButton';
 import { HeadComponent } from '../../components/ProductsPageComponents/HeadComponent';
 import { useState } from 'react';
 
+import content from '../../data/content.json';
+
 //SSR Fetching Function
 export async function getServerSideProps(context) {
 	const res = await fetch(
@@ -36,7 +38,15 @@ export default function HomePage({ isLoading, data }) {
 	const router = useRouter();
 	const products = router.query;
 	const [sortByValue, setSortByValue] = useState('low-high');
-
+	const { lang } = useRouter().query;
+	const title =
+		lang == 'arabic'
+			? content.ar.ProductContainerBody.find(
+					(x) => x.number == products.products
+			  ).title
+			: content.en.ProductContainerBody.find(
+					(x) => x.number == products.products
+			  ).title;
 	return (
 		<>
 			<HeadComponent products={products} />
@@ -45,7 +55,7 @@ export default function HomePage({ isLoading, data }) {
 				<ProductsContainer
 					number={products.products}
 					limit={0}
-					title={products.title}
+					title={title}
 					data={data}
 					isLoading={isLoading}
 					loadingAllowed={true}
