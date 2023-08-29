@@ -13,11 +13,12 @@ export default function Navigation({
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 z-40 h-screen  w-full flex-col items-center overflow-auto bg-white p-5 transition-all tablet:w-[35vw] `}
+			className={`fixed top-0 left-0 z-40 h-screen  w-full flex-col  overflow-auto bg-white p-5 transition-all tablet:w-[35vw] `}
 			style={{
-				transform: `translate(${
-					navigationVisability == 'flex' ? '0' : '-100vw'
-				},0)`,
+				// transform: `translate(${
+				// 	navigationVisability == 'flex' ? '0' : '-100vw'
+				// },0)`,
+				display: navigationVisability,
 			}}
 		>
 			<div className="my-4 flex items-center">
