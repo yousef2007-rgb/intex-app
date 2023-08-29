@@ -20,7 +20,7 @@ export default function ProductCard({
 			href={`/Product/${nid}?lang=${
 				lang == 'arabic' ? 'arabic' : 'english'
 			}`}
-			className="relative z-0 mx-2 my-4 flex min-h-[400px] w-full max-w-[180px] flex-col items-center justify-center rounded-lg bg-white text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl mobile:my-6 mobile:max-w-[280px] "
+			className="relative z-0 mx-2 my-4 flex min-h-[450px] w-full max-w-[160px] flex-col items-center justify-center rounded-lg bg-white text-center shadow-lg transition-all duration-300 hover:translate-y-[-20px] hover:shadow-2xl mobile:my-6 mobile:min-h-[400px] mobile:max-w-[280px] "
 			itemScope
 			itemType="https://schema.org/Product"
 			onMouseEnter={() => setHover(true)}
