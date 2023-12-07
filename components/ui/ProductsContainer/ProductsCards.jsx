@@ -37,6 +37,7 @@ export function ProductsCards({
 						price={price(product)}
 						nid={product.nid}
 						loadingAllowed={loadingAllowed}
+						packingDiscription={product.field_packing_description}
 					/>
 				))}
 		</div>

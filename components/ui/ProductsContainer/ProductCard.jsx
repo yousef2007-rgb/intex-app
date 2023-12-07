@@ -11,6 +11,7 @@ export default function ProductCard({
 	secondImage,
 	price,
 	nid,
+	packingDiscription,
 }) {
 	const [hover, setHover] = useState(false);
 	const { lang } = useRouter().query;
@@ -43,14 +44,25 @@ export default function ProductCard({
 					{discription}
 				</p>
 				<p className=" w-fit font-bold text-secondery">{label}</p>
-				<p className=" my-2 w-fit font-bold">
-					{price.specialPrice
-						? price.specialPrice + 'JOD'
-						: price.listPrice + 'JOD'}
-				</p>
-				<p className="text-sm font-bold text-gray-500 line-through">
-					{price.specialPrice ? price.listPrice + 'JOD' : ''}
-				</p>
+
+				{packingDiscription != 'comming-soon' ? (
+					<>
+						<p className=" my-2 w-fit font-bold">
+							{price.specialPrice
+								? price.specialPrice + 'JOD'
+								: price.listPrice + 'JOD'}
+						</p>
+						<p className="text-sm font-bold text-gray-500 line-through">
+							{price.specialPrice ? price.listPrice + 'JOD' : ''}
+						</p>
+					</>
+				) : (
+					<div className="flex w-full">
+						<span className="mt-5 w-full rounded-lg border-2 border-green-400 bg-green-400 py-2 text-center  capitalize text-white">
+							comming soon
+						</span>
+					</div>
+				)}
 			</article>
 		</Link>
 	);

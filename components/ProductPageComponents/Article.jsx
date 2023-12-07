@@ -49,101 +49,109 @@ export function Article({ content, product }) {
 					}}
 				></div>
 			</div>
-			<div className=" flex w-full flex-col">
-				<p
-					itemProp="price"
-					className=" my-2 ml-auto text-2xl capitalize"
-				>
-					<span className="text-2xl font-bold text-red-500">
-						{product.field_special_price
-							? '-' + discount + '%'
-							: ''}
-					</span>{' '}
-					{price + 'JOD'}
-				</p>
-				{/* <p>{product.field_wholesale_price}JOD</p> */}
-				<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
-					{product.field_special_price ? (
-						<>
-							<span>{content.ProductPage.listPrice}: </span>
-							<p
-								itemProp="price"
-								style={{
-									textDecoration: 'line-through',
-								}}
-							>
-								{listPrice + 'JOD'}
-							</p>
-						</>
+			{product.field_packing_description != 'comming-soon' ? (
+				<div className=" flex w-full flex-col">
+					<p
+						itemProp="price"
+						className=" my-2 ml-auto text-2xl capitalize"
+					>
+						<span className="text-2xl font-bold text-red-500">
+							{product.field_special_price
+								? '-' + discount + '%'
+								: ''}
+						</span>{' '}
+						{price + 'JOD'}
+					</p>
+					{/* <p>{product.field_wholesale_price}JOD</p> */}
+					<div className=" mb-2 ml-auto flex text-lg capitalize opacity-50">
+						{product.field_special_price ? (
+							<>
+								<span>{content.ProductPage.listPrice}: </span>
+								<p
+									itemProp="price"
+									style={{
+										textDecoration: 'line-through',
+									}}
+								>
+									{listPrice + 'JOD'}
+								</p>
+							</>
+						) : (
+							''
+						)}
+					</div>
+					{product.status == 0 ? (
+						<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500">
+							out of stock
+						</h1>
 					) : (
-						''
-					)}
-				</div>
-				{product.status == 0 ? (
-					<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500">
-						out of stock
-					</h1>
-				) : (
-					<>
-						<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
+						<>
+							<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
+								<button
+									onClick={() => {
+										if (counter > 0) {
+											setCounter(counter - 1);
+										}
+									}}
+									className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
+								>
+									-
+								</button>
+								<p className=" flex-1 py-2 tablet:px-24">
+									{counter}
+								</p>
+
+								<button
+									onClick={() => setCounter(counter + 1)}
+									className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
+								>
+									+
+								</button>
+							</div>
+
 							<button
+								className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
 								onClick={() => {
-									if (counter > 0) {
-										setCounter(counter - 1);
+									if (counter != 0) {
+										dispatch(
+											addCartItem({
+												item: {
+													image: product.image,
+													discription:
+														product.field_item_name,
+													label: product.label,
+													price: price,
+													nid: product.nid,
+												},
+												quantity: counter,
+												replace: false,
+											})
+										);
+									} else {
+										alert('Set A Quantity Please!');
 									}
 								}}
-								className=" rounded-l-xl bg-slate-800 p-2 px-3 font-bold text-white"
 							>
-								-
+								{content.ProductPage.addToCartButton}
 							</button>
-							<p className=" flex-1 py-2 tablet:px-24">
-								{counter}
-							</p>
 
-							<button
-								onClick={() => setCounter(counter + 1)}
-								className=" rounded-r-xl bg-slate-800 py-2 px-3 font-bold text-white"
+							<a
+								className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
+								href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
+								target="blank"
 							>
-								+
-							</button>
-						</div>
-
-						<button
-							className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
-							onClick={() => {
-								if (counter != 0) {
-									dispatch(
-										addCartItem({
-											item: {
-												image: product.image,
-												discription:
-													product.field_item_name,
-												label: product.label,
-												price: price,
-												nid: product.nid,
-											},
-											quantity: counter,
-											replace: false,
-										})
-									);
-								} else {
-									alert('Set A Quantity Please!');
-								}
-							}}
-						>
-							{content.ProductPage.addToCartButton}
-						</button>
-
-						<a
-							className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
-							href={`https://wa.me/798642783?text=can you help with jordan.intexjo.com/Product/${product.nid}`}
-							target="blank"
-						>
-							{content.ProductPage.help}
-						</a>
-					</>
-				)}
-			</div>
+								{content.ProductPage.help}
+							</a>
+						</>
+					)}
+				</div>
+			) : (
+				<div className="flex w-full">
+					<span className="w-full rounded-md border-2 border-green-500 py-2 text-center text-xl text-2xl capitalize text-green-500">
+						comming soon
+					</span>
+				</div>
+			)}
 		</article>
 	);
 }
