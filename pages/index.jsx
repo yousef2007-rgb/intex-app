@@ -79,7 +79,7 @@ export default function HomePage({ data, isLoading }) {
 					<Intro intros={IntroProps} />
 				</Suspense>
 				<ProductsContainerBody data={data} />
-				<article className=" px-5 py-10 text-center ">
+				<article className=" px-5 py-10 text-center max-w-[1200px] mx-auto">
 					<h1 className="py-4 text-center text-4xl uppercase text-blue_gray">
 						{welcoming[0]}
 					</h1>
