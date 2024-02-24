@@ -51,7 +51,7 @@ export default function Search({ mobile }) {
 	console.log('mobile is ' + mobile);
 	return (
 		<div
-			className={`relative z-30 flex w-full flex-1 items-center rounded-xl border-2 px-5 py-2 tablet:mx-auto `}
+			className={`relative z-30 flex w-full flex-1 items-center rounded-xl border-2 px-5 py-2 tablet:mx-auto max-w-[750px] `}
 		>
 			<input
 				className="h-full flex-1 font-bold text-black outline-none"
