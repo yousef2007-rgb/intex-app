@@ -7,7 +7,7 @@ export default function ProductsContainerBody({ data }) {
 	const content = useSelector((state) => state.language);
 
 	return (
-		<div>
+		<div className="max-w-[1200px] mx-auto">
 			{content.ProductContainerBody.map((item, index) => (
 				<ProductsContainer
 					key={index}
