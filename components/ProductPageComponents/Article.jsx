@@ -37,11 +37,11 @@ export function Article({ content, product }) {
 		window.dataLayer = window.dataLayer || [];
 		window.dataLayer.push({
 		  event: 'add_to_cart',
-		//   ecommerce: {
-		// 	value: item?.price,
-		// 	currency: currency,
-		// 	items: [item?.label]
-		//   }
+		  ecommerce: {
+			value: item?.price,
+			currency: currency,
+			items: [item?.label]
+		  }
 		});
 	  };
 
