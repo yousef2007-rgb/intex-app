@@ -24,6 +24,7 @@ export function Article({ content, product }) {
 	const dispatch = useDispatch();
 
 	const sendAddToCartEvent = (item,quantity) => {
+		// console.log("in send add to cart event "+JSON.stringify(item)+" "+quantity)
 		// Your existing logic to add to cart
 		// item: {
 		// 	image: product.image,
@@ -136,7 +137,7 @@ export function Article({ content, product }) {
 								className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
 								onClick={() => {
 									if (counter != 0) {
-										sendAddToCartEvent(item,quantity)
+										sendAddToCartEvent(product,counter)
 										dispatch(
 											addCartItem({
 												item: {
