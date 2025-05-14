@@ -136,6 +136,7 @@ export function Article({ content, product }) {
 								className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
 								onClick={() => {
 									if (counter != 0) {
+										sendAddToCartEvent(item,quantity)
 										dispatch(
 											addCartItem({
 												item: {
@@ -150,7 +151,7 @@ export function Article({ content, product }) {
 												replace: false,
 											})
 										);
-										sendAddToCartEvent(item,quantity)
+										
 										
 									} else {
 										alert('Set A Quantity Please!');
@@ -159,6 +160,20 @@ export function Article({ content, product }) {
 							>
 								{content.ProductPage.addToCartButton}
 							</button>
+
+
+							<button
+							
+							className=' m-2 bg-red-300'
+							onClick={()=>
+								{window.dataLayer = window.dataLayer || [];
+								window.dataLayer.push({
+								  event: 'a_button',
+								  
+								});}
+
+							}
+							> a</button>
 
 							<a
 								className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
