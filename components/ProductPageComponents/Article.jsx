@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
+import { currency } from '../../constants';
 
 export function Article({ content, product }) {
 	const [counter, setCounter] = useState(1);
@@ -21,6 +22,28 @@ export function Article({ content, product }) {
 				100
 	);
 	const dispatch = useDispatch();
+
+	const sendAddToCartEvent = (item,quantity) => {
+		// Your existing logic to add to cart
+		// item: {
+		// 	image: product.image,
+		// 	discription:
+		// 		product.field_item_name,
+		// 	label: product.label,
+		// 	price: price,
+		// 	nid: product.nid,
+		// },
+		// Push to GTM
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		  event: 'add_to_cart',
+		  ecommerce: {
+			value: item?.price,
+			currency: currency,
+			items: [item?.label]
+		  }
+		});
+	  };
 
 	return (
 		<article
@@ -127,6 +150,8 @@ export function Article({ content, product }) {
 												replace: false,
 											})
 										);
+										sendAddToCartEvent(item,quantity)
+										
 									} else {
 										alert('Set A Quantity Please!');
 									}
