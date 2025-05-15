@@ -24,17 +24,7 @@ export function Article({ content, product }) {
 	const dispatch = useDispatch();
 
 	const sendAddToCartEvent = (item,quantity) => {
-		// console.log("in send add to cart event "+JSON.stringify(item)+" "+quantity)
-		// Your existing logic to add to cart
-		// item: {
-		// 	image: product.image,
-		// 	discription:
-		// 		product.field_item_name,
-		// 	label: product.label,
-		// 	price: price,
-		// 	nid: product.nid,
-		// },
-		// Push to GTM
+
 		window.dataLayer = window.dataLayer || [];
 		window.dataLayer.push({
 		  event: 'add_to_cart',
