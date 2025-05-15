@@ -11,6 +11,7 @@ export const cartSlice = createSlice({
 				(c) => c.item.label === action.payload.item.label
 			);
 			if (!item) {
+				window.localStorage.setItem("cart", JSON.stringify([...state, action.payload]));
 				return [...state, action.payload];
 			}
 			const index = state.indexOf(item);
@@ -19,6 +20,7 @@ export const cartSlice = createSlice({
 			} else {
 				state[index].quantity = action.payload.quantity;
 			}
+			window.localStorage.setItem("cart", JSON.stringify(state));
 			return state;
 		},
 		clearItems: (state, action) => {
