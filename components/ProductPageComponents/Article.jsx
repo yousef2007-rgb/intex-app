@@ -23,6 +23,26 @@ export function Article({ content, product }) {
 	);
 	const dispatch = useDispatch();
 
+
+
+	useEffect(() => {
+		if (!product) return;
+	  
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		  event: 'view_item',
+		  ecommerce: {
+			items: [
+			  {
+				item_id: [product?.label],
+				
+				// ... other product fields
+			  },
+			],
+		  },
+		});
+	  }, [product?.label]);
+
 	const sendAddToCartEvent = (item,quantity) => {
 
 		window.dataLayer = window.dataLayer || [];
