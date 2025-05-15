@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
+import { currency } from '../../constants';
 
 export function Article({ content, product }) {
 	const [counter, setCounter] = useState(1);
@@ -21,6 +22,17 @@ export function Article({ content, product }) {
 				100
 	);
 	const dispatch = useDispatch();
+
+	const sendAddToCartEvent = (item,quantity) => {
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		  event: 'add_to_cart',
+		  ecommerce: {
+			items: [item?.label]
+		  }
+		});
+	  };
 
 	return (
 		<article
@@ -113,6 +125,7 @@ export function Article({ content, product }) {
 								className=" my-5 ml-auto w-full rounded-xl border-2 border-transparent bg-secondery py-2 font-bold uppercase text-white hover:border-secondery hover:bg-white hover:text-secondery tablet:max-w-[260px]"
 								onClick={() => {
 									if (counter != 0) {
+										sendAddToCartEvent(product,counter)
 										dispatch(
 											addCartItem({
 												item: {
@@ -127,6 +140,8 @@ export function Article({ content, product }) {
 												replace: false,
 											})
 										);
+										
+										
 									} else {
 										alert('Set A Quantity Please!');
 									}
@@ -134,6 +149,9 @@ export function Article({ content, product }) {
 							>
 								{content.ProductPage.addToCartButton}
 							</button>
+
+
+						
 
 							<a
 								className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"

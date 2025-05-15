@@ -14,10 +14,34 @@ import Trash from '../../public/Assets/icons/TrashIcon';
 import { removeCartItem, addCartItem } from '../../slices/cartSlice';
 import { useRouter } from 'next/router';
 
+import { currency } from '../../constants';
+
 //Main Component
 export default function CardItem({ item, quantity }) {
 	//React Hooks
 	const [inputValue, setInputValue] = useState(quantity);
+	const sendAddToCartEvent = (item,quantity) => {
+		// Your existing logic to add to cart
+		// item: {
+		// 	image: product.image,
+		// 	discription:
+		// 		product.field_item_name,
+		// 	label: product.label,
+		// 	price: price,
+		// 	nid: product.nid,
+		// },
+		// Push to GTM
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		  event: 'add_to_cart',
+		  ecommerce: {
+			value: item?.price,
+			currency: currency,
+			items: [item?.label]
+		  }
+		});
+	  };
+
 	useEffect(() => {
 		dispatch(
 			addCartItem({
@@ -32,6 +56,7 @@ export default function CardItem({ item, quantity }) {
 				replace: true,
 			})
 		);
+		sendAddToCartEvent(item,quantity)
 	}, [inputValue]);
 
 	//Redux Hooks
