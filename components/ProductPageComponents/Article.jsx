@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem } from '../../slices/cartSlice';
 import { currency } from '../../constants';
@@ -25,23 +25,23 @@ export function Article({ content, product }) {
 
 
 
-	useEffect(() => {
-		if (!product) return;
+	// useEffect(() => {
+	// 	if (!product) return;
 	  
-		window.dataLayer = window.dataLayer || [];
-		window.dataLayer.push({
-		  event: 'view_item',
-		  ecommerce: {
-			items: [
-			  {
-				item_id: [product?.label],
+	// 	window.dataLayer = window.dataLayer || [];
+	// 	window.dataLayer.push({
+	// 	  event: 'view_item',
+	// 	  ecommerce: {
+	// 		items: [
+	// 		  {
+	// 			item_id: [product?.label],
 				
-				// ... other product fields
-			  },
-			],
-		  },
-		});
-	  }, [product?.label]);
+	// 			// ... other product fields
+	// 		  },
+	// 		],
+	// 	  },
+	// 	});
+	//   }, [product?.label]);
 
 	const sendAddToCartEvent = (item,quantity) => {
 
