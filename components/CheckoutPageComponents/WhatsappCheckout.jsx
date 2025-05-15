@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 //Main Component
-export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
+export default function WhatsappCheckout({ clearItems, cartItems, uiData,sendPurchaseTrack }) {
 	//React Hooks
 	const [whatsappText, setWhatsAppText] = useState('');
 	useEffect(() => {
@@ -30,7 +30,12 @@ export default function WhatsappCheckout({ clearItems, cartItems, uiData }) {
 			className=" w-full rounded-xl border-2 border-green-500 bg-green-500 py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-green-500"
 			href={`https://wa.me/798642783?text=order:\n${whatsappText}`}
 			target={'blank'}
-			onClick={() => dispatch(clearItems())}
+			onClick={() => {
+				sendPurchaseTrack()
+				dispatch(clearItems());
+				
+				}
+			}
 		>
 			Checkout Using WhatsApp
 		</a>

@@ -14,6 +14,8 @@ import Trash from '../../public/Assets/icons/TrashIcon';
 import { removeCartItem, addCartItem } from '../../slices/cartSlice';
 import { useRouter } from 'next/router';
 
+import { currency } from '../../constants';
+
 //Main Component
 export default function CardItem({ item, quantity }) {
 	//React Hooks

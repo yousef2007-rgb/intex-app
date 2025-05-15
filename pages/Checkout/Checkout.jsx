@@ -10,6 +10,7 @@ import PopUp from '../../components/ui/PopUp/PopUp';
 import WhatsappButton from '../../components/ui/WhatsappButton';
 import { UserInfoForm } from '../../components/CheckoutPageComponents/UserInfoForm';
 import { useRouter } from 'next/router';
+import { currency } from '../../constants';
 export default function Checkout() {
 	const { lang } = useRouter().query;
 	const cartItems = useSelector((state) => state.cart);
@@ -77,10 +78,28 @@ export default function Checkout() {
 			.catch((err) => console.error(err));
 	};
 
+	
+	const sendPurchaseData = (items,value) => {
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		  event: 'purchase',
+		  value:value,
+		  currency:currency,
+		  ecommerce: {
+			items: items
+		  }
+		});
+	  };
+
+	
+
 	return (
 		<div className="flex min-h-screen w-screen flex-col ">
 			<Header />
-			{cartItems.length != 0 ? (
+			{
+			
+			cartItems.length != 0 ? (
 				<main className=" mx-auto  flex h-fit max-w-2xl flex-1 flex-col justify-center p-5 tablet:mt-32">
 					<PopUp
 						visability={PhoneNumberInputVisable}
@@ -115,6 +134,9 @@ export default function Checkout() {
 								className=" w-full rounded-xl border-2 border-secondery bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
 								onClick={() => {
 									setPhoneNumberInputVisability('block');
+									console.log("items in checkout "+JSON.stringify(cartItems))
+									const items=cartItems.map(itemData=>itemData?.item?.label)
+									sendPurchaseData(items,totalPrice)
 								}}
 							>
 								Stay Here and CheckOut
@@ -126,6 +148,10 @@ export default function Checkout() {
 							<WhatsappCheckout
 								clearItems={clearItems}
 								cartItems={cartItems}
+								sendPurchaseTrack={()=>
+									
+									{const items=cartItems.map(item=>item.label)
+									sendPurchaseData(items,totalPrice)}}
 							/>
 						</div>
 					</div>

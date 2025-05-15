@@ -39,8 +39,6 @@ export function Article({ content, product }) {
 		window.dataLayer.push({
 		  event: 'add_to_cart',
 		  ecommerce: {
-			value: item?.price,
-			currency: currency,
 			items: [item?.label]
 		  }
 		});
@@ -163,18 +161,7 @@ export function Article({ content, product }) {
 							</button>
 
 
-							<button
-							
-							className=' m-2 bg-red-300'
-							onClick={()=>
-								{window.dataLayer = window.dataLayer || [];
-								window.dataLayer.push({
-								  event: 'a_button',
-								  
-								});}
-
-							}
-							> a</button>
+						
 
 							<a
 								className=" mb-5  ml-auto w-full rounded-xl border-2 border-transparent bg-green-400 py-2 text-center font-bold uppercase text-white hover:border-green-400 hover:bg-white hover:text-green-400 tablet:max-w-[260px]"
