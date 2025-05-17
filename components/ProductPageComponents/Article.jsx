@@ -81,7 +81,14 @@ export function Article({ content, product }) {
 					}}
 				></div>
 			</div>
-			{product.field_packing_description != 'comming-soon' ? (
+			
+			{
+			
+			product.field_packing_description === 'out-of-stock'?
+			<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-gray-300">
+			out of stock
+		</h1>
+			:product.field_packing_description != 'comming-soon' ? (
 				<div className=" flex w-full flex-col">
 					<p
 						itemProp="price"
@@ -118,7 +125,14 @@ export function Article({ content, product }) {
 						</h1>
 					) : (
 						<>
+						<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500 items-end text-end w-full">
+							in stock
+						</h1>
 							<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
+								
+								
+								
+								
 								<button
 									onClick={() => {
 										if (counter > 0) {

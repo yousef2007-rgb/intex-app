@@ -45,7 +45,18 @@ export default function ProductCard({
 				</p>
 				<p className=" w-fit font-bold text-secondery">{label}</p>
 
-				{packingDiscription != 'comming-soon' ? (
+				{
+				packingDiscription === 'out-of-stock'?
+				<div className="flex w-full">
+						<span className="mt-5 w-full rounded-lg border-2  py-2 text-center  capitalize text-gray-300">
+							out of stock
+						</span>
+					</div>
+				
+				:
+				
+				
+				packingDiscription != 'comming-soon' ? (
 					<>
 						<p className=" my-2 w-fit font-bold">
 							{price.specialPrice
