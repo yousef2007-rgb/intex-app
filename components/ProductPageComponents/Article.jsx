@@ -85,9 +85,16 @@ export function Article({ content, product }) {
 			{
 			
 			product.field_packing_description === 'out-of-stock'?
-			<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-gray-300">
+
+			<div className='flex flex-row items-center'>
+						<span className="mx-1 my-2 text-l  text-gray-400 items-end">
+								Availability: 
+							</span>
+							<h1 className=" my-2 text-2xl font-bold capitalize text-gray-300">
 			out of stock
 		</h1>
+						</div>
+			
 			:product.field_packing_description != 'comming-soon' ? (
 				<div className=" flex w-full flex-col">
 					<p
@@ -119,15 +126,27 @@ export function Article({ content, product }) {
 							''
 						)}
 					</div>
+					
 					{product.status == 0 ? (
-						<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500">
+						<div className='flex flex-row items-center'>
+						<span className="mx-1 my-2 text-l  text-gray-400 items-end">
+								Availability: 
+							</span>
+						<h1 className=" my-2 text-2xl font-bold capitalize text-gray-500">
 							out of stock
 						</h1>
+						</div>
 					) : (
 						<>
-						<h1 className="mx-auto my-2 text-2xl font-bold capitalize text-red-500 items-end text-end w-full">
+						<div className='flex flex-row items-center justify-end'>
+						<span className="mx-1 my-2 text-xl  text-gray-400 ">
+								Availability: 
+							</span>
+						<h1 className=" my-2 text-2xl font-bold capitalize text-green-500 ">
 							in stock
 						</h1>
+						</div>
+						
 							<div className=" mx-auto flex w-full rounded-xl text-center shadow-md tablet:mr-0 tablet:w-fit">
 								
 								
