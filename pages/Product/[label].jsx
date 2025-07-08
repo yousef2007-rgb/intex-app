@@ -22,6 +22,7 @@ import { useRouter } from 'next/router';
 
 //SSR Fetching Function
 export async function getServerSideProps(context) {
+	console.log("SSR Fetching Function "+context.params.label)
 	const res = await fetch(
 		`https://orders.fore-site.net/media_admin/api/api_secure.php?module=inventory&method=get_product&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&filter1=${
 			context.params.label
@@ -50,7 +51,7 @@ export default function HomePage({ data }) {
 			? process.env.NEXT_PUBLIC_URL_AR
 			: process.env.NEXT_PUBLIC_URL;
 	//Component Data
-	const [relatedData, relatedIsLoading] = useFetch(linkUrl, 'data');
+	const [relatedData, relatedIsLoading] =  useFetch(linkUrl, 'data');
 	const product = data.data.res[0];
 	const content = useSelector((state) => state.language);
 
@@ -69,7 +70,7 @@ export default function HomePage({ data }) {
 						<ImageSlider product={product} />
 						<Article content={content} product={product} />
 					</div>
-					<ProductsContainer
+					{relatedData?.data?.res?.length>0&&<ProductsContainer
 						title={content.ProductPage.similarProducts}
 						limit={3}
 						number={product.field_subcategory}
@@ -77,8 +78,8 @@ export default function HomePage({ data }) {
 						isLoading={relatedIsLoading}
 						currentProduct={product.nid}
 						loadingAllowed={false}
-					/>
-					{product.field_subcategory == 342 ? (
+					/>}
+					{product.field_subcategory == 342&& relatedData?.data?.res?.length>0&& (
 						<ProductsContainer
 							title={content.ProductPage.relatedProducts}
 							limit={3}
@@ -89,14 +90,13 @@ export default function HomePage({ data }) {
 							loadingAllowed={false}
 							sortByValue="related"
 						/>
-					) : (
-						''
 					)}
 					{product.field_subcategory == 2693 ||
 					product.field_subcategory == 1515 ||
 					product.field_subcategory == 1514 ||
 					product.field_subcategory == 1944 ||
-					product.field_subcategory == 343 ? (
+					product.field_subcategory == 343 && (
+						relatedData?.data?.res?.length>0&&
 						<ProductsContainer
 							title={content.ProductPage.relatedProducts}
 							limit={3}
@@ -107,9 +107,7 @@ export default function HomePage({ data }) {
 							loadingAllowed={false}
 							sortByValue="related"
 						/>
-					) : (
-						''
-					)}
+					) }
 				</div>
 			</main>
 			<Footer />

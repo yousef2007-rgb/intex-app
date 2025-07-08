@@ -87,7 +87,7 @@ export function Article({ content, product }) {
 			product.field_packing_description === 'out-of-stock'?
 
 			<div className='flex flex-row items-center'>
-						<span className="mx-1 my-2 text-l  text-gray-400 items-end">
+						<span className="mx-1 my-2 text-l  text-gray-300 items-end">
 								Availability: 
 							</span>
 							<h1 className=" my-2 text-2xl font-bold capitalize text-gray-300">

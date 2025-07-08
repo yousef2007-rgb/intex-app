@@ -15,11 +15,10 @@ export const UserInfoForm = ({
 
 	console.log(city);
 	return (
+		<div className="flex min-h-[60vh] max-w-[1200px] mx-auto sm:min-w-[600px]">
 		<form
-			className="fixed top-[50%] left-1/2 flex w-[90%] max-w-xs  -translate-y-1/2 -translate-x-1/2 flex-col rounded-xl bg-white p-5 shadow-2xl "
-			style={{
-				display: PhoneNumberInputVisable,
-			}}
+			className=" px-5 py-10  mx-auto w-full"
+			
 			onSubmit={handleSubmit}
 		>
 			<div className=" flex flex-1 flex-col justify-evenly font-bold">
@@ -45,8 +44,13 @@ export const UserInfoForm = ({
 						type="tel"
 						id="phone"
 						name="phone"
-						pattern="[0-9]{9}"
-						onChange={(e) => setPhone(e.target.value)}
+						pattern="0?7[0-9]{8}"
+	onChange={(e) => {
+		const raw = e.target.value;
+		if (/^07[0-9]{8}$/.test(raw)) {
+			setPhone(raw.slice(1));
+		}
+	}}
 						required
 					/>
 				</div>
@@ -147,5 +151,6 @@ export const UserInfoForm = ({
 				/>
 			</div>
 		</form>
+		</div>
 	);
 };

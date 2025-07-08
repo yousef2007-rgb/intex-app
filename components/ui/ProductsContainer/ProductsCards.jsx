@@ -16,9 +16,13 @@ export function ProductsCards({
 				: product.field_wholesale_price * 1.5,
 		};
 	};
+	console.log("data in related data "+JSON.stringify(data));
 	return (
 		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly  text-center">
-			{data.data.res
+			{
+			
+			
+			data.data.res
 				.sort((a, b) => sortingFunction(a, b, sortByValue))
 				.filter((item) =>
 					mainFilteringFunction(item, number, currentProduct)
@@ -35,7 +39,7 @@ export function ProductsCards({
 						image={product.image}
 						secondImage={product.images[0]}
 						price={price(product)}
-						nid={product.nid}
+						nid={product?.nid}
 						loadingAllowed={loadingAllowed}
 						packingDiscription={product.field_packing_description}
 					/>

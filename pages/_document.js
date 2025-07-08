@@ -1,13 +1,22 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document() {
-  const GTM_ID="GTM-K3KBH6HM"
+class MyDocument extends Document {
+  // static async getInitialProps(ctx) {
+  //   const initialProps = await Document.getInitialProps(ctx)
+  //   // Get locale from Next.js i18n context (or default to 'en')
+  //   const lang = ctx.lang || 'english'
+  //   return { ...initialProps, lang }
+  // }
+  render() {
+    // const { lang } = this.props
+    // const GTM_ID = "GTM-K3KBH6HM"
+    // const dir = lang === 'arabic' ? 'rtl' : 'ltr'  // 'ar' for Arabic (standard code)
   return (
     <Html>
       <Head>
         {/* Facebook Pixel */}
 
-        <script
+        {/* <script
             dangerouslySetInnerHTML={{
               __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,29 +26,30 @@ export default function Document() {
               })(window,document,'script','dataLayer','${GTM_ID}');
               `,
             }}
-          />
+          /> */}
    
       </Head>
       
       <body>
           {/* GTM Body noscript */}
-          <noscript>
+          {/* <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
               height="0"
               width="0"
               style={{ display: 'none', visibility: 'hidden' }}
             ></iframe>
-          </noscript>
+          </noscript> */}
           <Main />
           <NextScript />
         
-        <Main />
-        <NextScript />
+        {/* <Main />
+        <NextScript /> */}
       </body>
     </Html>
   );
 }
+}
 
 
-
+export default MyDocument

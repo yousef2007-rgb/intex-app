@@ -18,7 +18,7 @@ export default function CheckoutButton() {
 		<Link
 			className=" w-full rounded-xl border-2 border-secondery
 			 bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
-			href={`/Checkout?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
+			href={`/Cart?lang=${lang == 'arabic' ? 'arabic' : 'english'}`}
 			onClick={() => dispatch(tougleCart())}
 		>
 			{content.Cart.checkoutButton}

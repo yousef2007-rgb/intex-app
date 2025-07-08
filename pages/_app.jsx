@@ -4,7 +4,15 @@ import { Provider } from "react-redux";
 import { Analytics } from "@vercel/analytics/react";
 import Loading from '../components/ui/Loading'
 import Script from "next/script";
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 function MyApp({ Component, pageProps }) {
+	const { lang } = useRouter()
+
+  useEffect(() => {
+	document.documentElement.lang = lang
+    document.documentElement.dir = lang === 'arabic' ? 'rtl' : 'ltr'
+  }, [lang])
 	return (
 		<Provider store={store}>
 			<Script id="script1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />

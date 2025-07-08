@@ -8,25 +8,17 @@ import WhatsappCheckout from '../../components/CheckoutPageComponents/WhatsappCh
 import CartItem from '../../components/CheckoutPageComponents/CartItem';
 import PopUp from '../../components/ui/PopUp/PopUp';
 import WhatsappButton from '../../components/ui/WhatsappButton';
-import { UserInfoForm } from '../../components/CheckoutPageComponents/UserInfoForm';
+
 import { useRouter } from 'next/router';
 import { currency } from '../../constants';
-export default function Checkout() {
+export default function Cart() {
 	const { lang } = useRouter().query;
+	const router = useRouter()
 	const cartItems = useSelector((state) => state.cart);
-	const dispatch = useDispatch();
+	
 	const [totalPrice, setTotalPrice] = useState(0);
-	const [PhoneNumberInputVisable, setPhoneNumberInputVisability] =
-		useState('none');
-	const [phone, setPhone] = useState('');
-	const [name, setName] = useState('');
-	const [location, setLocation] = useState('');
-	const touglePhoneNumberInputVisablity = () => {
-		console.log('tougled');
-		setPhoneNumberInputVisability(
-			PhoneNumberInputVisable == 'none' ? 'block' : 'none'
-		);
-	};
+
+
 	useEffect(() => {
 		let num = 0;
 		for (let i = 0; i < cartItems.length; i++) {
@@ -46,37 +38,6 @@ export default function Checkout() {
 		setCartItemsNumber(num);
 	}, [cartItems]);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const itemsArray = [];
-		cartItems.map((x, index) => {
-			itemsArray.push({
-				discount: 0.0,
-				item_id: String(x.item.nid),
-				item_price: x.item.price,
-				quantity: x.quantity,
-			});
-		});
-		let itemsArrayJSON = JSON.stringify(itemsArray);
-		itemsArrayJSON = itemsArrayJSON.replace(/"/g, '\\"');
-		fetch(
-			`https://orders.fore-site.net/media_admin/api/api_secure.php?module=orders&method=orders_submit&sk1=DICOSECSK1oolshdsf33sadGGHsd376&debug=yes&device_id=33333333&data=1&json1=[{"cart_code":"web_${Math.round(
-				+new Date() * Math.random(1000)
-			)}","notes":"${phone}-${name}-${location} ","customer_id":"${parseInt(
-				phone
-			)}","order_time":${+new Date()},"status":"saved","sync_time":0,"synced":false,"total":${totalPrice},"total_items":${cartItemsNumber},"items":"${itemsArrayJSON}"}]&lang=en&username=28`,
-			{
-				method: 'POST',
-			}
-		)
-			.then(
-				() =>
-					(window.location.href = `/Checkedout?lang=${
-						lang == 'arabic' ? 'arabic' : 'english'
-					}`)
-			)
-			.catch((err) => console.error(err));
-	};
 
 	
 	const sendPurchaseData = (items,value) => {
@@ -95,30 +56,21 @@ export default function Checkout() {
 	
 
 	return (
-		<div className="flex min-h-screen w-screen flex-col ">
+		<div className="flex min-h-screen w-screen flex-col overflow-y-auto">
 			<Header />
 			{
 			
 			cartItems.length != 0 ? (
 				<main className=" mx-auto  flex h-fit max-w-2xl flex-1 flex-col justify-center p-5 tablet:mt-32">
-					<PopUp
+					{/* <PopUp
 						visability={PhoneNumberInputVisable}
 						tougle={touglePhoneNumberInputVisablity}
 						usingRedux={false}
 						background={true}
 						messege={
-							<UserInfoForm
-								PhoneNumberInputVisable={
-									PhoneNumberInputVisable
-								}
-								setLocation={setLocation}
-								setPhone={setPhone}
-								setName={setName}
-								handleSubmit={handleSubmit}
-								totalPrice={parseFloat(totalPrice)}
-							/>
+							
 						}
-					/>
+					/> */}
 					<div className=" flex w-full  flex-col justify-evenly">
 						{cartItems.map((item, index) => (
 							<CartItem key={index} {...item} />
@@ -133,16 +85,17 @@ export default function Checkout() {
 							<button
 								className=" w-full rounded-xl border-2 border-secondery bg-secondery py-2 px-5 text-center font-bold capitalize text-white hover:bg-white hover:text-secondery"
 								onClick={() => {
-									setPhoneNumberInputVisability('block');
+									const selectedLang = lang === 'arabic' ? 'arabic' : 'english'
+									router.push(`/Checkout?lang=${selectedLang}`)
 									console.log("items in checkout "+JSON.stringify(cartItems))
 									const items=cartItems.map(itemData=>itemData?.item?.label)
 									sendPurchaseData(items,totalPrice)
 								}}
 							>
-								Stay Here and CheckOut
+								CheckOut
 							</button>
 						</div>
-						<span className="mx-2">or</span>
+						{/* <span className="mx-2">or</span>
 
 						<div className="my-4 flex  max-w-xs">
 							<WhatsappCheckout
@@ -153,7 +106,7 @@ export default function Checkout() {
 									{const items=cartItems.map(item=>item.label)
 									sendPurchaseData(items,totalPrice)}}
 							/>
-						</div>
+						</div> */}
 					</div>
 				</main>
 			) : (

@@ -3,13 +3,14 @@ const useFetch = (url, key) => {
 	const [data, setData] = useState({ data: { res: [] } });
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
+		console.log("url in useFetch "+url)
 		fetch(url, {
 			method: "GET",
 			headers: {
 				accept: "applictaion/json",
 			},
 		})
-			.then((res) => res.json())
+			.then((res) => res?.json())
 			.then((data) => {
 				setIsLoading(false);
 				setData(data);

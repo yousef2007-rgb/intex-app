@@ -18,10 +18,13 @@ export default function ProductsContainer({
 
 	const [sortByValue, setSortByValue] = useState('low-high');
 	const { lang } = useRouter().query;
+
+
+	console.log("data in product container "+JSON.stringify(data))
 	return isLoading ? (
 		<Loading />
 	) : (
-		<div className=" flex flex-1 flex-col items-center ">
+		data?.data?.res?.length>0&&<div className=" flex flex-1 flex-col items-center ">
 			<div className="my-10 flex w-full flex-col flex-wrap items-center justify-center ">
 				<h1 className=" w-fit text-3xl font-bold capitalize text-blue_gray  ">
 					{title}
