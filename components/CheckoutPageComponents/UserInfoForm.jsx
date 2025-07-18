@@ -146,7 +146,7 @@ export const UserInfoForm = ({
 			<div className="mt-5">
 				<input
 					className="cursor-pointer  rounded-lg bg-secondery px-5 py-1 font-bold text-white"
-					value={'submite'}
+					value={'submit'}
 					type={'submit'}
 				/>
 			</div>
