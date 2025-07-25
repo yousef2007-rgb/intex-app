@@ -20,8 +20,8 @@ export function ProductsCards({
 	return (
 		<div className="flex w-full flex-1 flex-wrap items-center justify-evenly  text-center">
 			{
-			
-			
+
+
 			data.data.res
 				.sort((a, b) => sortingFunction(a, b, sortByValue))
 				.filter((item) =>
@@ -29,6 +29,9 @@ export function ProductsCards({
 				)
 				.filter((item) =>
 					relatedProductsFilteringFunction(item, sortByValue)
+				)
+				.filter((item) =>
+					outOfStockFilteringFunction(item, limit)
 				)
 				.filter((_, index) => limitsFilteringFunction(index, limit))
 				.map((product, index) => (
@@ -89,3 +92,4 @@ const relatedProductsFilteringFunction = (item, sortByValue) =>
 		: true;
 
 const limitsFilteringFunction = (index, limit) => index < limit || limit == 0;
+const outOfStockFilteringFunction = (item, limit) => item.field_packing_description != 'out-of-stock'|| limit == 0  ;
