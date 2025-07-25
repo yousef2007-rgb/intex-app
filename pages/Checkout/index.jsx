@@ -12,7 +12,7 @@ export default function Checkout (){
         const [name, setName] = useState('');
         const [location, setLocation] = useState('');
             const [totalPrice, setTotalPrice] = useState(0);
-   
+
             const { lang } = useRouter().query;
             useEffect(() => {
                 let num = 0;
@@ -74,18 +74,21 @@ export default function Checkout (){
                     method: 'POST',
                 }
             )
-                .then(
-                    () =>
-                    // {const selectedLang = lang === 'arabic' ? 'arabic' : 'english'
-                    //     router.push(`/Checkedout?lang=${selectedLang}`)}
-                        (window.location.href = `/Checkedout?lang=${
+				.then((res) => res.json())
+                .then((response) =>{
+					if(response.result == "success" ){
+						return window.location.href = `/Checkedout?lang=${
                             lang == 'arabic' ? 'arabic' : 'english'
-                        }`)
+                        }`
+					}else{
+						alert("something went wrong try again please")
+					}
+}
                 )
                 .catch((err) => console.error(err));
         };
 
-        
+
 return (
 <>
 
@@ -102,7 +105,7 @@ return (
                                 handleSubmit={handleSubmit}
                                 totalPrice={parseFloat(totalPrice)}
                             />
-                           
+
                             </div>
                              <Footer />
                             </>)
