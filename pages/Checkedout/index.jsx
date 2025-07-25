@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import CartItem from '../../components/CheckoutPageComponents/CartItem';
 import { clearItems } from '../../slices/cartSlice';
+import data from "../../data/Checkedout.json";
 
 const ThankYouPage = () => {
 	const [checkedoutItems, setCheckedoutItems] = useState([]);
@@ -17,21 +18,25 @@ const ThankYouPage = () => {
 			JSON.parse(window.localStorage.getItem('checkedout'))
 		);
 	}, []);
+	let content = data.English;
+	if(lang == "english" || !lang) {
+		content = data.English;
+	}else{
+		content = data.Arabic
+	}
 	return (
 		<main className=" flex min-h-screen flex-col tablet:mt-32">
 			<Header />
 			<div className="flex flex-1 flex-col items-center justify-center bg-gray-100 px-3">
-				<div className="mx-auto my-10  max-w-2xl bg-white p-8 shadow-md">
-					<h2 className="mb-4 text-2xl font-bold">
-						Thank You for Your Purchase!
+				<div className="mx-auto flex flex-col my-10  max-w-2xl bg-white p-8 shadow-md">
+					<h2 className="mb-4 text-2xl text-center w-full font-bold">
+						{content.thankyou}
 					</h2>
-					<p className="text-gray-700 ">
-						We appreciate your business and your support. Your order
-						has been successfully processed,
-the delivery usually takes one to two business, for more accurate delivery details contact this number:
+					<p className="text-gray-700 text-center">
+						{content.details}
 								<a
 									href="https://wa.me/798642783"
-									className="flex w-fit text-green-400 hover:underline"
+									className="flex w-fit text-green-400 mx-auto hover:underline"
 								>
 									<svg
 										className="h-5 w-5"
@@ -47,8 +52,9 @@ the delivery usually takes one to two business, for more accurate delivery detai
 									<span>798642783</span>
 								</a>
 					</p>
-					<h1 className="my-4 text-2xl font-bold capitalize">
-						you have orderd:
+
+					<h1 className="my-4 text-2xl font-bold capitalize text-center">
+						{content.orderTitle}
 					</h1>
 					{checkedoutItems.map((item, index) => (
 						<div
@@ -81,12 +87,12 @@ the delivery usually takes one to two business, for more accurate delivery detai
 					))}
 
 					<Link
-						className="mt-6 font-bold text-green-400 underline"
+						className="mt-6 font-bold text-green-400 underline mx-auto w-fit text-center"
 						href={`/?lang=${
 							lang == 'arabic' ? 'arabic' : 'english'
 						}`}
 					>
-						continue shopping
+						{content.continueShopping}
 					</Link>
 				</div>
 

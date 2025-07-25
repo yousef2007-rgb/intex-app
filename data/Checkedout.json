@@ -1,0 +1,15 @@
+{
+	"English": {
+		"thankyou": "Thank You for Your Purchase!",
+		"details": "We appreciate your business and your support. Your order has been successfully processed, Delivery typically takes one to two business days. For further details regarding your delivery, please contact the following number:",
+		"orderTitle": "Your Order:",
+		"continueShopping": "continue shopping"
+	},
+	"Arabic": {
+		"thankyou": "شكرًا لك",
+		"details": "نحن نُقدّر دعمك وثقتك بنا. تم تسجيل طلبك بنجاح، وعادةً ما يستغرق التوصيل من يوم إلى يومين عمل. للمزيد من التفاصيل، يُرجى الاتصال بالرقم التالي",
+		"orderTitle": "طلبك",
+		"continueShopping": "الاستمرار في التسوق"
+	}
+}
+
