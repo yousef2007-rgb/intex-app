@@ -31,7 +31,7 @@ export const UserInfoForm = ({
 						type="text"
 						id="name"
 						name="name"
-						onChange={(e) => setName(e.target.value)}
+						onChange={(e) =>{console.log("name e "+e) ;setName(e.target.value)}}
 						required
 					/>
 				</div>
@@ -46,10 +46,16 @@ export const UserInfoForm = ({
 						name="phone"
 						pattern="0?7[0-9]{8}"
 	onChange={(e) => {
-		const raw = e.target.value;
+		console.log("in onchange "+e)
+		const raw = e?.target?.value;
+		console.log([...raw]); // show every character
+console.log(raw.slice(1));
+		console.log("after raw "+raw)
 		if (/^07[0-9]{8}$/.test(raw)) {
+			console.log("inside check 0 "+raw.slice(1))
 			setPhone(raw.slice(1));
 		}
+		else setPhone(raw);
 	}}
 						required
 					/>
