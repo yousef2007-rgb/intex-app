@@ -38,27 +38,34 @@ export const UserInfoForm = ({
 				<label className="my-2" for="phone">
 					Enter your phone so we can contact you
 				</label>
-				<div className="flex h-8">
+				
+				<div className="flex h-8 border">
+					<div className='flex h-full bg-gray-200 '>
+						<label  className=" text-center  my-auto px-2 " >
+					+962
+				</label>
+				</div>
+				
 					<input
-						className=" flex-1 border outline-none"
+						className="   outline-none flex-1 px-1"
 						type="tel"
 						id="phone"
 						name="phone"
 						pattern="0?7[0-9]{8}"
 	onChange={(e) => {
-		console.log("in onchange "+e)
 		const raw = e?.target?.value;
-		console.log([...raw]); // show every character
-console.log(raw.slice(1));
+
 		console.log("after raw "+raw)
 		if (/^07[0-9]{8}$/.test(raw)) {
-			console.log("inside check 0 "+raw.slice(1))
 			setPhone(raw.slice(1));
 		}
 		else setPhone(raw);
 	}}
 						required
 					/>
+					
+					
+					
 				</div>
 				<small>Format: 791234567</small>
 				<label className="mt-2" htmlFor="city-select">
