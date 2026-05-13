@@ -78,54 +78,54 @@ export const UserInfoForm = ({
 					className="my-2 border"
 				>
 					<option
-						value={JSON.stringify({ name: 'Amman', price: 2.5 })}
+						value={JSON.stringify({ name: 'Amman', price: 3 })}
 					>
 						Amman
 					</option>
-					<option value={JSON.stringify({ name: 'Zarqa', price: 3 })}>
+					<option value={JSON.stringify({ name: 'Zarqa', price: 5 })}>
 						Zarqa
 					</option>
-					<option value={JSON.stringify({ name: 'Irbid', price: 4 })}>
+					<option value={JSON.stringify({ name: 'Irbid', price: 5 })}>
 						Irbid
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Jerash', price: 4 })}
+						value={JSON.stringify({ name: 'Jerash', price: 5 })}
 					>
 						Jerash
 					</option>
-					<option value={JSON.stringify({ name: 'Aqaba', price: 4 })}>
+					<option value={JSON.stringify({ name: 'Aqaba', price: 5 })}>
 						Aqaba
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Ajloun', price: 4 })}
+						value={JSON.stringify({ name: 'Ajloun', price: 5 })}
 					>
 						Ajloun
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Alsalt', price: 4 })}
+						value={JSON.stringify({ name: 'Alsalt', price: 5})}
 					>
 						Alsalt
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Almafraq', price: 4 })}
+						value={JSON.stringify({ name: 'Almafraq', price: 5 })}
 					>
 						Almafraq
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Altafila', price: 4 })}
+						value={JSON.stringify({ name: 'Altafila', price: 5 })}
 					>
 						Altafila
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Alkarek', price: 4 })}
+						value={JSON.stringify({ name: 'Alkarek', price: 5})}
 					>
 						Alkarek
 					</option>
-					<option value={JSON.stringify({ name: 'Maan', price: 4 })}>
+					<option value={JSON.stringify({ name: 'Maan', price: 5 })}>
 						Maan
 					</option>
 					<option
-						value={JSON.stringify({ name: 'Madaba', price: 4 })}
+						value={JSON.stringify({ name: 'Madaba', price: 5 })}
 					>
 						Madaba
 					</option>
