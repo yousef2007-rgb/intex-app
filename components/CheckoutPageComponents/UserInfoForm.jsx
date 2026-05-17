@@ -9,7 +9,7 @@ export const UserInfoForm = ({
 	handleSubmit,
 	totalPrice,
 }) => {
-	const [city, setCity] = useState({ name: 'Amman', price: parseFloat(2.5) });
+	const [city, setCity] = useState({ name: 'Amman', price: parseFloat(3) });
 	const { lang } = useRouter().query;
 	const total = parseFloat(totalPrice) + parseFloat(city.price);
 
