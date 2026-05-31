@@ -114,7 +114,11 @@
 				"number": "2764",
 				"keywords": "slider swing seesaw"
 				
-			}
+			},
+		{
+			"title": "non intex products",
+			"number": "2899"
+		}
 		],
 		"ProductContainer": {
 			"viewAllButton": "view all",
@@ -248,7 +252,11 @@
 				"number": "1944",
 				"keywords": "كرسي سرير فراش",
 				"image": "categories-04.jpg"
-			}
+			},
+		{
+			"title": "منتجات غير انتكس",
+			"number": "2899"
+		}
 		],
 		"ProductContainer": {
 			"viewAllButton": "عرض الجميع",
