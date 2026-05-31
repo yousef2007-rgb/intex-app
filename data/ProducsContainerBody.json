@@ -32,6 +32,10 @@
 		{
 			"title": "furniture",
 			"number": "1944"
+		},
+		{
+			"title": "non intex products",
+			"number": "2899"
 		}
 	],
 	"arabic": [
@@ -66,6 +70,10 @@
 		{
 			"title": "اثاث",
 			"number": "1944"
+		},
+		{
+			"title": "منتجات غير انتكس",
+			"number": "2899"
 		}
 	]
 }
